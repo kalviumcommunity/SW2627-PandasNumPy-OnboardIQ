@@ -520,3 +520,608 @@ All sources must be validated against the schema contracts in Appendix B. Employ
 | NFR-28 | Access-control and legal-review requirements for production data are explicitly deferred and documented as prerequisites for production deployment. |
 | NFR-29 | Data-processing logic must preserve auditable lineage from dashboard metrics to processed source records. |
 
+# 10\. User Stories
+
+## Epic 1 — Executive Dashboard
+
+### US-101
+
+As an Executive Leader, I want to view a company-level onboarding health summary, so that I can understand whether new-hire readiness is improving and where leadership attention is required.
+
+Acceptance Criteria:
+
+* The view displays active new hires, completion rate, median completion time, productivity-readiness score, and high-risk count for the selected period.
+* The view displays a monthly trend for completion and readiness.
+* The view identifies the departments with the highest risk or largest negative variance.
+* Each KPI displays a clear definition or tooltip and reflects the active filters.
+
+### US-102
+
+As an Executive Leader, I want to compare onboarding performance across departments, so that I can prioritize cross-functional operational investment.
+
+Acceptance Criteria:
+
+* A comparison table shows department, eligible hires, completion rate, median completion days, high-risk count, and support-delay indicator.
+* The user can sort the table and select a department for drill-down.
+* Variance from the company benchmark is displayed.
+
+### US-103
+
+As an Executive Leader, I want to see concise risk alerts with contributing factors, so that I can ask the appropriate leader to take action.
+
+Acceptance Criteria:
+
+* Alerts identify severity, affected department or cohort, affected employee count, and top contributing factor.
+* Persistent issues are distinguishable from newly detected issues.
+* Alerts link to the relevant HR or manager analysis view.
+
+## Epic 2 — HR Dashboard
+
+### US-201
+
+As an HR Manager, I want to see an onboarding funnel by stage, so that I can identify where employees stop progressing.
+
+Acceptance Criteria:
+
+* The funnel shows counts and conversion rates across Preboarding, Setup, Orientation, Enablement, and Productive stages.
+* The selected date range and organization filters are applied.
+* The system highlights the stage with the largest drop-off or longest median duration.
+
+### US-202
+
+As an HR Manager, I want to view employees with incomplete or overdue mandatory tasks, so that I can coordinate timely follow-up.
+
+Acceptance Criteria:
+
+* A detail table shows employee, department, manager, current stage, overdue task count, due date, and risk band.
+* The table can be filtered by task category and risk band.
+* The user can export the filtered list to CSV.
+
+### US-203
+
+As an HR Manager, I want to analyze training completion and assessment outcomes, so that I can identify whether learning requirements are delaying readiness.
+
+Acceptance Criteria:
+
+* The dashboard shows course completion rate, overdue courses, average assessment score, and completion time.
+* Results can be filtered by course type, department, and cohort.
+* Overdue mandatory learning is visible in employee drill-down data.
+
+### US-204
+
+As an HR Manager, I want to see support issues associated with new hires, so that I can work with IT and HR support to remove recurring barriers.
+
+Acceptance Criteria:
+
+* The dashboard displays ticket volume, median resolution time, open-ticket count, and category distribution.
+* The view identifies issue categories with the strongest association to delayed completion.
+* No ticket body text or sensitive free-form content is displayed.
+
+## Epic 3 — Manager Dashboard
+
+### US-301
+
+As a Department Manager, I want to see my team’s onboarding progress, so that I can ensure each new hire receives timely support.
+
+Acceptance Criteria:
+
+* The view defaults to the manager’s selected team in the demonstration workflow.
+* It shows each new hire’s completion percentage, stage, readiness score, pending tasks, and open support tickets.
+* Employees are sortable by risk and overdue actions.
+
+### US-302
+
+As a Department Manager, I want a prioritized list of actions assigned to me or my team, so that I can remove blockers before they affect productivity.
+
+Acceptance Criteria:
+
+* The action list identifies owner, employee, action type, due date, status, and impact rationale.
+* Actions include manager check-ins, role-specific task completion, and escalation of blocked dependencies where supported by data.
+* The list clearly distinguishes inferred recommendations from source-system task status.
+
+### US-303
+
+As a Department Manager, I want to compare my team’s onboarding outcomes with the company benchmark, so that I can understand whether my process needs improvement.
+
+Acceptance Criteria:
+
+* The dashboard compares completion time, readiness, overdue-task rate, and ticket-resolution time with company values.
+* Comparisons include sample-size context to prevent misleading interpretation.
+* The dashboard does not rank individual employees against peers.
+
+## Epic 4 — Analytics and KPI Exploration
+
+### US-401
+
+As an HR Operations Analyst, I want to filter onboarding metrics by cohort, department, role, location, and employment type, so that I can investigate meaningful operational differences.
+
+Acceptance Criteria:
+
+* All supported filters are visible and their active state is clear.
+* Filters update KPI cards, charts, tables, and exports consistently.
+* Empty-result states explain that no records match the selected filters.
+
+### US-402
+
+As an HR Operations Analyst, I want to analyze the relationship between support delays and onboarding outcomes, so that I can make evidence-based process recommendations.
+
+Acceptance Criteria:
+
+* The platform displays a correlation or grouped comparison between ticket-resolution time and completion or readiness outcomes.
+* The analysis clearly states that correlation does not prove causation.
+* Users can inspect the underlying aggregated data.
+
+### US-403
+
+As an HR Operations Analyst, I want to use heatmaps and trends to locate recurring bottlenecks, so that I can prioritize process improvements.
+
+Acceptance Criteria:
+
+* Heatmaps can show completion rate or median duration by department and onboarding stage.
+* Trend charts show relevant daily, weekly, or monthly metric changes.
+* The selected metric and calculation period are labeled.
+
+### US-404
+
+As an HR Operations Analyst, I want to export validated analytical results, so that I can prepare further analysis and stakeholder reports without rebuilding calculations.
+
+Acceptance Criteria:
+
+* CSV exports preserve the active filters and visible metric definitions.
+* Exported files use stable column names.
+* Generated files contain no source credentials or restricted fields.
+
+## Epic 5 — Machine Learning and Recommendations
+
+### US-501
+
+As an HR Manager, I want to see an onboarding risk score and key drivers for each at-risk employee, so that I can intervene appropriately.
+
+Acceptance Criteria:
+
+* High-risk employees display risk band, probability or score, and up to three interpretable contributing factors.
+* Factors are derived from approved features such as overdue tasks, unresolved tickets, training status, and stage duration.
+* The interface states that the prediction supports review and does not make automated employment decisions.
+
+### US-502
+
+As an HR Operations Analyst, I want the system to predict likely onboarding delays, so that I can assess which cohorts require proactive support.
+
+Acceptance Criteria:
+
+* The model produces predictions for eligible employees with sufficient input data.
+* Performance metrics are available for the selected trained model.
+* Missing features result in a clear unavailable or lower-confidence state rather than an unsupported prediction.
+
+### US-503
+
+As an HR Manager, I want to identify unusual onboarding patterns, so that I can investigate process failures that standard threshold rules may miss.
+
+Acceptance Criteria:
+
+* The anomaly view identifies the employee, cohort, or process area, anomaly date or period, and explanation fields.
+* Examples include unusually long stage duration, abnormal ticket concentration, or low adoption relative to comparable role peers.
+* Anomalies can be filtered and reviewed alongside underlying records.
+
+### US-504
+
+As a Department Manager, I want targeted recommendations for high-risk onboarding cases, so that I know the next best action rather than only seeing a score.
+
+Acceptance Criteria:
+
+* Recommendations are rule-based and linked to identified operational evidence.
+* Each recommendation includes a suggested owner and rationale.
+* Recommendations do not automatically modify HR or ticketing systems in the MVP.
+
+## Epic 6 — Reporting
+
+### US-601
+
+As an Executive Leader, I want a downloadable monthly onboarding summary, so that I can use consistent information in an operating review.
+
+Acceptance Criteria:
+
+* The report includes company KPIs, departmental variance, major bottlenecks, risk summary, and recommended focus areas.
+* The report is generated from the same processed data as the dashboard.
+* The reporting period and data freshness timestamp are included.
+
+### US-602
+
+As an HR Manager, I want a department health report, so that I can review performance with department leaders.
+
+Acceptance Criteria:
+
+* The report includes completion, readiness, task, learning, and support indicators.
+* It identifies the most material bottleneck and risk cohort.
+* The report can be exported in CSV or Markdown/PDF-ready format.
+
+### US-603
+
+As an HR Operations Analyst, I want Power BI-compatible output tables, so that the organization can reuse the project data in existing reporting workflows.
+
+Acceptance Criteria:
+
+* Export tables have documented schemas and stable metric columns.
+* The export includes refresh timestamp and source lineage fields.
+* Sample instructions describe how to import the output into Power BI.
+
+## Epic 7 — Data Pipeline and Quality
+
+### US-701
+
+As a Data Engineer, I want to run the end-to-end pipeline with one command, so that I can refresh all analytical outputs reliably.
+
+Acceptance Criteria:
+
+* A documented command executes ingestion, validation, cleaning, integration, KPI generation, and scoring in the correct dependency order.
+* The run produces status logs and output locations.
+* A failure prevents downstream publication and provides a descriptive error.
+
+### US-702
+
+As a Data Engineer, I want schema and quality validation before analytics runs, so that dashboard outputs are trustworthy.
+
+Acceptance Criteria:
+
+* Required-field, type, uniqueness, range, and referential-integrity checks execute for each source.
+* Invalid records are quarantined with reason codes.
+* A quality summary is saved for every run.
+
+### US-703
+
+As a Data Engineer, I want automated CI checks on each code change, so that regressions are detected before demonstration deployment.
+
+Acceptance Criteria:
+
+* GitHub Actions runs linting, unit tests, and validation checks on pushes and pull requests.
+* A failed check is visible in the repository and blocks a protected merge workflow where configured.
+* Dependencies are pinned or constrained for reproducibility.
+
+# 11\. Dashboard Pages & User Experience
+
+## 11.1 Entry Point and First-Time User Experience
+
+The Streamlit application opens on a concise platform landing page. It explains the purpose of the platform, displays the last successful data-refresh time, and provides navigation to Executive, HR, Manager, and Analytics dashboards. A short onboarding panel defines the productivity-readiness score, risk bands, data limitations, and the fact that the data is anonymized or simulated for the MVP. The product should not require a user to understand the underlying pipeline before interpreting the dashboard.
+
+Users select a reporting period and relevant organization filters in a persistent filter area. The interface must show which filters are active and provide a reset option. If data is unavailable, stale, or filtered to an empty cohort, the product displays a clear state with next-step guidance rather than blank charts.
+
+## 11.2 Executive Dashboard
+
+The Executive Dashboard is designed for a two-minute operational review. It presents a Company Overview with active new hires, onboarding completion rate, median completion time, productivity-readiness score, first-30-day completion, and count of high-risk employees. Each KPI includes comparison with the prior period where data is available.
+
+Monthly Trends visualize completion rate, time-to-productivity proxy, risk count, and support-delay trends. A department comparison ranks or groups departments against the organizational benchmark. Risk Alerts summarize material exceptions, including persistent task bottlenecks, rising support resolution time, or a department cohort with elevated predicted delay risk. The dashboard includes a short insight panel that translates data into action-oriented language, such as: “New hires in Engineering show a higher-than-baseline setup-stage duration; unresolved access tickets are the leading associated factor.”
+
+## 11.3 HR Dashboard
+
+The HR Dashboard supports operational management. The Onboarding Funnel displays progression from preboarding through productive status, including count, conversion, and median duration at each stage. Department Comparison allows HR to identify uneven outcomes and investigate whether variation is driven by role mix, support delays, learning completion, or manager-owned tasks.
+
+Task Completion shows completion rates by category and identifies pending, blocked, and overdue requirements. Pending Employees is a prioritized table with employee identifier, department, manager, stage, overdue task count, open-ticket count, readiness score, and risk band. Training Analytics includes course completion, overdue learning, assessment performance, and completion duration. Support analytics show ticket volume, category, priority, resolution time, and likely impact on onboarding delay.
+
+## 11.4 Manager Dashboard
+
+The Manager Dashboard focuses on a manager’s immediate responsibilities. Team Progress shows current new hires and their stage, completion percentage, readiness indicator, open blockers, and pending manager actions. Employee Performance is intentionally framed as onboarding readiness rather than performance evaluation; it provides transparent operational signals and does not make individual employment judgments.
+
+Completion Status supports drill-down to tasks, learning assignments, and ticket metadata. Pending Actions places the most time-sensitive and impactful follow-ups first. The manager can review why a case is high risk, including specific overdue onboarding activities or unresolved access issues, then export the list for a weekly check-in. The interface must state when information is inferred from analytics rather than directly reported by a source system.
+
+## 11.5 Analytics Dashboard
+
+The Analytics Dashboard is intended for HR Operations and data-oriented stakeholders. Trend Analysis provides time-series views of completion, readiness, support resolution, and active-risk indicators. Correlation Charts allow analysts to compare aggregated support resolution time, task completion, learning outcomes, and tool adoption with onboarding outcomes. Heatmaps reveal stage duration or completion rate by department, role family, cohort, or location.
+
+Department Comparison provides a structured table for benchmarking. Support Analytics links ticket categories and resolution-time bands to completion outcomes. The dashboard must make calculations and denominators clear, support download of visible data, and avoid causal claims from correlation alone.
+
+## 11.6 Advanced Features and Edge Cases
+
+* Employees with a joining date inside the selected range but insufficient elapsed time are identified as in-progress and excluded from final-completion denominators where appropriate.
+* Employees whose role does not require GitHub or Jira are not penalized for low use of those tools; role-aware eligibility rules apply.
+* A completed checklist with unresolved high-priority support tickets remains visible as a potential operational concern, not a contradiction.
+* Missing source data produces a data-quality warning and suppresses unreliable derived scores where essential features are absent.
+* Small cohort sizes are labeled to discourage overinterpretation of percentage changes.
+* Model scoring is unavailable when minimum data completeness rules are not met.
+
+## 11.7 UI/UX Highlights
+
+* Use clear risk labels: Low, Medium, High; pair colors with icons and text.
+* Use consistent date and percentage formats across all pages.
+* Keep primary executive cards concise; place detail in drill-down tables and tooltips.
+* Provide plain-language metric definitions adjacent to complex scores.
+* Ensure keyboard-friendly navigation, readable contrast, responsive layout, and accessible chart alternatives.
+
+# 12\. MVP Scope
+
+The MVP validates the core proposition: reliable onboarding data can be consolidated to expose bottlenecks, identify at-risk new hires, and support more timely operational intervention. It prioritizes data quality, transparent KPIs, and useful dashboards over integrations and automation.
+
+## Included in MVP
+
+| Feature | Rationale |
+| --- | --- |
+| CSV ingestion for employee, onboarding, tool-usage, ticket, and learning datasets | Establishes the required analytical foundation without live-system dependencies. |
+| Schema validation, rejected-record logs, and quality summaries | Ensures dashboard outputs are credible and auditable. |
+| Cleaning, standardization, and unified analytical tables | Enables consistent cross-source analysis. |
+| KPI engine for completion, stage duration, task, learning, support, and tool-adoption measures | Delivers the core decision-support value. |
+| Executive, HR, Manager, and Analytics Streamlit dashboards | Provides persona-specific access to validated insights. |
+| Baseline risk scoring and delay prediction | Demonstrates predictive analytics using explainable, feasible models. |
+| Rule-based recommendations | Translates observed risk drivers into next-step guidance without unsupported automation. |
+| CSV and Power BI-compatible exports | Allows evaluation and downstream reporting. |
+| GitHub Actions CI, tests, and project documentation | Provides a professional, reproducible engineering baseline. |
+| Synthetic or anonymized sample datasets | Enables safe, repeatable capstone demonstration. |
+
+## Explicitly Excluded from MVP
+
+| Feature | Reason for Deferral |
+| --- | --- |
+| Authentication and login | Not required for controlled capstone evaluation; production access controls require separate design and review. |
+| Live HRIS, LMS, ticketing, or collaboration-tool APIs | Adds credential management, rate limits, privacy review, and integration complexity beyond MVP validation. |
+| Transactional onboarding workflows | The product is an analytics platform, not a replacement for HR task-management tools. |
+| Real-time streaming analytics | Daily refresh is sufficient for initial onboarding operational decisions. |
+| Automated notifications by email or Slack | Requires external integration and escalation governance; suitable for Phase 2. |
+| Production employee data | The capstone uses synthetic or approved anonymized datasets only. |
+| Automated employment actions | Risk scores support human review and must not trigger personnel decisions. |
+| Full Power BI live integration | Stable exports demonstrate interoperability without workspace configuration. |
+
+# 13\. Future Scope
+
+## Phase 2 — Intelligence and Operational Alerts
+
+| Feature | Description |
+| --- | --- |
+| Real-Time Analytics | Add event- or API-based ingestion for more frequent refreshes of onboarding and support signals. |
+| Email and Collaboration Alerts | Send governed alerts to HR or manager channels when high-risk thresholds, critical ticket aging, or stalled stages are detected. |
+| Role-Based Authentication | Introduce secure role-aware access so managers see their teams, HR sees permitted organizational data, and executives see aggregate views. |
+| Power BI Integration | Publish modeled tables or a managed semantic layer for Power BI reporting. |
+| LLM-Generated HR Summaries | Generate reviewed, evidence-grounded monthly summaries from approved metrics and risk data. |
+| Intervention Outcome Tracking | Capture whether recommended follow-up occurred and whether it improved the observed outcome. |
+
+## Phase 3 — Platform Scale and Automation
+
+| Feature | Description |
+| --- | --- |
+| Cloud Deployment | Containerize and deploy the platform to a managed cloud environment with monitoring and governed storage. |
+| API Layer | Provide documented APIs for validated metrics, risk results, and dashboard integrations. |
+| Advanced Forecasting | Evaluate gradient boosting and time-series methods for readiness and capacity forecasting when sufficient historical data exists. |
+| Automated Workflow Recommendations | Integrate with approved workflow systems to draft or route recommended actions for human approval. |
+| Chatbot Assistant | Provide a governed natural-language interface that retrieves approved onboarding metrics and report summaries. |
+| Data Warehouse Integration | Replace CSV-only processing with managed warehouse tables and scheduled transformation jobs. |
+
+# 14\. Risks and Assumptions
+
+## 14.1 Risks
+
+| \# | Risk | Probability | Impact | Mitigation |
+| --- | --- | --- | --- | --- |
+| R1 | Synthetic data may not reflect the complexity or missingness of real HR operational data. | Medium | High | Base schemas on realistic exports, create varied scenarios, and document simulation limitations. |
+| R2 | Limited labeled historical outcomes may reduce model accuracy or make ML evaluation unstable. | High | Medium | Use simple baselines, cross-validation where appropriate, transparent metrics, and rule-based fallback recommendations. |
+| R3 | Productivity proxies may be misunderstood as employee-performance measures. | Medium | High | Use careful terminology, document limitations, show operational drivers, and prohibit automated personnel decisions. |
+| R4 | Employee identifiers and department labels may not match across sources. | High | High | Enforce mapping tables, referential-integrity checks, and visible data-quality reports. |
+| R5 | Tool-usage data may introduce privacy concerns. | Medium | High | Use anonymized aggregate counts only; exclude content and document privacy principles. |
+| R6 | Streamlit performance may decline with large detail tables. | Medium | Medium | Cache processed data, aggregate before rendering, and paginate or limit drill-down tables. |
+| R7 | Scope creep may introduce live integrations, authentication, or transactional workflows before the core analytics value is validated. | High | High | Maintain strict MVP boundaries and record deferred work in the roadmap. |
+| R8 | Correlation findings may be interpreted as causation. | Medium | Medium | Use explanatory language, show methodology, and frame insights as hypotheses for operational review. |
+| R9 | Inconsistent model training data may create unfair risk signals across roles or departments. | Medium | High | Evaluate segmented performance, use approved operational features, and include human-review guidance. |
+| R10 | CI or environment inconsistencies may delay demonstration readiness. | Low | Medium | Pin dependencies, use requirements.txt, test clean setup, and validate GitHub Actions early. |
+
+## 14.2 Assumptions
+
+| \# | Assumption |
+| --- | --- |
+| A1 | MVP source data is available as CSV files with the schema contracts defined in this document. |
+| A2 | Datasets use anonymized or synthetic employee IDs and do not contain production credentials or sensitive free-form content. |
+| A3 | Employee ID can be used as the primary integration key across the five required datasets. |
+| A4 | The organization has defined mandatory onboarding tasks and target completion windows for the modeled scenario. |
+| A5 | Role-aware eligibility rules can identify which tools and learning assignments are relevant to an employee. |
+| A6 | A productivity-readiness proxy is acceptable for analytical demonstration when clearly documented and not used as a performance rating. |
+| A7 | Python 3.10+ is available in the development and demonstration environment. |
+| A8 | Streamlit is the primary MVP dashboard surface; Power BI is supported through stable export tables. |
+| A9 | GitHub and GitHub Actions are available for version control and continuous integration. |
+| A10 | The capstone team can generate or obtain enough sample history to demonstrate trends and baseline ML evaluation. |
+| A11 | Stakeholders will review model recommendations as decision support rather than automated policy. |
+| A12 | Daily refresh frequency is sufficient for MVP reporting and risk detection. |
+
+# 15\. Acceptance Criteria
+
+The following criteria define the minimum bar for the Employee Onboarding Analytics Platform MVP to be considered complete and ready for capstone evaluation.
+
+## AC-1 — Data Pipeline
+
+* All five datasets are ingested through a documented command.
+* Each dataset passes required schema validation before records are admitted to the processed layer.
+* Invalid records are isolated with source, row identifier, and reason code; the pipeline does not silently drop them.
+* The pipeline produces employee, onboarding fact, and supporting analytical tables with documented output locations.
+* The pipeline completes within five minutes for the defined one-year sample workload.
+
+## AC-2 — Data Quality and Integration
+
+* Processed employee IDs have no unintended duplicates.
+* Referential-integrity failures are reported and excluded from dependent calculations according to documented rules.
+* Department, role, category, status, and date fields are standardized consistently.
+* A quality report includes source counts, accepted records, rejected records, duplicates removed, null rates, and execution timestamp.
+* Dashboard metrics can be traced to documented processed tables and source fields.
+
+## AC-3 — Analytics Engine
+
+* Completion rate, completion time, task completion, overdue-task rate, learning completion, ticket metrics, and tool-adoption indicators match expected test calculations.
+* Metrics can be segmented by at least department, cohort, manager, and date range where source data allows.
+* Bottleneck analysis identifies stages, tasks, or support categories using transparent calculation rules.
+* Productivity-readiness scoring is documented, reproducible, and clearly presented as a proxy.
+
+## AC-4 — Machine Learning
+
+* A baseline completion-risk or delay-prediction model trains and scores eligible records end-to-end without errors.
+* The selected model achieves the documented target or reports its observed performance transparently on held-out/simulated evaluation data.
+* Risk outputs include Low, Medium, and High bands plus interpretable drivers or explanation fields.
+* Model metadata and artifacts are saved and reloadable without retraining.
+* Recommendation outputs are evidence-based, rule-driven, and do not trigger automated employment decisions.
+
+## AC-5 — Dashboard
+
+* Executive, HR, Manager, and Analytics views render without unhandled errors.
+* All required KPI cards, tables, and charts respond correctly to applicable filters.
+* The HR Dashboard includes funnel, department comparison, task completion, pending employees, training analytics, and support insights.
+* The Manager Dashboard includes team progress, employee readiness, completion status, and pending actions.
+* The Analytics Dashboard includes trends, correlations or grouped comparisons, heatmaps, department comparison, and support analytics.
+* The dashboard loads within three seconds for the standard sample dataset and displays data freshness.
+
+## AC-6 — Reporting and Export
+
+* Users can export visible summary and detail data as CSV.
+* The system produces an executive summary and manager-action report containing the required period and data-refresh timestamp.
+* Power BI-compatible exports use stable schema names and include data lineage fields.
+* Exported data reflects active dashboard filters and contains no prohibited sensitive fields.
+
+## AC-7 — Code Quality and DevOps
+
+* Core Python files pass configured linting checks.
+* Unit-test coverage is at least 80% for core modules.
+* GitHub Actions runs linting, unit tests, and validation checks on relevant branch activity.
+* README documentation enables a reviewer to install dependencies, run the pipeline, launch the dashboard, and locate outputs.
+
+## AC-8 — Documentation
+
+* This PRD is version-controlled in the repository.
+* Data schemas, metric definitions, assumptions, and model limitations are documented.
+* The architecture diagram or architecture explanation identifies raw, processing, analytics, ML, and dashboard layers.
+* Source modules contain meaningful documentation and configuration instructions are complete.
+
+# Appendices
+
+## Appendix A — Glossary
+
+| Term | Definition |
+| --- | --- |
+| Onboarding | The structured process that helps a new employee become administratively, culturally, and operationally ready to work. |
+| Time-to-Productivity | The elapsed time from joining date until a defined productivity-readiness threshold is reached. |
+| Productivity-Readiness Score | A documented composite proxy based on approved onboarding, learning, tool-adoption, and support signals; not an employee performance rating. |
+| Onboarding Funnel | A staged view showing how employees progress through predefined onboarding phases. |
+| Bottleneck | A task, stage, dependency, or issue category associated with disproportionate delay or drop-off. |
+| Cohort | A group of employees analyzed together, usually by joining month, department, role, or location. |
+| KPI | Key Performance Indicator used to measure progress toward an operational objective. |
+| Data Freshness | How recently a dataset or dashboard was successfully refreshed. |
+| Data Lineage | The traceable path from a metric or output back through transformations to source data. |
+| Schema Contract | A documented agreement defining required fields, types, allowed values, and validation rules for a dataset. |
+| Referential Integrity | The condition in which a foreign key, such as employee_id in a ticket record, maps to a valid parent record. |
+| Risk Score | A model- or rule-derived estimate of the likelihood of an operational outcome such as delayed onboarding completion. |
+| Anomaly Detection | Identification of patterns that are meaningfully different from expected values or comparable cohorts. |
+| Classification Model | A machine learning model that assigns records to categories or estimates the likelihood of a categorical outcome. |
+| Random Forest | An ensemble machine learning method using multiple decision trees for classification or regression. |
+| Logistic Regression | An interpretable statistical classification model often used as a baseline for probability estimation. |
+| XGBoost | A gradient-boosting method that may be evaluated in future scope for structured prediction tasks. |
+| Isolation Forest | An anomaly-detection algorithm that identifies observations that are easier to isolate than normal patterns. |
+| MAPE | Mean Absolute Percentage Error, a commonly used measure of forecasting accuracy. |
+| CI | Continuous Integration: automated checks that run when code changes are submitted. |
+
+## Appendix B — Data Schema Contracts
+
+### B.1 Employee Dataset
+
+```text
+employee_id       : VARCHAR(50)   required, unique
+Department        : VARCHAR(100)  required, controlled mapping
+manager_id        : VARCHAR(50)   required where applicable
+joining_date      : DATE          required, YYYY-MM-DD
+role              : VARCHAR(100)  required
+location          : VARCHAR(100)  required
+employment_type   : VARCHAR(30)   required, full_time | part_time | contractor | intern
+onboarding_cohort : VARCHAR(20)   derived, YYYY-MM
+
+```
+
+### B.2 Onboarding Progress Dataset
+
+```text
+onboarding_task_id     : VARCHAR(50)  required, unique
+employee_id            : VARCHAR(50)  required, foreign key to employee
+Task_name              : VARCHAR(150) required
+task_category          : VARCHAR(80)  required
+current_stage          : VARCHAR(50)  preboarding | setup | orientation | enablement | productive
+task_status            : VARCHAR(30)  not_started | in_progress | complete | blocked | overdue
+due_date               : DATE         required for mandatory tasks
+completed_date         : DATE         nullable until complete
+completion_percentage  : DECIMAL(5,2) range 0–100
+
+```
+
+### B.3 Internal Tool Usage Dataset
+
+```text
+usage_id                : VARCHAR(50) required, unique
+employee_id             : VARCHAR(50) required, foreign key to employee
+usage_date              : DATE        required
+slack_activity_count    : INTEGER     non-negative
+jira_usage_count        : INTEGER     non-negative
+github_activity_count   : INTEGER     non-negative
+teams_activity_count    : INTEGER     non-negative
+workspace_activity_count: INTEGER     non-negative
+daily_active_usage      : BOOLEAN     required
+
+```
+
+### B.4 Support Ticket Dataset
+
+```text
+ticket_id               : VARCHAR(50)  required, unique
+employee_id             : VARCHAR(50)  required, foreign key to employee
+created_date            : DATETIME     required
+issue_category          : VARCHAR(80)  access | hardware | payroll | hr_policy | learning | other
+priority                : VARCHAR(20)  low | medium | high | critical
+resolution_time_hours   : DECIMAL(10,2) nullable until resolved, non-negative
+assigned_team           : VARCHAR(100) required
+status                  : VARCHAR(30)  open | in_progress | resolved | closed
+
+```
+
+### B.5 Learning Management Dataset
+
+```text
+learning_record_id      : VARCHAR(50)  required, unique
+employee_id             : VARCHAR(50)  required, foreign key to employee
+course_name             : VARCHAR(150) required
+course_type             : VARCHAR(50)  compliance | orientation | role_specific | optional
+assigned_date           : DATE         required
+completed_date          : DATE         nullable until complete
+assessment_score        : DECIMAL(5,2) nullable, range 0–100
+completion_time_hours   : DECIMAL(10,2) nullable until complete, non-negative
+course_status           : VARCHAR(30)  assigned | in_progress | completed | overdue
+
+```
+
+## Appendix C — Technology Stack
+
+| Technology | Role in MVP |
+| --- | --- |
+| Python | Primary language for data processing, analytics, model training, and application orchestration. |
+| Pandas | Data loading, cleaning, transformation, aggregation, and export. |
+| NumPy | Numerical calculations and feature-engineering support. |
+| SQL | Reproducible analytical queries and KPI calculations against processed data. |
+| Scikit-learn | Baseline classification, clustering, anomaly detection, preprocessing, and evaluation. |
+| Streamlit | Interactive dashboard and demonstration interface. |
+| Power BI | Secondary reporting target through compatible exports and optional visualization review. |
+| GitHub | Source control, collaboration, version history, and documentation hosting. |
+| GitHub Actions | Automated linting, test execution, and validation checks. |
+
+## Appendix D — Project Architecture
+
+The architecture is intentionally layered so that ingestion and business logic can be maintained independently from presentation.
+
+### D.1 Raw Data Layer
+
+The raw layer contains immutable or source-faithful CSV inputs for employee, onboarding progress, internal tool usage, support tickets, and learning records. Source files are stored separately from processed outputs. The raw layer is treated as input evidence and is never overwritten by transformation logic.
+
+### D.2 Processing Layer
+
+The processing layer performs schema validation, duplicate handling, standardization, missing-value treatment, referential-integrity checks, and source mapping. It writes rejected records and data-quality reports alongside cleaned outputs. This layer creates trusted, normalized intermediate tables that preserve employee IDs and source lineage.
+
+### D.3 Analytics Layer
+
+The analytics layer creates employee-level onboarding snapshots and supporting detail tables. SQL and Pandas calculations generate KPIs for completion, stage duration, learning, support, tool adoption, cohorts, and bottlenecks. Metric definitions are centralized so the dashboard and exports use the same logic.
+
+### D.4 Machine Learning Layer
+
+The machine learning layer reads approved analytical features, prepares train/test datasets, trains baseline models such as Logistic Regression or Random Forest, and evaluates performance. Isolation Forest may be used for anomaly detection where appropriate. Serialized artifacts, model metadata, and evaluation outputs are saved in a dedicated model output location. All outputs remain advisory and interpretable.
+
+### D.5 Dashboard Layer
+
+The Streamlit dashboard reads processed analytical tables and model outputs rather than raw CSV files. It provides Executive, HR, Manager, and Analytics pages with global filters, accessible visualizations, exports, data freshness indicators, and explicit limitations. Power BI-compatible exports are generated from the validated analytics layer, preserving consistency across reporting surfaces.
+
+### D.6 Delivery and Quality Layer
+
+GitHub stores source code, schemas, documentation, sample data generators, and tests. GitHub Actions validates code quality and selected data contracts on change. A documented requirements file and configuration approach allow a reviewer to reproduce the pipeline and dashboard in a clean environment.
+
