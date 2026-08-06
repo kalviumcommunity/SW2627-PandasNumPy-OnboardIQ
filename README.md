@@ -10,13 +10,12 @@ Build an interactive analytics dashboard that consolidates onboarding data, anal
 
 ## Technology Stack
 
-- Python
-- Pandas
-- NumPy
-- SQLite
-- Streamlit
-- Plotly
-- GitHub Actions
+* Python
+* Pandas
+* NumPy
+* SQLite
+* Streamlit
+* GitHub Actions
 
 ## Repository Structure
 
@@ -26,9 +25,17 @@ data/
 database/
 reports/
 tests/
+docs/
+design/
 ```
 
-# 8. Run the app
+## Current Progress
+
+* ✅ Product Requirements Document (PRD) completed and under review.
+* 🎨 Mock UI/UX design is currently in progress.
+* 🚧 Dashboard development will begin after the UI/UX design is finalized.
+
+## Run the App
 
 ```bash
 python app.py
@@ -36,4 +43,8 @@ python app.py
 
 ## Project Status
 
-🚧 Repository setup completed. Development is in progress.
+🚧 **Planning Phase**
+
+* ✅ PRD Completed
+* 🎨 Mock UI/UX In Progress
+* ⏳ Development Yet to Begin
