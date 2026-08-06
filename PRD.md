@@ -11,7 +11,7 @@ Problem statement — A rapidly scaling startup stores employee onboarding progr
 | Field | Detail |
 | --- | --- |
 | Version | 1.0.0 |
-| Status | Approved – Ready for Development |
+| Status | Waiting for Approval – Ready for Development |
 | Created | 2026-08-04 |
 | Last Updated | 2026-08-06 |
 | Document Type | Product Requirements Document |
