@@ -16,7 +16,7 @@ Problem statement — A rapidly scaling startup stores employee onboarding progr
 | Last Updated | 2026-08-06 |
 | Document Type | Product Requirements Document |
 | Project | OnboardIQ - Employee Onboarding Analytics Platform |
-| Tech Stack | Python · Pandas · NumPy · SQL · Streamlit · GitHub · GitHub Actions |
+| Tech Stack | Python · Pandas · NumPy · SQLite · Streamlit · Plotly · Git · GitHub |
 
 ## Table of Contents
 
@@ -48,22 +48,27 @@ OnboardIQ Employee Onboarding Analytics Platform is a unified analytics product 
 
 Scaling organizations frequently operate onboarding through a combination of HR information systems, learning platforms, task trackers, collaboration tools, ticketing systems, and spreadsheets. Each system can report on its own activity, but none explains the full experience of a new hire. A task may appear overdue in an onboarding tracker, while the underlying cause is an unresolved laptop-access ticket, a delayed manager approval, or incomplete role-specific training. In the absence of a shared analytical view, HR and managers rely on manual follow-up and retrospective reporting rather than early intervention.
 
-Built as a data product using Python, SQL, machine learning, Streamlit, and Power BI-compatible exports, the platform provides:
+Built as an enterprise-style onboarding analytics platform using **Python, Pandas, NumPy, SQLite, Streamlit, and Plotly**, the system transforms fragmented onboarding data into actionable operational insights. The platform provides:
 
-* A consolidated onboarding record that joins employee, task, learning, tool-adoption, and support-ticket data.
-* Role- and department-level dashboards for monitoring onboarding health, completion, productivity proxies, and outstanding actions.
-* KPI calculations for completion time, time-to-productivity, task completion, training completion, tool adoption, and support resolution.
-* Analytics that identify bottlenecks by stage, department, manager, location, and issue category.
-* Machine learning features that estimate completion risk, predict likely delays, segment onboarding experiences, identify anomalies, and suggest targeted interventions.
-* Exportable reports that make executive reviews and HR Operations reporting faster, more consistent, and evidence-based.
+* A consolidated onboarding dataset that integrates employee records, onboarding tasks, learning progress, internal tool usage, and support ticket history.
 
-The MVP is deliberately analytical rather than transactional. It accepts governed CSV datasets, performs repeatable validation and transformation, and delivers a demonstrable decision-support experience without introducing employee self-service workflows, authentication, or live HR-system integrations. This document defines the requirements, boundaries, measures of success, and acceptance criteria needed to deliver the capstone project as a credible enterprise-style SaaS analytics product.
+* Executive, HR, and department-level dashboards for monitoring onboarding health, productivity trends, completion rates, and operational bottlenecks.
+
+* Automated KPI calculations including onboarding completion rate, average onboarding duration, time-to-productivity, **Productivity Score**, **Friction Score**, and **Onboarding Health Score**.
+
+* Interactive analytics that identify bottlenecks by department, role, manager, onboarding stage, location, and support issue category.
+
+* A rule-based recommendation engine that detects at-risk employees, highlights operational friction points, and provides transparent, evidence-based recommendations supported by the underlying data.
+
+* Downloadable executive reports in PDF and CSV formats, enabling faster leadership reviews, standardized operational reporting, and data-driven decision-making.
+
+The MVP focuses on **analytics and decision support rather than workflow automation**. It imports governed CSV datasets, performs automated validation, data cleaning, schema harmonization, integration, KPI generation, and rule-based analysis before presenting actionable insights through an interactive **Streamlit** dashboard. To keep the scope achievable within the 20-day sprint, the platform intentionally excludes authentication, employee self-service, live HRIS integrations, real-time data streaming, and predictive machine learning, while providing a modular architecture that can support these enterprise capabilities in future releases.
 
 # 2\. Business Problem
 
 ## 2.1 Context
 
-For a growing startup, the first month of employment is a critical period. New hires must complete mandatory paperwork, obtain equipment and system access, meet their manager and team, complete training, understand priorities, and begin contributing. The organization already records much of this activity, but the evidence is fragmented. HR may own the employee roster and checklist; IT owns access and hardware tickets; Learning and Development owns course completion; department managers track role readiness; and collaboration platforms contain indirect signals of adoption.
+For a growing startup, the first month of employment is a critical period. New hires must complete mandatory paperwork, obtain equipment and system access, meet their manager and team, complete training, understand priorities, and begin contributing. The organization already records much of this activity, but the evidence is fragmented. HR may own the employee roster and checklist, IT owns access and hardware tickets, Learning and Development owns course completion, department managers track role readiness, and collaboration platforms contain indirect signals of adoption.
 
 This fragmentation makes it difficult to distinguish normal variation from operational failure. For example, a new engineer who has not completed security training may be blocked by an unresolved identity-management ticket rather than lack of engagement. A manager may incorrectly perceive poor onboarding performance because no shared view exposes the dependency. Conversely, an apparently completed checklist may conceal weak adoption of the tools required for effective work.
 
@@ -229,20 +234,34 @@ The MVP assumes anonymized or synthetic CSV datasets. Each source is validated b
 
 ## 6.1 Employee Dataset
 
-The employee dataset is the master dimension for new-hire analysis. It defines the employee identifier used to relate records and supplies cohort dimensions needed for fair comparison. It must contain only MVP-approved, de-identified fields and should not include compensation, protected characteristics, or sensitive personal details.
+The employee dataset is the master dimension for new-hire analysis. It defines the employee identifier used to relate records across all analytical datasets and provides organizational attributes required for segmentation and cohort analysis. The raw HR dataset contains additional employee information; however, only MVP-approved, de-identified fields are retained in the processed analytical layer. Sensitive personal information such as employee names, salary, demographic attributes, and other non-essential HR fields are excluded during preprocessing to support privacy-conscious analytics.
 
 | Field | Type | Description | Validation |
 | --- | --- | --- | --- |
 | employee_id | VARCHAR(50) | Unique employee identifier | Required; unique; non-null |
 | department | VARCHAR(100) | Organizational department | Required; mapped to controlled list |
-| manager_id | VARCHAR(50) | Direct manager identifier | Required where applicable |
-| joining_date | DATE | Employee start date | Required; valid date; not future-dated beyond approved data window |
-| role | VARCHAR(100) | Job role or role family | Required; normalized label |
-| location | VARCHAR(100) | Work location or region | Required; normalized label |
-| employment_type | VARCHAR(30) | Full-time, part-time, contractor, intern | Required; controlled values |
-| onboarding_cohort | VARCHAR(20) | Derived joining-month cohort | Derived from joining_date |
+| manager_id | VARCHAR(50) | Direct manager identifier | Required where applicable; valid reference |
+| joining_date | DATE | Employee hiring date | Required; valid date; not future-dated |
+| role | VARCHAR(100) | Employee job position or role | Required; normalized label |
+| location | VARCHAR(100) | Employee work location (state/region) | Required; normalized label |
+| employment_status | VARCHAR(30) | Current employment status (e.g., Active, Leave of Absence, Voluntarily Terminated, Terminated for Cause) | Required; controlled values |
+| onboarding_cohort | VARCHAR(20) | Joining-month cohort used for trend analysis | Derived from joining_date |
 
-Owner: HR Operations. Refresh frequency: weekly or event-based. Data quality checks include unique employee IDs, valid organizational mappings, non-null joining date, and referential integrity for manager IDs when a manager record is supplied.
+**Owner:** HR Operations
+
+**Refresh Frequency:** Weekly or event-based
+
+**Data Quality Checks:**
+- Unique and non-null employee identifiers.
+- Valid department and role mappings.
+- Non-null and valid hiring dates.
+- Standardized location values.
+- Controlled employment-status values.
+- Referential integrity for manager IDs where applicable.
+- Derivation and validation of onboarding cohorts from hiring dates.
+
+**Preprocessing Note:**  
+The source HR dataset includes additional attributes such as employee name, salary, demographic information, recruitment source, performance metrics, and termination details. These fields are intentionally excluded from the processed employee dataset because they are outside the scope of the MVP and are not required for onboarding analytics. The processed employee dataset retains only the fields necessary for data integration, cohort analysis, and dashboard reporting.
 
 ## 6.2 Onboarding Progress Dataset
 
