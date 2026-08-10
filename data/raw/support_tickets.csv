@@ -1,0 +1,1049 @@
+ticket_id,employee_id,created_date,issue_category,priority,resolution_time_hours,assigned_team,status
+TKT00001,10026,2011-08-10 13:07:00,Learning,Medium,20.43,HR Support,Resolved
+TKT00002,10026,2011-07-30 12:27:00,Learning,Medium,21.38,Learning & Development,Resolved
+TKT00003,10026,2011-08-08 15:21:00,HR policy,Critical,1.77,People Operations,Closed
+TKT00004,10026,2011-07-27 08:32:00,Hardware,Medium,22.95,IT Service Desk,Closed
+TKT00005,10084,2015-04-24 14:56:00,Access,High,8.95,IT Service Desk,Closed
+TKT00006,10084,2015-05-06 16:23:00,Learning,Medium,15.75,HR Support,Closed
+TKT00007,10084,2015-05-05 15:46:00,Access,Medium,13.42,IT Access Management,Closed
+TKT00008,10084,2015-04-05 10:06:00,Payroll,Medium,10.13,HR Support,Resolved
+TKT00009,10084,2015-04-25 13:05:00,HR policy,Medium,10.23,People Operations,Resolved
+TKT00010,10084,2015-04-17 17:51:00,Access,Low,33.77,IT Access Management,Resolved
+TKT00011,10196,2011-08-07 14:27:00,Access,Low,33.52,IT Service Desk,Resolved
+TKT00012,10196,2011-07-12 11:14:00,Hardware,Medium,14.08,IT Service Desk,Resolved
+TKT00013,10196,2011-08-18 11:54:00,Access,Medium,29.07,IT Service Desk,Resolved
+TKT00014,10196,2011-08-10 12:44:00,HR policy,Low,,HR Support,In Progress
+TKT00015,10196,2011-07-14 15:18:00,Hardware,Medium,14.09,IT Service Desk,Resolved
+TKT00016,10196,2011-08-04 12:18:00,HR policy,Medium,7.95,People Operations,Resolved
+TKT00017,10196,2011-07-06 09:29:00,Hardware,Medium,52.16,IT Service Desk,Resolved
+TKT00018,10088,2008-01-13 17:25:00,Access,Medium,39.79,IT Service Desk,Resolved
+TKT00019,10088,2008-02-19 09:34:00,Hardware,Medium,18.73,Endpoint Support,Resolved
+TKT00020,10088,2008-01-20 08:21:00,Hardware,High,7.53,Endpoint Support,Resolved
+TKT00021,10069,2011-08-15 11:06:00,Learning,High,4.15,Learning & Development,Resolved
+TKT00022,10069,2011-07-25 16:27:00,Hardware,Medium,,Endpoint Support,In Progress
+TKT00023,10002,2012-01-11 10:26:00,Access,Critical,5.08,IT Access Management,Closed
+TKT00024,10002,2012-01-14 13:28:00,Other,Medium,29.61,IT Service Desk,Resolved
+TKT00025,10194,2014-11-15 08:49:00,Access,Low,52.12,IT Access Management,Resolved
+TKT00026,10194,2014-11-22 11:59:00,Access,Critical,2.51,IT Access Management,Resolved
+TKT00027,10114,2009-08-01 12:11:00,HR policy,High,3.29,People Operations,Closed
+TKT00028,10114,2009-08-01 17:04:00,Access,Medium,20.64,IT Service Desk,Resolved
+TKT00029,10250,2015-01-09 15:08:00,HR policy,Medium,,HR Support,In Progress
+TKT00030,10250,2015-02-07 16:25:00,Other,Medium,30.97,IT Service Desk,Resolved
+TKT00031,10250,2015-02-10 12:13:00,Learning,Medium,11.35,Learning & Development,Resolved
+TKT00032,10252,2011-02-17 16:57:00,Learning,Low,27.99,Learning & Development,Resolved
+TKT00033,10252,2011-01-24 17:08:00,Learning,High,5.4,HR Support,Resolved
+TKT00034,10252,2011-02-03 08:42:00,Access,Low,33.38,IT Service Desk,Resolved
+TKT00035,10252,2011-01-28 16:19:00,HR policy,Medium,9.44,People Operations,Closed
+TKT00036,10242,2012-05-15 12:16:00,Payroll,Medium,13.09,HR Support,Resolved
+TKT00037,10012,2014-12-18 16:54:00,Access,Critical,3.0,IT Access Management,Closed
+TKT00038,10265,2012-03-27 11:41:00,Hardware,Medium,12.25,Endpoint Support,Resolved
+TKT00039,10265,2012-03-01 11:22:00,Hardware,Medium,26.27,IT Service Desk,Resolved
+TKT00040,10265,2012-03-27 17:40:00,Access,Medium,19.74,IT Access Management,Resolved
+TKT00041,10066,2012-10-25 13:51:00,Access,Low,37.85,IT Access Management,Resolved
+TKT00042,10066,2012-10-18 17:43:00,Access,High,13.18,IT Service Desk,Closed
+TKT00043,10066,2012-10-30 17:56:00,Learning,Medium,10.65,HR Support,Resolved
+TKT00044,10066,2012-09-29 13:00:00,Access,Medium,16.73,IT Access Management,Resolved
+TKT00045,10066,2012-10-16 10:35:00,Learning,High,3.14,HR Support,Resolved
+TKT00046,10061,2011-03-22 10:47:00,Learning,Medium,17.11,Learning & Development,Resolved
+TKT00047,10061,2011-03-13 15:22:00,Other,Medium,12.43,IT Service Desk,Resolved
+TKT00048,10061,2011-02-27 11:39:00,Hardware,Medium,,Endpoint Support,In Progress
+TKT00049,10061,2011-04-01 16:38:00,Access,Low,21.97,IT Access Management,Resolved
+TKT00050,10023,2016-08-23 15:32:00,Other,Critical,2.48,IT Service Desk,Closed
+TKT00051,10023,2016-07-25 14:59:00,Learning,Medium,20.27,HR Support,Resolved
+TKT00052,10023,2016-08-01 10:27:00,Access,Medium,13.57,IT Service Desk,Resolved
+TKT00053,10023,2016-07-22 08:00:00,HR policy,Low,11.72,People Operations,Resolved
+TKT00054,10055,2011-04-09 15:50:00,Other,High,5.66,HR Support,Resolved
+TKT00055,10245,2014-07-14 16:44:00,Learning,Low,34.46,HR Support,Resolved
+TKT00056,10245,2014-07-30 08:04:00,HR policy,Low,10.1,People Operations,Closed
+TKT00057,10277,2013-07-29 13:47:00,Other,Medium,21.18,IT Service Desk,Resolved
+TKT00058,10046,2012-05-14 12:07:00,Hardware,Low,73.04,IT Service Desk,Resolved
+TKT00059,10046,2012-04-30 12:38:00,Hardware,Medium,13.2,Endpoint Support,Resolved
+TKT00060,10046,2012-05-14 08:17:00,Hardware,Medium,17.51,IT Service Desk,Resolved
+TKT00061,10046,2012-05-04 13:38:00,Payroll,Medium,18.54,HR Support,Resolved
+TKT00062,10046,2012-04-26 14:31:00,Hardware,Medium,28.01,IT Service Desk,Closed
+TKT00063,10226,2013-09-25 08:04:00,Learning,Medium,21.94,Learning & Development,Resolved
+TKT00064,10226,2013-08-19 12:49:00,Learning,High,9.57,Learning & Development,Resolved
+TKT00065,10226,2013-09-11 11:30:00,Access,Critical,2.16,IT Access Management,Closed
+TKT00066,10226,2013-09-20 15:23:00,HR policy,Medium,17.99,People Operations,Resolved
+TKT00067,10226,2013-09-20 09:25:00,Access,Critical,1.81,IT Access Management,Resolved
+TKT00068,10226,2013-08-25 13:26:00,Other,Medium,19.1,IT Service Desk,Resolved
+TKT00069,10226,2013-09-30 09:18:00,Hardware,High,5.93,IT Service Desk,Resolved
+TKT00070,10003,2014-08-15 14:33:00,Learning,Medium,15.62,HR Support,Closed
+TKT00071,10003,2014-07-31 16:20:00,Hardware,High,13.71,Endpoint Support,Resolved
+TKT00072,10003,2014-07-26 17:18:00,Payroll,High,6.44,Payroll Support,Resolved
+TKT00073,10003,2014-08-18 14:37:00,Hardware,Low,62.77,IT Service Desk,Resolved
+TKT00074,10294,2011-04-28 14:42:00,HR policy,Medium,11.25,People Operations,Resolved
+TKT00075,10294,2011-05-07 10:57:00,Other,Medium,23.95,HR Support,Closed
+TKT00076,10294,2011-05-03 13:57:00,Hardware,High,,Endpoint Support,Open
+TKT00077,10294,2011-05-07 17:44:00,Access,Medium,9.1,IT Access Management,Resolved
+TKT00078,10267,2011-01-22 17:26:00,Learning,Low,30.57,HR Support,Resolved
+TKT00079,10267,2011-02-10 15:42:00,Access,Medium,9.7,IT Service Desk,Closed
+TKT00080,10267,2011-02-20 10:06:00,Access,High,8.13,IT Access Management,Resolved
+TKT00081,10267,2011-01-11 15:24:00,HR policy,High,3.51,HR Support,Resolved
+TKT00082,10267,2011-02-14 16:54:00,Hardware,Medium,23.74,IT Service Desk,Resolved
+TKT00083,10267,2011-01-18 14:05:00,Other,Medium,23.81,HR Support,Closed
+TKT00084,10199,2014-03-28 15:44:00,Other,Medium,,HR Support,In Progress
+TKT00085,10199,2014-02-23 09:21:00,Hardware,Low,51.96,IT Service Desk,Resolved
+TKT00086,10081,2015-03-05 10:33:00,Other,High,2.52,IT Service Desk,Resolved
+TKT00087,10081,2015-03-18 08:17:00,Payroll,Low,42.13,HR Support,Resolved
+TKT00088,10081,2015-02-18 13:15:00,Access,Medium,21.46,IT Access Management,Resolved
+TKT00089,10081,2015-03-19 10:48:00,Other,High,6.6,IT Service Desk,Closed
+TKT00090,10081,2015-03-07 14:19:00,Access,Medium,24.86,IT Access Management,Resolved
+TKT00091,10175,2013-10-20 10:30:00,Access,Medium,10.19,IT Access Management,Resolved
+TKT00092,10175,2013-11-10 14:26:00,Access,Medium,21.68,IT Service Desk,Resolved
+TKT00093,10177,2012-04-07 13:16:00,Access,Medium,13.83,IT Service Desk,Resolved
+TKT00094,10177,2012-04-13 10:19:00,Learning,Low,15.84,Learning & Development,Resolved
+TKT00095,10238,2008-11-04 09:36:00,HR policy,Low,,HR Support,In Progress
+TKT00096,10238,2008-11-04 16:01:00,Access,Low,42.38,IT Service Desk,Resolved
+TKT00097,10184,2014-10-20 09:53:00,HR policy,High,4.89,People Operations,Resolved
+TKT00098,10184,2014-10-26 17:59:00,Hardware,Medium,38.01,Endpoint Support,Closed
+TKT00099,10203,2013-11-26 11:01:00,Access,Low,52.91,IT Service Desk,Closed
+TKT00100,10203,2013-11-16 16:08:00,Hardware,Low,27.51,Endpoint Support,Resolved
+TKT00101,10203,2013-12-04 09:59:00,Access,Low,60.63,IT Access Management,Resolved
+TKT00102,10203,2013-12-07 16:05:00,Access,Medium,15.14,IT Access Management,Resolved
+TKT00103,10203,2013-12-08 09:17:00,Access,Medium,15.42,IT Service Desk,Closed
+TKT00104,10203,2013-12-19 16:50:00,Access,Medium,18.92,IT Service Desk,Resolved
+TKT00105,10188,2011-09-03 12:56:00,Payroll,High,10.71,HR Support,Resolved
+TKT00106,10188,2011-09-28 10:10:00,Access,Low,30.66,IT Service Desk,Closed
+TKT00107,10188,2011-09-24 15:38:00,Hardware,Medium,46.63,Endpoint Support,Resolved
+TKT00108,10188,2011-09-20 17:34:00,Learning,Low,,HR Support,In Progress
+TKT00109,10188,2011-09-07 08:00:00,Learning,Medium,33.94,Learning & Development,Resolved
+TKT00110,10188,2011-09-17 17:53:00,Hardware,Medium,112.88,Endpoint Support,Resolved
+TKT00111,10188,2011-08-15 14:34:00,Hardware,Medium,27.38,Endpoint Support,Resolved
+TKT00112,10107,2012-04-17 15:14:00,Hardware,Low,46.54,IT Service Desk,Closed
+TKT00113,10107,2012-04-18 09:28:00,Access,Medium,18.37,IT Access Management,Resolved
+TKT00114,10181,2011-05-09 11:52:00,Access,High,,IT Access Management,Open
+TKT00115,10181,2011-05-01 08:24:00,Other,Medium,5.84,IT Service Desk,Resolved
+TKT00116,10181,2011-05-02 12:32:00,Learning,Low,20.86,Learning & Development,Resolved
+TKT00117,10181,2011-04-28 15:44:00,Payroll,Medium,22.62,HR Support,Resolved
+TKT00118,10150,2011-08-27 09:50:00,Access,Low,34.67,IT Service Desk,Resolved
+TKT00119,10150,2011-08-21 16:34:00,HR policy,Medium,23.27,People Operations,Resolved
+TKT00120,10150,2011-08-22 08:56:00,Access,High,6.74,IT Service Desk,Closed
+TKT00121,10001,2016-02-19 16:57:00,Other,Low,17.87,IT Service Desk,Resolved
+TKT00122,10001,2016-02-14 09:09:00,Access,Medium,27.8,IT Access Management,Resolved
+TKT00123,10001,2016-02-21 14:11:00,Hardware,Critical,1.05,IT Service Desk,Closed
+TKT00124,10001,2016-03-06 17:40:00,Access,Low,21.72,IT Service Desk,Resolved
+TKT00125,10001,2016-03-02 14:47:00,HR policy,Low,,People Operations,In Progress
+TKT00126,10085,2013-12-21 08:23:00,Access,Low,25.74,IT Service Desk,Resolved
+TKT00127,10115,2014-04-21 14:57:00,Payroll,Medium,30.08,Payroll Support,Resolved
+TKT00128,10115,2014-05-15 12:17:00,Access,Medium,,IT Access Management,Open
+TKT00129,10115,2014-04-30 09:18:00,Payroll,High,17.35,HR Support,Resolved
+TKT00130,10115,2014-04-06 15:35:00,Payroll,High,9.35,Payroll Support,Resolved
+TKT00131,10082,2016-08-02 14:18:00,HR policy,Medium,10.06,HR Support,Resolved
+TKT00132,10082,2016-07-11 17:40:00,Learning,Low,20.62,Learning & Development,Resolved
+TKT00133,10082,2016-08-11 17:44:00,HR policy,Medium,10.89,HR Support,Closed
+TKT00134,10082,2016-07-11 11:37:00,HR policy,Medium,,People Operations,In Progress
+TKT00135,10040,2014-10-01 14:21:00,Other,High,5.46,IT Service Desk,Closed
+TKT00136,10067,2014-11-06 17:58:00,Other,Medium,18.81,IT Service Desk,Closed
+TKT00137,10067,2014-10-31 10:36:00,Hardware,Medium,32.98,Endpoint Support,Resolved
+TKT00138,10067,2014-10-09 14:48:00,Hardware,High,11.68,IT Service Desk,Resolved
+TKT00139,10067,2014-10-05 16:14:00,Learning,Medium,12.99,Learning & Development,Resolved
+TKT00140,10108,2016-10-18 10:58:00,HR policy,Low,25.51,HR Support,Resolved
+TKT00141,10108,2016-09-16 14:27:00,Other,High,7.06,IT Service Desk,Resolved
+TKT00142,10210,2014-05-26 10:27:00,Other,Medium,22.74,HR Support,Resolved
+TKT00143,10210,2014-06-12 16:54:00,Learning,Medium,28.12,HR Support,Resolved
+TKT00144,10210,2014-06-03 10:53:00,Learning,Low,37.77,Learning & Development,Closed
+TKT00145,10210,2014-05-24 08:30:00,Payroll,Low,32.38,HR Support,Resolved
+TKT00146,10210,2014-06-11 15:49:00,Access,Low,10.51,IT Service Desk,Resolved
+TKT00147,10210,2014-06-01 16:02:00,Payroll,Medium,22.14,HR Support,Closed
+TKT00148,10210,2014-06-04 13:45:00,Learning,Medium,5.85,HR Support,Resolved
+TKT00149,10154,2013-08-14 08:23:00,Access,Critical,2.1,IT Service Desk,Resolved
+TKT00150,10154,2013-07-16 16:57:00,Hardware,High,7.03,Endpoint Support,Resolved
+TKT00151,10154,2013-07-21 10:44:00,HR policy,Medium,38.07,HR Support,Resolved
+TKT00152,10200,2012-06-05 14:15:00,HR policy,Medium,6.64,HR Support,Closed
+TKT00153,10200,2012-06-17 10:07:00,Hardware,Medium,18.84,Endpoint Support,Resolved
+TKT00154,10200,2012-05-14 08:12:00,Access,High,9.49,IT Access Management,Resolved
+TKT00155,10240,2011-07-18 09:18:00,Payroll,Low,19.85,Payroll Support,Resolved
+TKT00156,10240,2011-07-05 08:08:00,Hardware,High,8.71,IT Service Desk,Resolved
+TKT00157,10240,2011-07-12 10:55:00,Hardware,Low,33.83,Endpoint Support,Closed
+TKT00158,10168,2011-10-12 16:57:00,Access,High,10.24,IT Access Management,Resolved
+TKT00159,10168,2011-10-21 08:19:00,Access,High,9.29,IT Access Management,Resolved
+TKT00160,10168,2011-10-17 12:31:00,Other,Critical,3.48,IT Service Desk,Resolved
+TKT00161,10220,2012-10-14 08:35:00,Access,Medium,25.92,IT Access Management,Resolved
+TKT00162,10220,2012-10-11 17:43:00,Other,Medium,35.62,IT Service Desk,Resolved
+TKT00163,10275,2011-05-23 13:43:00,Access,Medium,13.25,IT Access Management,Resolved
+TKT00164,10275,2011-06-09 16:58:00,Access,Medium,32.35,IT Access Management,Resolved
+TKT00165,10275,2011-06-03 09:55:00,Other,Medium,13.74,HR Support,Resolved
+TKT00166,10275,2011-05-19 08:20:00,Payroll,High,13.73,Payroll Support,Resolved
+TKT00167,10029,2016-07-15 13:14:00,Hardware,High,7.55,Endpoint Support,Closed
+TKT00168,10029,2016-08-15 13:22:00,Payroll,Low,48.67,HR Support,Closed
+TKT00169,10029,2016-08-08 14:54:00,Other,Medium,10.58,IT Service Desk,Resolved
+TKT00170,10029,2016-08-13 08:17:00,Learning,Medium,13.28,HR Support,Closed
+TKT00171,10029,2016-07-25 14:34:00,Hardware,Medium,13.36,IT Service Desk,Resolved
+TKT00172,10029,2016-07-27 17:31:00,Access,Low,37.7,IT Service Desk,Resolved
+TKT00173,10261,2013-07-19 08:34:00,Other,High,5.59,HR Support,Resolved
+TKT00174,10261,2013-07-09 10:32:00,Hardware,Critical,,Endpoint Support,In Progress
+TKT00175,10292,2011-08-21 09:16:00,Learning,High,5.4,Learning & Development,Resolved
+TKT00176,10292,2011-08-06 15:23:00,Other,Medium,8.25,IT Service Desk,Resolved
+TKT00177,10292,2011-08-03 10:11:00,Access,Low,39.63,IT Access Management,Closed
+TKT00178,10282,2010-09-02 12:42:00,Other,Medium,16.71,IT Service Desk,Resolved
+TKT00179,10282,2010-07-25 08:43:00,Hardware,Medium,19.95,IT Service Desk,Resolved
+TKT00180,10282,2010-07-21 11:09:00,HR policy,Low,,People Operations,In Progress
+TKT00181,10282,2010-08-19 17:52:00,Payroll,Low,32.84,Payroll Support,Resolved
+TKT00182,10282,2010-07-28 09:34:00,Access,High,7.17,IT Access Management,Resolved
+TKT00183,10282,2010-08-28 14:39:00,Learning,High,4.36,HR Support,Resolved
+TKT00184,10019,2009-01-13 14:19:00,Payroll,Medium,31.3,Payroll Support,Resolved
+TKT00185,10019,2009-02-15 09:42:00,Learning,Low,11.5,HR Support,Resolved
+TKT00186,10019,2009-01-28 17:26:00,Payroll,Critical,5.96,Payroll Support,Resolved
+TKT00187,10094,2015-02-02 08:35:00,HR policy,Medium,9.94,People Operations,Closed
+TKT00188,10193,2015-04-18 12:38:00,Learning,High,14.29,Learning & Development,Resolved
+TKT00189,10132,2016-07-30 10:35:00,Hardware,Low,44.73,Endpoint Support,Resolved
+TKT00190,10132,2016-08-16 15:16:00,Learning,Low,,HR Support,In Progress
+TKT00191,10132,2016-07-24 10:19:00,Access,High,9.83,IT Access Management,Closed
+TKT00192,10132,2016-07-22 15:28:00,Access,Low,20.46,IT Service Desk,Resolved
+TKT00193,10132,2016-08-13 15:08:00,Payroll,Medium,13.64,HR Support,Closed
+TKT00194,10083,2014-12-13 10:54:00,Hardware,Medium,27.84,Endpoint Support,Resolved
+TKT00195,10083,2014-11-23 16:22:00,Hardware,Low,33.81,IT Service Desk,Closed
+TKT00196,10083,2014-11-11 16:37:00,HR policy,Medium,11.69,People Operations,Closed
+TKT00197,10083,2014-12-01 15:04:00,Learning,Low,31.68,Learning & Development,Resolved
+TKT00198,10083,2014-12-15 13:38:00,Payroll,Low,50.43,Payroll Support,Resolved
+TKT00199,10099,2014-05-20 17:33:00,Other,Medium,8.89,HR Support,Resolved
+TKT00200,10099,2014-06-09 12:03:00,Other,Medium,25.47,HR Support,Resolved
+TKT00201,10099,2014-05-17 17:54:00,Learning,Low,14.32,Learning & Development,Resolved
+TKT00202,10099,2014-05-20 17:33:00,Access,Medium,16.38,IT Service Desk,Resolved
+TKT00203,10099,2014-06-09 13:22:00,Learning,High,6.49,HR Support,Resolved
+TKT00204,10099,2014-06-14 08:12:00,Other,Medium,13.59,IT Service Desk,Closed
+TKT00205,10212,2014-12-02 15:51:00,Hardware,Medium,31.41,IT Service Desk,Closed
+TKT00206,10212,2014-11-21 17:04:00,Hardware,Medium,42.47,IT Service Desk,Closed
+TKT00207,10212,2014-11-19 09:11:00,Hardware,Medium,29.48,IT Service Desk,Resolved
+TKT00208,10056,2012-07-20 17:13:00,Other,High,5.68,IT Service Desk,Resolved
+TKT00209,10056,2012-07-21 15:09:00,HR policy,High,2.19,HR Support,Closed
+TKT00210,10056,2012-07-04 16:52:00,Access,Medium,17.3,IT Access Management,Resolved
+TKT00211,10056,2012-07-09 17:06:00,Learning,Medium,13.27,HR Support,Closed
+TKT00212,10056,2012-08-08 09:44:00,Learning,Medium,7.36,Learning & Development,Resolved
+TKT00213,10056,2012-07-25 13:51:00,Payroll,Medium,,HR Support,In Progress
+TKT00214,10143,2011-12-10 16:55:00,Other,Critical,2.86,HR Support,Resolved
+TKT00215,10143,2011-11-17 08:35:00,Other,High,5.84,IT Service Desk,Resolved
+TKT00216,10143,2011-12-22 12:53:00,Hardware,Medium,14.15,IT Service Desk,Closed
+TKT00217,10143,2011-12-20 16:56:00,HR policy,Low,16.94,HR Support,Closed
+TKT00218,10311,2018-07-10 16:23:00,Learning,High,3.15,HR Support,Resolved
+TKT00219,10070,2011-05-31 17:26:00,Access,Medium,17.81,IT Access Management,Closed
+TKT00220,10070,2011-06-05 08:38:00,Hardware,Low,35.67,IT Service Desk,Closed
+TKT00221,10070,2011-05-21 09:15:00,Payroll,High,,Payroll Support,In Progress
+TKT00222,10070,2011-05-23 10:12:00,Hardware,Low,33.4,IT Service Desk,Resolved
+TKT00223,10070,2011-05-17 09:31:00,Access,Medium,16.44,IT Access Management,Closed
+TKT00224,10155,2012-02-14 15:15:00,Access,Low,33.91,IT Access Management,Resolved
+TKT00225,10155,2012-02-07 16:52:00,HR policy,Medium,18.83,HR Support,Resolved
+TKT00226,10155,2012-02-19 09:17:00,HR policy,Medium,16.72,HR Support,Resolved
+TKT00227,10155,2012-01-16 14:55:00,HR policy,Medium,9.49,HR Support,Resolved
+TKT00228,10155,2012-01-29 08:24:00,Access,Low,17.87,IT Access Management,Resolved
+TKT00229,10306,2014-11-01 17:55:00,HR policy,Medium,24.33,HR Support,Resolved
+TKT00230,10306,2014-10-22 14:28:00,Access,High,12.43,IT Access Management,Resolved
+TKT00231,10306,2014-10-26 09:25:00,Hardware,Low,50.9,IT Service Desk,Resolved
+TKT00232,10306,2014-11-01 15:01:00,Learning,Medium,11.17,HR Support,Resolved
+TKT00233,10100,2011-05-17 13:09:00,Other,High,,HR Support,Open
+TKT00234,10100,2011-04-17 11:15:00,Access,Medium,21.84,IT Service Desk,Resolved
+TKT00235,10100,2011-04-19 14:43:00,Payroll,High,12.83,Payroll Support,Resolved
+TKT00236,10100,2011-04-17 17:26:00,Learning,Critical,,HR Support,Open
+TKT00237,10310,2014-08-02 14:24:00,Payroll,Medium,16.58,HR Support,Resolved
+TKT00238,10310,2014-07-15 13:51:00,Access,Medium,16.44,IT Access Management,Resolved
+TKT00239,10310,2014-08-20 11:06:00,Access,Medium,21.92,IT Service Desk,Resolved
+TKT00240,10197,2017-03-10 14:13:00,Access,Medium,25.68,IT Service Desk,Resolved
+TKT00241,10197,2017-02-15 13:10:00,Other,High,8.89,HR Support,Resolved
+TKT00242,10276,2014-06-15 10:44:00,Hardware,Medium,28.12,IT Service Desk,Closed
+TKT00243,10276,2014-06-10 10:36:00,Hardware,Medium,33.55,IT Service Desk,Closed
+TKT00244,10276,2014-06-09 14:41:00,Hardware,Low,22.39,IT Service Desk,Resolved
+TKT00245,10276,2014-05-20 09:49:00,Hardware,High,15.74,Endpoint Support,Resolved
+TKT00246,10276,2014-06-04 17:30:00,Other,Medium,,IT Service Desk,In Progress
+TKT00247,10304,2012-03-19 12:25:00,HR policy,Medium,6.51,People Operations,Resolved
+TKT00248,10304,2012-02-28 16:31:00,Learning,Medium,11.08,Learning & Development,Resolved
+TKT00249,10304,2012-03-07 17:10:00,Learning,Low,16.27,HR Support,Resolved
+TKT00250,10284,2013-01-12 10:05:00,Other,Critical,1.33,HR Support,Resolved
+TKT00251,10284,2013-01-22 11:04:00,HR policy,Medium,13.9,People Operations,Closed
+TKT00252,10284,2013-02-09 13:19:00,Learning,Medium,,HR Support,In Progress
+TKT00253,10284,2013-01-12 11:53:00,HR policy,Medium,11.33,HR Support,Resolved
+TKT00254,10133,2015-01-24 08:41:00,Access,Medium,6.91,IT Access Management,Resolved
+TKT00255,10133,2015-01-16 11:27:00,Access,Medium,16.4,IT Access Management,Closed
+TKT00256,10028,2014-02-13 12:44:00,Hardware,Medium,,IT Service Desk,In Progress
+TKT00257,10105,2014-09-24 15:20:00,Payroll,Critical,2.18,HR Support,Resolved
+TKT00258,10105,2014-09-18 12:09:00,Hardware,Medium,29.01,Endpoint Support,Resolved
+TKT00259,10105,2014-09-22 13:25:00,Payroll,High,6.73,Payroll Support,Resolved
+TKT00260,10105,2014-10-21 16:09:00,Payroll,Medium,23.45,HR Support,Closed
+TKT00261,10105,2014-11-01 10:11:00,Payroll,Medium,22.73,Payroll Support,Resolved
+TKT00262,10105,2014-10-09 09:30:00,HR policy,Medium,16.96,People Operations,Resolved
+TKT00263,10211,2010-04-27 13:29:00,Hardware,Low,53.07,IT Service Desk,Resolved
+TKT00264,10211,2010-05-06 14:09:00,Other,Medium,,HR Support,Open
+TKT00265,10211,2010-05-03 09:31:00,Hardware,Medium,41.67,IT Service Desk,Resolved
+TKT00266,10211,2010-05-23 10:15:00,Other,Low,26.67,IT Service Desk,Resolved
+TKT00267,10211,2010-05-08 10:11:00,Access,Medium,6.14,IT Service Desk,Resolved
+TKT00268,10064,2011-05-01 17:21:00,Learning,Medium,10.85,HR Support,Resolved
+TKT00269,10247,2014-12-25 12:46:00,Access,Low,38.21,IT Access Management,Resolved
+TKT00270,10247,2014-12-16 14:31:00,Learning,Low,28.61,HR Support,Resolved
+TKT00271,10247,2014-11-30 12:15:00,Access,Medium,16.66,IT Service Desk,Resolved
+TKT00272,10247,2014-12-22 12:45:00,Other,Medium,18.56,IT Service Desk,Resolved
+TKT00273,10247,2014-11-16 15:21:00,Payroll,Medium,34.94,Payroll Support,Resolved
+TKT00274,10247,2014-11-10 15:29:00,Other,High,8.95,HR Support,Resolved
+TKT00275,10247,2014-12-17 11:35:00,Access,Medium,,IT Access Management,In Progress
+TKT00276,10235,2014-03-31 08:30:00,Learning,Medium,9.84,HR Support,Resolved
+TKT00277,10235,2014-05-11 10:11:00,Other,Medium,24.42,IT Service Desk,Resolved
+TKT00278,10299,2014-07-21 16:15:00,Hardware,High,42.55,IT Service Desk,Resolved
+TKT00279,10280,2012-05-13 16:15:00,Access,Medium,21.25,IT Service Desk,Resolved
+TKT00280,10280,2012-04-29 14:26:00,Hardware,High,12.08,IT Service Desk,Closed
+TKT00281,10280,2012-04-16 17:22:00,Access,Medium,10.65,IT Service Desk,Resolved
+TKT00282,10280,2012-05-02 11:11:00,Access,Medium,14.71,IT Service Desk,Resolved
+TKT00283,10296,2014-03-30 17:47:00,Payroll,Low,51.38,Payroll Support,Resolved
+TKT00284,10296,2014-02-17 08:26:00,Hardware,Low,43.27,Endpoint Support,Closed
+TKT00285,10296,2014-03-28 13:37:00,Learning,Medium,10.48,HR Support,Closed
+TKT00286,10296,2014-02-21 13:42:00,Access,High,8.96,IT Service Desk,Resolved
+TKT00287,10290,2011-06-11 15:45:00,Access,Low,46.95,IT Service Desk,Resolved
+TKT00288,10290,2011-05-11 11:36:00,HR policy,Low,15.59,HR Support,Closed
+TKT00289,10136,2014-03-16 14:53:00,Hardware,Critical,4.79,IT Service Desk,Resolved
+TKT00290,10136,2014-02-23 10:16:00,Hardware,Medium,22.0,IT Service Desk,Resolved
+TKT00291,10136,2014-02-20 08:24:00,Access,Low,6.8,IT Service Desk,Resolved
+TKT00292,10136,2014-02-23 13:25:00,Access,Medium,26.64,IT Service Desk,Resolved
+TKT00293,10136,2014-03-08 08:41:00,Access,High,11.15,IT Access Management,Resolved
+TKT00294,10189,2011-11-07 15:00:00,Access,High,5.88,IT Service Desk,Closed
+TKT00295,10308,2015-06-01 13:46:00,Access,Medium,16.3,IT Service Desk,Resolved
+TKT00296,10308,2015-05-17 13:49:00,Other,Low,30.76,IT Service Desk,Resolved
+TKT00297,10309,2015-04-18 11:41:00,Hardware,Medium,34.07,IT Service Desk,Resolved
+TKT00298,10309,2015-04-26 13:08:00,Other,Medium,9.67,IT Service Desk,Closed
+TKT00299,10309,2015-04-04 08:17:00,Access,Critical,4.33,IT Access Management,Resolved
+TKT00300,10049,2012-01-09 11:35:00,Hardware,Critical,3.3,Endpoint Support,Resolved
+TKT00301,10093,2011-06-25 11:32:00,Access,Medium,,IT Access Management,In Progress
+TKT00302,10093,2011-06-09 17:29:00,Hardware,Low,37.79,IT Service Desk,Resolved
+TKT00303,10093,2011-06-20 09:05:00,Other,Medium,15.34,IT Service Desk,Resolved
+TKT00304,10093,2011-05-19 08:41:00,Learning,Medium,12.91,HR Support,Closed
+TKT00305,10093,2011-06-06 11:55:00,Payroll,High,12.97,Payroll Support,Resolved
+TKT00306,10093,2011-06-19 11:59:00,Hardware,Low,51.71,IT Service Desk,Resolved
+TKT00307,10163,2011-05-08 13:20:00,Payroll,Medium,15.78,Payroll Support,Resolved
+TKT00308,10305,2014-11-08 13:40:00,Payroll,Low,16.73,HR Support,Resolved
+TKT00309,10305,2014-10-16 13:57:00,Learning,Medium,5.05,HR Support,Resolved
+TKT00310,10305,2014-10-22 10:22:00,Learning,Low,39.98,Learning & Development,Resolved
+TKT00311,10015,2011-05-24 11:50:00,Learning,High,3.01,HR Support,Resolved
+TKT00312,10015,2011-05-03 09:03:00,Other,High,10.05,HR Support,Closed
+TKT00313,10015,2011-05-19 16:40:00,Access,Low,36.72,IT Service Desk,Closed
+TKT00314,10080,2009-01-29 15:38:00,Other,Medium,7.86,IT Service Desk,Resolved
+TKT00315,10080,2009-01-19 16:21:00,Access,Low,19.06,IT Service Desk,Resolved
+TKT00316,10258,2011-09-12 17:54:00,Other,High,8.12,HR Support,Closed
+TKT00317,10258,2011-09-29 14:31:00,HR policy,High,6.18,HR Support,Resolved
+TKT00318,10273,2010-05-21 13:20:00,Payroll,Low,35.96,HR Support,Resolved
+TKT00319,10111,2015-04-04 14:45:00,Hardware,Medium,33.69,Endpoint Support,Closed
+TKT00320,10111,2015-04-20 16:01:00,Access,Medium,32.13,IT Service Desk,Resolved
+TKT00321,10257,2011-06-30 11:00:00,HR policy,Medium,22.38,HR Support,Closed
+TKT00322,10257,2011-05-28 14:48:00,HR policy,Low,,People Operations,In Progress
+TKT00323,10257,2011-06-23 11:04:00,Access,Low,22.84,IT Access Management,Resolved
+TKT00324,10257,2011-05-25 12:05:00,Access,Medium,15.1,IT Service Desk,Closed
+TKT00325,10159,2015-04-17 17:56:00,Access,High,6.23,IT Access Management,Resolved
+TKT00326,10122,2011-11-17 15:39:00,HR policy,Medium,10.59,People Operations,Closed
+TKT00327,10122,2011-11-10 10:08:00,Learning,Low,43.56,Learning & Development,Closed
+TKT00328,10122,2011-12-17 17:57:00,Other,Low,,HR Support,In Progress
+TKT00329,10142,2014-08-03 12:49:00,Access,Medium,11.22,IT Access Management,Resolved
+TKT00330,10142,2014-07-16 10:49:00,Hardware,Low,43.46,Endpoint Support,Closed
+TKT00331,10142,2014-07-19 10:49:00,Learning,Medium,18.48,HR Support,Closed
+TKT00332,10283,2012-04-12 11:50:00,Access,Medium,27.54,IT Service Desk,Resolved
+TKT00333,10283,2012-04-19 16:36:00,Learning,Medium,20.86,Learning & Development,Resolved
+TKT00334,10283,2012-04-20 12:28:00,Hardware,Medium,41.04,Endpoint Support,Resolved
+TKT00335,10283,2012-04-05 11:39:00,Learning,High,4.99,HR Support,Resolved
+TKT00336,10283,2012-05-06 11:14:00,Access,Medium,16.87,IT Service Desk,Resolved
+TKT00337,10283,2012-04-04 16:14:00,Hardware,High,20.66,Endpoint Support,Resolved
+TKT00338,10283,2012-04-20 17:52:00,Access,Medium,15.57,IT Access Management,Resolved
+TKT00339,10018,2014-10-02 10:18:00,Other,Low,21.55,IT Service Desk,Closed
+TKT00340,10018,2014-11-13 12:00:00,Payroll,Medium,26.45,HR Support,Resolved
+TKT00341,10018,2014-10-18 09:15:00,Hardware,Medium,22.56,Endpoint Support,Resolved
+TKT00342,10018,2014-09-29 15:17:00,Other,Medium,14.61,HR Support,Resolved
+TKT00343,10255,2015-02-24 10:45:00,Learning,Medium,7.95,HR Support,Closed
+TKT00344,10255,2015-04-02 08:56:00,Hardware,Medium,17.87,IT Service Desk,Closed
+TKT00345,10255,2015-03-24 17:52:00,Other,Medium,19.22,IT Service Desk,Resolved
+TKT00346,10255,2015-03-16 09:35:00,Other,Low,,IT Service Desk,In Progress
+TKT00347,10255,2015-03-19 08:50:00,Hardware,Critical,4.28,IT Service Desk,Resolved
+TKT00348,10228,2015-04-03 08:38:00,Access,Medium,17.56,IT Service Desk,Resolved
+TKT00349,10228,2015-04-25 17:27:00,Payroll,High,5.67,HR Support,Resolved
+TKT00350,10228,2015-05-07 08:34:00,Other,Medium,11.77,HR Support,Resolved
+TKT00351,10228,2015-03-30 12:36:00,Other,Medium,8.09,IT Service Desk,Resolved
+TKT00352,10228,2015-05-02 15:11:00,Hardware,Low,63.06,IT Service Desk,Resolved
+TKT00353,10228,2015-04-20 13:31:00,Access,Medium,21.59,IT Service Desk,Resolved
+TKT00354,10243,2013-12-14 08:27:00,Other,Low,14.48,IT Service Desk,Closed
+TKT00355,10243,2013-12-06 12:12:00,Hardware,Medium,25.08,Endpoint Support,Resolved
+TKT00356,10031,2011-07-31 15:14:00,Hardware,Low,72.7,Endpoint Support,Resolved
+TKT00357,10031,2011-08-13 11:37:00,Learning,Medium,26.03,Learning & Development,Closed
+TKT00358,10300,2010-04-30 12:24:00,Hardware,Low,28.93,IT Service Desk,Resolved
+TKT00359,10300,2010-05-30 14:53:00,Access,Low,20.89,IT Service Desk,Resolved
+TKT00360,10300,2010-05-08 09:24:00,Access,Medium,12.73,IT Service Desk,Resolved
+TKT00361,10300,2010-05-10 11:28:00,Payroll,Low,48.8,Payroll Support,Resolved
+TKT00362,10300,2010-05-01 09:08:00,Access,Critical,1.28,IT Access Management,Resolved
+TKT00363,10300,2010-05-14 17:24:00,Access,Medium,15.43,IT Service Desk,Resolved
+TKT00364,10101,2015-02-16 11:34:00,Access,Medium,12.25,IT Service Desk,Resolved
+TKT00365,10101,2015-01-20 09:49:00,Hardware,High,8.29,IT Service Desk,Resolved
+TKT00366,10101,2015-01-05 16:09:00,Other,Medium,9.3,IT Service Desk,Resolved
+TKT00367,10101,2015-01-26 11:20:00,Payroll,Medium,42.99,Payroll Support,Resolved
+TKT00368,10237,2014-06-26 16:13:00,Access,High,8.61,IT Access Management,Resolved
+TKT00369,10237,2014-06-05 15:01:00,Hardware,High,15.11,Endpoint Support,Resolved
+TKT00370,10237,2014-06-23 15:31:00,Access,Medium,15.53,IT Service Desk,Resolved
+TKT00371,10237,2014-05-18 15:39:00,Other,Low,31.08,HR Support,Resolved
+TKT00372,10051,2012-07-23 09:39:00,Access,Low,,IT Access Management,In Progress
+TKT00373,10051,2012-07-10 14:40:00,Learning,Medium,5.89,HR Support,Closed
+TKT00374,10218,2013-10-11 12:03:00,Access,Medium,9.14,IT Access Management,Resolved
+TKT00375,10256,2013-09-27 17:45:00,Access,High,2.1,IT Service Desk,Resolved
+TKT00376,10256,2013-08-22 11:46:00,Learning,Medium,25.45,HR Support,Resolved
+TKT00377,10256,2013-09-02 16:29:00,Access,Medium,22.46,IT Access Management,Resolved
+TKT00378,10256,2013-08-23 13:19:00,Other,Low,9.67,HR Support,Resolved
+TKT00379,10098,2015-06-02 14:38:00,Learning,Medium,14.58,Learning & Development,Resolved
+TKT00380,10098,2015-07-17 09:42:00,Access,Medium,25.73,IT Access Management,Resolved
+TKT00381,10059,2011-03-29 10:12:00,Other,Low,33.71,HR Support,Resolved
+TKT00382,10059,2011-03-15 12:37:00,HR policy,Low,23.21,HR Support,Resolved
+TKT00383,10059,2011-02-27 10:09:00,Hardware,Medium,19.12,Endpoint Support,Resolved
+TKT00384,10059,2011-03-26 08:26:00,Access,Low,,IT Service Desk,In Progress
+TKT00385,10059,2011-02-25 16:00:00,Learning,Medium,23.21,HR Support,Resolved
+TKT00386,10059,2011-03-03 10:06:00,Access,Medium,16.99,IT Access Management,Closed
+TKT00387,10234,2017-04-28 16:23:00,Other,Medium,12.77,HR Support,Resolved
+TKT00388,10234,2017-05-01 09:10:00,Hardware,High,8.22,Endpoint Support,Resolved
+TKT00389,10234,2017-04-22 14:34:00,HR policy,Medium,15.69,HR Support,Resolved
+TKT00390,10109,2012-03-14 15:40:00,HR policy,Medium,15.68,People Operations,Resolved
+TKT00391,10109,2012-04-12 12:03:00,Hardware,Low,43.49,IT Service Desk,Resolved
+TKT00392,10109,2012-04-19 09:25:00,HR policy,High,4.86,HR Support,Resolved
+TKT00393,10125,2011-11-28 11:35:00,Hardware,Critical,6.62,IT Service Desk,Resolved
+TKT00394,10125,2011-12-31 08:42:00,HR policy,High,5.58,HR Support,Resolved
+TKT00395,10074,2013-11-13 08:51:00,Hardware,High,7.11,IT Service Desk,Resolved
+TKT00396,10097,2012-02-14 14:17:00,Access,Medium,20.52,IT Access Management,Closed
+TKT00397,10097,2012-01-10 09:52:00,HR policy,Medium,12.86,People Operations,Resolved
+TKT00398,10097,2012-02-15 12:49:00,Access,Low,55.87,IT Service Desk,Resolved
+TKT00399,10097,2012-01-15 13:17:00,Learning,Low,16.56,Learning & Development,Resolved
+TKT00400,10097,2012-02-12 11:15:00,HR policy,Low,26.98,People Operations,Resolved
+TKT00401,10007,2014-06-09 11:10:00,Access,Medium,14.88,IT Access Management,Resolved
+TKT00402,10007,2014-05-28 14:00:00,Learning,Medium,17.03,HR Support,Resolved
+TKT00403,10007,2014-05-25 14:11:00,Learning,High,7.73,Learning & Development,Resolved
+TKT00404,10007,2014-06-03 09:26:00,HR policy,Low,10.9,People Operations,Resolved
+TKT00405,10007,2014-06-01 17:14:00,Access,Medium,18.88,IT Service Desk,Resolved
+TKT00406,10007,2014-06-23 15:17:00,Payroll,Low,49.08,HR Support,Resolved
+TKT00407,10007,2014-05-25 12:07:00,Other,Medium,23.87,HR Support,Resolved
+TKT00408,10075,2011-01-13 09:41:00,Access,Low,14.63,IT Service Desk,Resolved
+TKT00409,10167,2014-08-25 14:41:00,Payroll,Medium,34.4,Payroll Support,Closed
+TKT00410,10167,2014-09-01 17:06:00,Payroll,Medium,24.95,HR Support,Resolved
+TKT00411,10167,2014-09-25 14:01:00,Access,Medium,25.6,IT Access Management,Resolved
+TKT00412,10195,2011-09-06 16:28:00,Learning,Low,,Learning & Development,In Progress
+TKT00413,10195,2011-09-24 17:05:00,Access,Low,22.06,IT Access Management,Resolved
+TKT00414,10195,2011-08-18 09:56:00,Payroll,High,15.73,HR Support,Resolved
+TKT00415,10195,2011-08-23 15:52:00,Access,Low,30.33,IT Service Desk,Resolved
+TKT00416,10112,2015-05-12 12:16:00,Access,Low,56.59,IT Service Desk,Resolved
+TKT00417,10112,2015-04-24 16:48:00,Payroll,Medium,17.32,HR Support,Resolved
+TKT00418,10112,2015-04-03 14:30:00,Access,Medium,24.97,IT Access Management,Closed
+TKT00419,10112,2015-05-09 08:31:00,Hardware,Low,17.41,IT Service Desk,Resolved
+TKT00420,10112,2015-04-24 17:28:00,Hardware,Medium,48.56,IT Service Desk,Resolved
+TKT00421,10112,2015-05-08 13:07:00,Payroll,Medium,19.8,HR Support,Closed
+TKT00422,10272,2014-05-28 15:25:00,Access,Low,,IT Access Management,In Progress
+TKT00423,10272,2014-05-06 10:08:00,Other,High,10.98,HR Support,Resolved
+TKT00424,10272,2014-05-30 17:56:00,HR policy,Medium,13.41,HR Support,Resolved
+TKT00425,10182,2015-03-27 08:43:00,Other,Medium,25.56,IT Service Desk,Resolved
+TKT00426,10248,2012-03-21 17:08:00,Access,Medium,20.18,IT Access Management,Resolved
+TKT00427,10248,2012-02-22 15:42:00,HR policy,High,3.11,HR Support,Closed
+TKT00428,10248,2012-03-09 11:09:00,HR policy,Medium,12.97,People Operations,Resolved
+TKT00429,10248,2012-03-24 13:10:00,Learning,Critical,4.23,HR Support,Resolved
+TKT00430,10248,2012-03-06 12:19:00,Payroll,Low,39.67,Payroll Support,Resolved
+TKT00431,10248,2012-03-31 11:06:00,Access,Medium,17.14,IT Access Management,Resolved
+TKT00432,10201,2016-06-19 17:11:00,Learning,Low,50.88,HR Support,Closed
+TKT00433,10201,2016-06-06 11:17:00,Learning,Medium,7.75,Learning & Development,Closed
+TKT00434,10201,2016-07-12 17:48:00,Hardware,Medium,35.39,IT Service Desk,Resolved
+TKT00435,10201,2016-06-25 16:49:00,Payroll,High,,HR Support,In Progress
+TKT00436,10201,2016-06-21 15:04:00,Hardware,Medium,52.68,Endpoint Support,Closed
+TKT00437,10214,2015-06-10 13:48:00,HR policy,Medium,13.19,HR Support,Closed
+TKT00438,10214,2015-07-19 13:23:00,Hardware,Medium,18.26,IT Service Desk,Closed
+TKT00439,10214,2015-07-12 14:40:00,Hardware,Medium,,Endpoint Support,In Progress
+TKT00440,10160,2011-03-21 16:50:00,Payroll,Medium,18.26,HR Support,Resolved
+TKT00441,10160,2011-02-28 11:50:00,Access,Medium,15.93,IT Service Desk,Resolved
+TKT00442,10160,2011-03-21 15:17:00,Access,Low,30.03,IT Access Management,Resolved
+TKT00443,10160,2011-04-02 15:32:00,Hardware,High,6.64,Endpoint Support,Resolved
+TKT00444,10160,2011-04-06 17:09:00,Hardware,High,17.45,IT Service Desk,Closed
+TKT00445,10160,2011-03-16 10:17:00,Hardware,Medium,35.54,Endpoint Support,Resolved
+TKT00446,10289,2011-03-29 16:00:00,Learning,High,6.66,Learning & Development,Resolved
+TKT00447,10289,2011-03-07 16:26:00,Access,Medium,30.98,IT Service Desk,Resolved
+TKT00448,10289,2011-02-28 08:02:00,Learning,Medium,26.11,HR Support,Resolved
+TKT00449,10289,2011-03-29 17:23:00,Other,Medium,21.53,IT Service Desk,Closed
+TKT00450,10139,2013-09-27 15:52:00,Other,High,9.78,IT Service Desk,Resolved
+TKT00451,10139,2013-10-03 10:26:00,Payroll,Low,17.64,Payroll Support,Resolved
+TKT00452,10139,2013-08-29 11:39:00,Access,Medium,15.4,IT Access Management,Resolved
+TKT00453,10139,2013-09-08 11:21:00,HR policy,Medium,,HR Support,In Progress
+TKT00454,10139,2013-08-31 15:27:00,HR policy,High,6.56,People Operations,Resolved
+TKT00455,10227,2012-12-10 12:28:00,Payroll,Low,18.21,Payroll Support,Closed
+TKT00456,10227,2012-11-29 14:16:00,Learning,Low,17.24,Learning & Development,Closed
+TKT00457,10227,2012-11-17 11:14:00,Learning,Low,31.98,Learning & Development,Closed
+TKT00458,10236,2013-10-07 16:25:00,Access,High,3.06,IT Access Management,Resolved
+TKT00459,10236,2013-10-11 14:23:00,Other,Medium,18.65,IT Service Desk,Resolved
+TKT00460,10009,2011-08-10 15:52:00,Hardware,Medium,33.03,Endpoint Support,Resolved
+TKT00461,10009,2011-07-05 09:59:00,Learning,Medium,22.26,Learning & Development,Resolved
+TKT00462,10009,2011-08-17 14:36:00,Hardware,Medium,12.86,Endpoint Support,Resolved
+TKT00463,10060,2014-02-15 08:14:00,Hardware,Medium,20.4,IT Service Desk,Closed
+TKT00464,10060,2014-01-17 14:48:00,Hardware,Medium,26.32,IT Service Desk,Closed
+TKT00465,10060,2014-02-09 16:51:00,Other,High,10.7,HR Support,Closed
+TKT00466,10060,2014-01-13 14:33:00,Hardware,High,21.9,Endpoint Support,Resolved
+TKT00467,10060,2014-02-19 14:14:00,Learning,Medium,11.11,Learning & Development,Closed
+TKT00468,10034,2011-12-13 12:38:00,Learning,Low,21.87,Learning & Development,Closed
+TKT00469,10034,2011-12-09 10:15:00,Access,High,5.93,IT Access Management,Resolved
+TKT00470,10034,2011-12-11 12:09:00,Payroll,Medium,22.97,Payroll Support,Resolved
+TKT00471,10034,2011-12-19 10:09:00,Access,Critical,6.56,IT Service Desk,Resolved
+TKT00472,10156,2015-01-15 14:17:00,Hardware,High,,Endpoint Support,In Progress
+TKT00473,10036,2014-07-10 12:50:00,Other,High,7.43,HR Support,Resolved
+TKT00474,10036,2014-07-31 09:55:00,Other,Medium,22.77,IT Service Desk,Resolved
+TKT00475,10036,2014-07-14 09:33:00,Access,Medium,20.02,IT Access Management,Resolved
+TKT00476,10036,2014-07-13 08:16:00,Access,Medium,19.79,IT Service Desk,Resolved
+TKT00477,10036,2014-08-06 15:37:00,Access,High,10.37,IT Access Management,Closed
+TKT00478,10138,2011-02-24 12:04:00,Hardware,Medium,23.24,IT Service Desk,Closed
+TKT00479,10244,2011-11-19 09:19:00,Payroll,High,12.76,HR Support,Resolved
+TKT00480,10244,2011-12-03 12:17:00,Hardware,Medium,24.12,IT Service Desk,Closed
+TKT00481,10192,2013-11-02 14:42:00,Payroll,Low,50.67,Payroll Support,Resolved
+TKT00482,10192,2013-11-07 11:26:00,Hardware,Low,65.21,Endpoint Support,Closed
+TKT00483,10192,2013-10-03 08:28:00,HR policy,Low,34.3,HR Support,Resolved
+TKT00484,10192,2013-10-12 13:00:00,Hardware,Medium,11.73,IT Service Desk,Resolved
+TKT00485,10192,2013-10-05 16:07:00,Access,Critical,2.75,IT Service Desk,Resolved
+TKT00486,10089,2012-08-09 17:25:00,Learning,Low,21.73,Learning & Development,Resolved
+TKT00487,10089,2012-08-13 17:37:00,Payroll,Medium,20.66,Payroll Support,Resolved
+TKT00488,10089,2012-08-04 16:45:00,Access,Medium,13.39,IT Access Management,Resolved
+TKT00489,10089,2012-08-11 13:32:00,Learning,High,9.85,HR Support,Resolved
+TKT00490,10089,2012-07-27 11:10:00,Hardware,Medium,29.96,IT Service Desk,Resolved
+TKT00491,10166,2011-10-21 10:32:00,Access,High,6.24,IT Access Management,Resolved
+TKT00492,10166,2011-10-06 13:42:00,Payroll,Medium,7.56,HR Support,Resolved
+TKT00493,10166,2011-10-18 15:05:00,HR policy,Low,15.04,HR Support,Resolved
+TKT00494,10170,2011-10-09 09:25:00,Other,High,,HR Support,In Progress
+TKT00495,10170,2011-09-28 13:12:00,Access,High,8.3,IT Access Management,Resolved
+TKT00496,10170,2011-10-01 09:41:00,Hardware,Medium,15.19,IT Service Desk,Resolved
+TKT00497,10170,2011-10-04 12:04:00,Access,High,5.78,IT Service Desk,Resolved
+TKT00498,10208,2014-02-23 14:29:00,Access,Medium,11.69,IT Service Desk,Resolved
+TKT00499,10176,2011-01-12 17:28:00,Hardware,Critical,6.01,Endpoint Support,Resolved
+TKT00500,10176,2011-01-20 10:00:00,Hardware,Low,21.95,IT Service Desk,Resolved
+TKT00501,10165,2011-04-12 09:24:00,Hardware,Medium,32.25,IT Service Desk,Resolved
+TKT00502,10165,2011-03-08 12:33:00,Other,Medium,26.85,HR Support,Resolved
+TKT00503,10165,2011-04-17 10:58:00,Learning,Medium,,Learning & Development,In Progress
+TKT00504,10165,2011-04-19 12:39:00,Learning,Medium,17.79,Learning & Development,Resolved
+TKT00505,10113,2014-12-17 16:31:00,Hardware,High,11.7,IT Service Desk,Resolved
+TKT00506,10113,2014-12-22 15:28:00,Access,Medium,16.39,IT Service Desk,Resolved
+TKT00507,10113,2014-11-18 14:10:00,Other,Medium,30.77,HR Support,Closed
+TKT00508,10092,2011-02-15 14:16:00,Access,Medium,,IT Access Management,In Progress
+TKT00509,10092,2011-01-28 14:36:00,Hardware,Low,40.11,IT Service Desk,Resolved
+TKT00510,10092,2011-02-05 08:09:00,HR policy,Medium,15.36,HR Support,Resolved
+TKT00511,10092,2011-01-31 13:52:00,Hardware,Medium,35.4,Endpoint Support,Resolved
+TKT00512,10092,2011-01-14 15:45:00,Access,High,8.07,IT Service Desk,Resolved
+TKT00513,10092,2011-01-16 14:20:00,Payroll,High,11.86,Payroll Support,Resolved
+TKT00514,10106,2013-02-18 12:31:00,Learning,Medium,12.66,HR Support,Closed
+TKT00515,10106,2013-01-21 10:52:00,Learning,High,4.15,HR Support,Resolved
+TKT00516,10106,2013-02-12 13:53:00,Other,Medium,,HR Support,Open
+TKT00517,10052,2012-07-24 08:07:00,Payroll,High,9.04,Payroll Support,Closed
+TKT00518,10052,2012-08-02 15:02:00,Hardware,Medium,25.82,IT Service Desk,Resolved
+TKT00519,10052,2012-08-14 12:04:00,HR policy,Low,31.0,HR Support,Resolved
+TKT00520,10052,2012-08-04 08:00:00,Hardware,High,8.95,IT Service Desk,Resolved
+TKT00521,10052,2012-08-07 10:31:00,Payroll,Medium,7.97,Payroll Support,Resolved
+TKT00522,10052,2012-07-27 11:32:00,Access,Medium,,IT Service Desk,In Progress
+TKT00523,10038,2014-02-15 14:20:00,Access,High,17.9,IT Service Desk,Closed
+TKT00524,10038,2014-01-09 17:29:00,Access,Low,33.65,IT Access Management,Closed
+TKT00525,10038,2014-02-20 13:55:00,Access,High,16.56,IT Service Desk,Resolved
+TKT00526,10038,2014-02-12 16:06:00,Access,Medium,16.39,IT Service Desk,Closed
+TKT00527,10038,2014-01-30 12:44:00,Access,Medium,26.9,IT Service Desk,Resolved
+TKT00528,10038,2014-02-01 08:11:00,Access,Medium,10.33,IT Service Desk,Resolved
+TKT00529,10038,2014-01-20 08:44:00,Access,Low,17.39,IT Service Desk,Resolved
+TKT00530,10249,2012-05-05 11:46:00,Access,Low,25.28,IT Access Management,Resolved
+TKT00531,10249,2012-04-30 14:38:00,Payroll,High,10.02,Payroll Support,Resolved
+TKT00532,10249,2012-04-14 12:51:00,HR policy,Low,24.87,HR Support,Resolved
+TKT00533,10232,2016-11-02 08:50:00,Learning,Medium,,Learning & Development,In Progress
+TKT00534,10087,2011-11-02 13:47:00,Hardware,Medium,,IT Service Desk,Open
+TKT00535,10087,2011-10-28 16:05:00,Learning,Low,9.33,Learning & Development,Resolved
+TKT00536,10087,2011-10-28 17:00:00,Access,Medium,15.99,IT Service Desk,Resolved
+TKT00537,10087,2011-11-06 17:59:00,Access,Critical,3.91,IT Service Desk,Resolved
+TKT00538,10087,2011-09-29 15:35:00,Access,High,3.44,IT Service Desk,Resolved
+TKT00539,10134,2016-01-30 09:20:00,Access,High,8.24,IT Access Management,Resolved
+TKT00540,10134,2016-02-10 16:16:00,Access,Medium,,IT Service Desk,In Progress
+TKT00541,10134,2016-02-13 15:23:00,Learning,High,27.89,HR Support,Resolved
+TKT00542,10134,2016-02-14 13:19:00,Access,Medium,23.27,IT Service Desk,Closed
+TKT00543,10134,2016-02-17 11:04:00,Access,Medium,20.59,IT Service Desk,Closed
+TKT00544,10134,2016-02-10 13:34:00,Access,Low,16.3,IT Access Management,Resolved
+TKT00545,10134,2016-02-07 11:56:00,Access,Medium,17.66,IT Service Desk,Closed
+TKT00546,10251,2012-06-05 16:14:00,Access,High,3.29,IT Access Management,Resolved
+TKT00547,10103,2012-05-20 09:42:00,Payroll,Medium,19.88,HR Support,Resolved
+TKT00548,10103,2012-05-27 10:10:00,Access,Medium,13.61,IT Service Desk,Resolved
+TKT00549,10103,2012-06-04 11:17:00,Payroll,Medium,29.72,HR Support,Closed
+TKT00550,10103,2012-05-07 16:43:00,Hardware,Medium,25.46,IT Service Desk,Resolved
+TKT00551,10103,2012-05-02 11:32:00,HR policy,Low,25.15,HR Support,Closed
+TKT00552,10103,2012-06-05 15:44:00,Learning,Low,39.3,HR Support,Resolved
+TKT00553,10103,2012-05-21 11:22:00,Other,Low,34.9,HR Support,Resolved
+TKT00554,10017,2013-09-30 10:00:00,Payroll,Medium,16.92,Payroll Support,Resolved
+TKT00555,10017,2013-10-16 13:15:00,Access,Low,17.74,IT Service Desk,Resolved
+TKT00556,10137,2013-07-09 10:18:00,Hardware,High,,Endpoint Support,In Progress
+TKT00557,10137,2013-08-08 11:29:00,Hardware,Medium,18.06,IT Service Desk,Resolved
+TKT00558,10137,2013-08-07 16:39:00,Other,Medium,18.73,HR Support,Resolved
+TKT00559,10137,2013-08-09 16:43:00,Access,Medium,39.04,IT Service Desk,Resolved
+TKT00560,10137,2013-07-14 13:09:00,Access,Medium,,IT Access Management,Open
+TKT00561,10137,2013-08-19 10:01:00,Other,Low,23.01,HR Support,Resolved
+TKT00562,10008,2011-02-01 11:51:00,Learning,Medium,10.92,HR Support,Closed
+TKT00563,10008,2011-03-07 13:52:00,Payroll,Critical,3.91,Payroll Support,Resolved
+TKT00564,10008,2011-02-12 08:29:00,Hardware,High,12.32,Endpoint Support,Closed
+TKT00565,10008,2011-02-26 12:00:00,HR policy,Medium,25.28,HR Support,Resolved
+TKT00566,10096,2013-08-16 10:37:00,Hardware,Low,51.77,Endpoint Support,Resolved
+TKT00567,10096,2013-08-16 12:44:00,Learning,Medium,10.9,HR Support,Closed
+TKT00568,10096,2013-08-08 15:38:00,Payroll,Medium,21.09,HR Support,Resolved
+TKT00569,10096,2013-08-07 12:51:00,Access,Low,39.54,IT Service Desk,Resolved
+TKT00570,10096,2013-08-08 12:08:00,Other,Medium,,IT Service Desk,Open
+TKT00571,10096,2013-08-10 12:17:00,Access,Low,27.21,IT Service Desk,Closed
+TKT00572,10035,2013-10-03 10:00:00,Other,High,9.5,IT Service Desk,Resolved
+TKT00573,10035,2013-08-20 14:33:00,Learning,Medium,14.32,HR Support,Resolved
+TKT00574,10035,2013-09-08 16:50:00,Hardware,High,17.89,IT Service Desk,Resolved
+TKT00575,10035,2013-09-19 14:47:00,Access,High,,IT Access Management,Open
+TKT00576,10057,2015-02-17 10:24:00,Learning,Critical,1.72,Learning & Development,Resolved
+TKT00577,10057,2015-03-06 12:37:00,Hardware,High,,IT Service Desk,Open
+TKT00578,10057,2015-03-22 11:56:00,HR policy,Low,15.32,People Operations,Resolved
+TKT00579,10057,2015-03-01 08:40:00,Learning,Medium,12.8,HR Support,Resolved
+TKT00580,10057,2015-03-13 12:38:00,Payroll,Low,,Payroll Support,In Progress
+TKT00581,10004,2011-11-15 09:15:00,Hardware,Medium,15.82,Endpoint Support,Resolved
+TKT00582,10004,2011-12-21 08:51:00,HR policy,Medium,28.25,HR Support,Resolved
+TKT00583,10004,2011-11-07 08:28:00,Access,Low,16.41,IT Access Management,Resolved
+TKT00584,10191,2012-10-14 09:40:00,Learning,Medium,15.21,Learning & Development,Closed
+TKT00585,10191,2012-10-20 12:09:00,Access,Medium,,IT Service Desk,In Progress
+TKT00586,10219,2014-02-18 11:23:00,Learning,Medium,10.35,HR Support,Resolved
+TKT00587,10073,2011-08-06 17:56:00,Other,Medium,20.39,IT Service Desk,Closed
+TKT00588,10073,2011-08-13 15:43:00,Hardware,Medium,21.78,Endpoint Support,Resolved
+TKT00589,10073,2011-07-22 14:25:00,Hardware,Medium,33.32,IT Service Desk,Resolved
+TKT00590,10073,2011-07-25 15:20:00,Other,Medium,26.37,HR Support,Resolved
+TKT00591,10073,2011-07-25 09:04:00,Hardware,Medium,39.92,IT Service Desk,Resolved
+TKT00592,10279,2013-11-17 12:26:00,Payroll,Medium,13.42,Payroll Support,Resolved
+TKT00593,10279,2013-12-13 16:15:00,Hardware,Medium,20.01,IT Service Desk,Resolved
+TKT00594,10279,2013-11-26 14:14:00,Other,High,10.13,IT Service Desk,Closed
+TKT00595,10110,2013-11-27 10:33:00,Learning,Low,10.87,Learning & Development,Resolved
+TKT00596,10110,2013-11-16 17:11:00,Learning,Medium,3.5,HR Support,Resolved
+TKT00597,10053,2011-07-09 13:28:00,Payroll,Medium,23.32,Payroll Support,Resolved
+TKT00598,10053,2011-06-26 15:12:00,HR policy,Medium,13.45,People Operations,Resolved
+TKT00599,10053,2011-07-13 08:47:00,Hardware,Medium,22.98,IT Service Desk,Resolved
+TKT00600,10076,2015-04-30 12:29:00,Access,Low,48.92,IT Access Management,Resolved
+TKT00601,10076,2015-05-14 09:26:00,Access,High,5.61,IT Service Desk,Closed
+TKT00602,10076,2015-04-01 11:27:00,Access,High,6.66,IT Access Management,Closed
+TKT00603,10076,2015-04-17 13:10:00,Hardware,Medium,31.76,Endpoint Support,Resolved
+TKT00604,10076,2015-03-30 10:14:00,Hardware,Medium,21.66,IT Service Desk,Resolved
+TKT00605,10076,2015-04-20 14:22:00,Access,Medium,11.27,IT Access Management,Resolved
+TKT00606,10076,2015-05-05 15:54:00,Hardware,Medium,20.76,Endpoint Support,Resolved
+TKT00607,10145,2013-01-14 08:52:00,Access,Medium,26.93,IT Service Desk,Resolved
+TKT00608,10145,2013-02-03 09:07:00,Hardware,Low,110.32,Endpoint Support,Closed
+TKT00609,10145,2013-02-13 11:07:00,Learning,Low,,HR Support,In Progress
+TKT00610,10145,2013-02-04 08:33:00,HR policy,Medium,11.69,HR Support,Closed
+TKT00611,10145,2013-02-06 17:06:00,Learning,Medium,21.27,HR Support,Resolved
+TKT00612,10202,2016-08-11 10:34:00,Payroll,Medium,24.73,Payroll Support,Resolved
+TKT00613,10202,2016-08-02 11:20:00,Payroll,High,5.27,HR Support,Closed
+TKT00614,10202,2016-08-04 17:19:00,Hardware,Medium,24.27,IT Service Desk,Resolved
+TKT00615,10128,2012-04-24 14:17:00,Learning,Low,12.88,HR Support,Closed
+TKT00616,10128,2012-04-25 09:14:00,Other,Low,41.72,HR Support,Resolved
+TKT00617,10128,2012-05-15 16:19:00,Hardware,High,14.37,Endpoint Support,Closed
+TKT00618,10068,2015-04-29 12:11:00,Other,Low,22.85,IT Service Desk,Resolved
+TKT00619,10068,2015-05-03 16:37:00,Access,Medium,15.91,IT Access Management,Resolved
+TKT00620,10116,2012-08-27 13:37:00,Access,Medium,12.49,IT Access Management,Closed
+TKT00621,10116,2012-09-15 14:41:00,Learning,Low,11.01,HR Support,Closed
+TKT00622,10116,2012-09-28 10:25:00,Access,Low,46.34,IT Access Management,Resolved
+TKT00623,10298,2011-08-25 11:00:00,Access,Medium,21.52,IT Access Management,Resolved
+TKT00624,10213,2011-12-19 13:24:00,Other,Medium,13.47,IT Service Desk,Resolved
+TKT00625,10288,2012-03-15 13:11:00,Hardware,High,12.53,IT Service Desk,Resolved
+TKT00626,10288,2012-03-08 11:39:00,HR policy,Low,32.01,People Operations,Resolved
+TKT00627,10288,2012-03-14 11:13:00,Hardware,Medium,21.0,Endpoint Support,Closed
+TKT00628,10288,2012-03-16 15:41:00,Hardware,Medium,45.9,Endpoint Support,Resolved
+TKT00629,10025,2013-06-04 12:36:00,Payroll,Medium,,HR Support,In Progress
+TKT00630,10025,2013-06-03 14:19:00,Other,Medium,25.63,HR Support,Resolved
+TKT00631,10025,2013-05-14 09:00:00,Payroll,High,11.27,HR Support,Resolved
+TKT00632,10223,2012-01-14 10:13:00,Learning,Medium,7.97,Learning & Development,Resolved
+TKT00633,10223,2012-01-19 16:49:00,Other,Low,,HR Support,Open
+TKT00634,10151,2015-02-18 13:42:00,Access,Medium,10.55,IT Access Management,Resolved
+TKT00635,10151,2015-03-01 12:08:00,Access,High,16.85,IT Service Desk,Resolved
+TKT00636,10254,2013-05-14 13:35:00,Hardware,Low,46.65,Endpoint Support,Resolved
+TKT00637,10254,2013-05-03 16:10:00,Hardware,Medium,30.28,Endpoint Support,Resolved
+TKT00638,10120,2013-06-20 11:27:00,Learning,Critical,1.82,Learning & Development,Resolved
+TKT00639,10120,2013-06-20 17:51:00,HR policy,Medium,13.76,People Operations,Resolved
+TKT00640,10120,2013-05-23 12:51:00,Learning,Medium,11.53,Learning & Development,Resolved
+TKT00641,10120,2013-06-10 15:45:00,Access,High,8.73,IT Service Desk,Resolved
+TKT00642,10216,2013-08-02 11:06:00,HR policy,Medium,14.0,HR Support,Resolved
+TKT00643,10079,2017-02-26 16:58:00,Hardware,Low,29.56,Endpoint Support,Resolved
+TKT00644,10079,2017-03-10 08:33:00,Learning,Medium,,Learning & Development,In Progress
+TKT00645,10079,2017-02-13 16:46:00,Learning,High,9.28,Learning & Development,Resolved
+TKT00646,10079,2017-03-03 14:13:00,Access,Low,42.61,IT Access Management,Resolved
+TKT00647,10079,2017-02-13 11:58:00,Hardware,High,8.28,Endpoint Support,Resolved
+TKT00648,10079,2017-03-15 13:21:00,HR policy,Medium,8.0,People Operations,Resolved
+TKT00649,10215,2011-10-04 14:00:00,Access,Medium,13.59,IT Access Management,Resolved
+TKT00650,10215,2011-10-07 14:20:00,Access,High,6.3,IT Service Desk,Resolved
+TKT00651,10215,2011-10-22 15:36:00,Other,Medium,14.52,IT Service Desk,Resolved
+TKT00652,10215,2011-10-26 12:16:00,Other,Medium,18.58,IT Service Desk,Resolved
+TKT00653,10215,2011-10-03 10:27:00,Access,Low,24.45,IT Service Desk,Resolved
+TKT00654,10185,2013-04-07 17:45:00,Access,Medium,16.19,IT Access Management,Resolved
+TKT00655,10037,2013-04-05 12:28:00,Access,Medium,16.47,IT Service Desk,Resolved
+TKT00656,10042,2013-08-10 09:23:00,HR policy,Medium,11.52,HR Support,Resolved
+TKT00657,10042,2013-07-22 17:15:00,Access,Medium,15.61,IT Service Desk,Resolved
+TKT00658,10042,2013-08-09 16:05:00,Access,Low,17.71,IT Service Desk,Resolved
+TKT00659,10042,2013-08-17 17:36:00,Learning,Medium,17.34,HR Support,Resolved
+TKT00660,10206,2013-08-17 09:55:00,Hardware,Medium,,Endpoint Support,In Progress
+TKT00661,10206,2013-08-16 16:24:00,Learning,Medium,19.39,Learning & Development,Resolved
+TKT00662,10206,2013-08-10 15:57:00,Access,Medium,,IT Service Desk,Open
+TKT00663,10206,2013-08-13 09:10:00,Access,Medium,6.92,IT Access Management,Resolved
+TKT00664,10206,2013-07-28 13:51:00,Hardware,Medium,22.72,IT Service Desk,Closed
+TKT00665,10104,2014-12-14 15:31:00,HR policy,Low,80.87,HR Support,Resolved
+TKT00666,10104,2014-11-22 11:25:00,Access,Medium,17.02,IT Access Management,Resolved
+TKT00667,10303,2014-05-05 11:29:00,Hardware,Medium,21.24,IT Service Desk,Closed
+TKT00668,10078,2012-06-03 09:20:00,Other,Medium,12.06,IT Service Desk,Closed
+TKT00669,10121,2013-10-28 16:42:00,Access,Medium,6.65,IT Access Management,Resolved
+TKT00670,10121,2013-10-30 15:12:00,Learning,High,5.73,HR Support,Closed
+TKT00671,10121,2013-10-13 17:37:00,Other,Medium,13.58,HR Support,Resolved
+TKT00672,10121,2013-10-03 16:08:00,HR policy,High,7.86,HR Support,Closed
+TKT00673,10121,2013-10-02 16:01:00,Learning,Low,,Learning & Development,Open
+TKT00674,10281,2014-03-21 17:47:00,Access,Low,30.07,IT Access Management,Resolved
+TKT00675,10281,2014-03-07 12:17:00,Access,Medium,8.22,IT Access Management,Resolved
+TKT00676,10281,2014-03-08 14:24:00,Hardware,Medium,20.43,IT Service Desk,Resolved
+TKT00677,10281,2014-02-28 10:37:00,HR policy,Low,51.08,HR Support,Resolved
+TKT00678,10041,2015-02-09 14:19:00,Access,Low,54.83,IT Service Desk,Closed
+TKT00679,10041,2015-01-25 09:02:00,Other,Medium,12.9,IT Service Desk,Resolved
+TKT00680,10005,2011-12-10 10:05:00,Hardware,High,14.97,Endpoint Support,Resolved
+TKT00681,10005,2011-11-24 16:09:00,Access,Medium,,IT Access Management,In Progress
+TKT00682,10005,2011-12-15 12:21:00,Access,Medium,16.36,IT Service Desk,Resolved
+TKT00683,10005,2011-12-18 09:57:00,Learning,Medium,17.23,HR Support,Resolved
+TKT00684,10005,2011-11-09 14:41:00,Access,Low,40.34,IT Service Desk,Resolved
+TKT00685,10005,2011-11-13 15:27:00,Learning,Medium,13.89,Learning & Development,Resolved
+TKT00686,10259,2014-12-10 08:27:00,Access,Medium,,IT Access Management,Open
+TKT00687,10259,2014-12-19 11:56:00,Access,High,,IT Service Desk,In Progress
+TKT00688,10286,2011-01-20 16:19:00,HR policy,High,12.49,HR Support,Resolved
+TKT00689,10286,2011-02-04 10:50:00,Access,Medium,16.1,IT Service Desk,Resolved
+TKT00690,10286,2011-01-26 08:10:00,Other,Medium,29.38,IT Service Desk,Closed
+TKT00691,10297,2011-07-27 09:26:00,Access,Medium,7.82,IT Service Desk,Resolved
+TKT00692,10297,2011-07-17 16:54:00,HR policy,Medium,16.39,People Operations,Resolved
+TKT00693,10297,2011-07-26 16:48:00,Hardware,Medium,27.05,Endpoint Support,Closed
+TKT00694,10171,2011-06-12 12:35:00,Payroll,Medium,39.85,Payroll Support,Resolved
+TKT00695,10171,2011-05-22 12:53:00,HR policy,Low,12.24,HR Support,Resolved
+TKT00696,10171,2011-06-25 16:18:00,HR policy,Medium,13.17,HR Support,Resolved
+TKT00697,10032,2011-05-27 14:39:00,Other,Low,28.99,IT Service Desk,Resolved
+TKT00698,10032,2011-06-16 13:20:00,Access,Medium,27.32,IT Access Management,Resolved
+TKT00699,10032,2011-06-24 15:45:00,HR policy,Medium,11.52,People Operations,Resolved
+TKT00700,10032,2011-06-05 17:12:00,HR policy,Medium,22.36,People Operations,Resolved
+TKT00701,10130,2010-12-06 08:24:00,HR policy,Medium,14.89,HR Support,Resolved
+TKT00702,10130,2010-11-14 17:31:00,Other,Medium,11.17,HR Support,Resolved
+TKT00703,10130,2010-11-26 14:02:00,Hardware,Medium,21.24,IT Service Desk,Resolved
+TKT00704,10217,2012-04-27 14:09:00,Hardware,Low,64.03,Endpoint Support,Resolved
+TKT00705,10217,2012-04-04 14:18:00,Learning,Medium,11.53,Learning & Development,Resolved
+TKT00706,10217,2012-04-21 14:30:00,Access,Medium,9.33,IT Service Desk,Resolved
+TKT00707,10217,2012-05-08 14:47:00,Hardware,Medium,48.56,Endpoint Support,Resolved
+TKT00708,10016,2014-11-16 12:44:00,Other,Medium,24.01,HR Support,Resolved
+TKT00709,10050,2011-07-07 10:59:00,Access,Medium,18.69,IT Access Management,Closed
+TKT00710,10050,2011-08-02 13:52:00,Learning,Medium,15.29,HR Support,Resolved
+TKT00711,10050,2011-08-19 13:17:00,Access,Medium,24.05,IT Access Management,Closed
+TKT00712,10050,2011-07-31 16:25:00,Access,Low,20.31,IT Access Management,Resolved
+TKT00713,10050,2011-07-16 13:05:00,Other,Medium,34.48,IT Service Desk,Closed
+TKT00714,10164,2007-11-07 17:45:00,Access,Medium,13.88,IT Service Desk,Resolved
+TKT00715,10164,2007-12-03 14:32:00,Access,Medium,,IT Access Management,Open
+TKT00716,10164,2007-11-09 12:11:00,HR policy,High,,HR Support,Open
+TKT00717,10124,2012-02-14 15:52:00,Other,Medium,21.48,IT Service Desk,Resolved
+TKT00718,10124,2012-02-05 16:08:00,Access,High,15.4,IT Access Management,Resolved
+TKT00719,10124,2012-02-08 08:54:00,HR policy,Medium,11.56,People Operations,Closed
+TKT00720,10187,2011-06-03 17:02:00,Other,Low,28.64,HR Support,Resolved
+TKT00721,10187,2011-05-19 11:36:00,Learning,Low,11.24,Learning & Development,Resolved
+TKT00722,10225,2014-02-13 14:38:00,Hardware,Medium,26.91,IT Service Desk,Closed
+TKT00723,10225,2014-01-30 11:13:00,Access,Low,22.9,IT Service Desk,Closed
+TKT00724,10225,2014-01-23 17:51:00,Access,Medium,11.55,IT Access Management,Closed
+TKT00725,10225,2014-02-15 17:48:00,Learning,High,8.39,Learning & Development,Resolved
+TKT00726,10262,2012-10-24 13:36:00,HR policy,Medium,14.33,People Operations,Resolved
+TKT00727,10131,2011-02-24 14:40:00,Payroll,Medium,23.97,HR Support,Resolved
+TKT00728,10131,2011-03-08 11:18:00,Access,Medium,8.1,IT Service Desk,Closed
+TKT00729,10131,2011-03-09 12:09:00,Access,Medium,13.83,IT Access Management,Resolved
+TKT00730,10131,2011-04-02 10:49:00,HR policy,Medium,9.57,HR Support,Resolved
+TKT00731,10131,2011-03-16 16:28:00,Other,Low,19.17,HR Support,Resolved
+TKT00732,10131,2011-02-27 12:06:00,Payroll,High,2.35,Payroll Support,Resolved
+TKT00733,10131,2011-04-07 16:51:00,Learning,Low,19.49,HR Support,Resolved
+TKT00734,10239,2016-10-15 14:41:00,Access,Medium,8.88,IT Access Management,Resolved
+TKT00735,10239,2016-10-07 10:11:00,HR policy,Medium,5.46,HR Support,Resolved
+TKT00736,10239,2016-10-07 12:32:00,Access,Low,34.1,IT Access Management,Closed
+TKT00737,10152,2011-10-30 16:57:00,Access,High,8.02,IT Service Desk,Resolved
+TKT00738,10152,2011-09-27 14:46:00,Learning,Low,30.1,HR Support,Closed
+TKT00739,10152,2011-10-20 08:42:00,Learning,Medium,13.74,Learning & Development,Resolved
+TKT00740,10152,2011-10-24 13:17:00,HR policy,Low,,People Operations,In Progress
+TKT00741,10152,2011-10-21 10:37:00,Payroll,Medium,19.32,HR Support,Closed
+TKT00742,10152,2011-10-09 13:27:00,Learning,Low,29.74,Learning & Development,Closed
+TKT00743,10140,2014-06-20 11:35:00,Access,Medium,11.43,IT Service Desk,Resolved
+TKT00744,10140,2014-06-11 17:50:00,Hardware,Medium,23.47,IT Service Desk,Resolved
+TKT00745,10140,2014-06-02 10:10:00,Access,Medium,19.98,IT Service Desk,Resolved
+TKT00746,10140,2014-06-01 13:27:00,Hardware,Low,39.87,Endpoint Support,Resolved
+TKT00747,10058,2011-06-07 09:18:00,Access,Medium,13.59,IT Service Desk,Resolved
+TKT00748,10058,2011-06-12 15:17:00,HR policy,Low,8.62,HR Support,Resolved
+TKT00749,10058,2011-05-26 14:45:00,Other,Medium,15.87,HR Support,Resolved
+TKT00750,10058,2011-05-27 16:36:00,Payroll,Medium,27.91,HR Support,Resolved
+TKT00751,10011,2012-01-08 17:34:00,Other,Medium,32.53,IT Service Desk,Resolved
+TKT00752,10011,2011-12-21 12:04:00,Learning,Medium,10.96,Learning & Development,Resolved
+TKT00753,10011,2011-12-28 17:51:00,Hardware,Medium,28.98,Endpoint Support,Closed
+TKT00754,10224,2011-08-08 15:56:00,Learning,Critical,2.35,HR Support,Closed
+TKT00755,10224,2011-07-09 16:47:00,Learning,Low,,Learning & Development,In Progress
+TKT00756,10224,2011-07-21 08:27:00,Access,Low,46.06,IT Service Desk,Resolved
+TKT00757,10224,2011-07-12 10:44:00,Other,Medium,18.42,IT Service Desk,Resolved
+TKT00758,10047,2011-01-29 09:32:00,Payroll,High,10.52,HR Support,Resolved
+TKT00759,10047,2011-02-09 13:14:00,Access,High,8.82,IT Access Management,Resolved
+TKT00760,10047,2011-01-28 16:19:00,Access,High,4.08,IT Service Desk,Resolved
+TKT00761,10047,2011-01-25 17:04:00,Access,Low,19.77,IT Service Desk,Resolved
+TKT00762,10047,2011-02-07 14:21:00,Payroll,Low,48.87,HR Support,Closed
+TKT00763,10285,2011-02-01 09:14:00,Learning,Medium,10.09,Learning & Development,Closed
+TKT00764,10285,2011-01-16 14:10:00,HR policy,Medium,15.27,People Operations,Resolved
+TKT00765,10020,2013-08-15 15:25:00,Learning,High,,Learning & Development,In Progress
+TKT00766,10020,2013-08-20 14:36:00,Hardware,Medium,53.66,IT Service Desk,Resolved
+TKT00767,10162,2015-02-18 13:21:00,Access,Medium,11.56,IT Service Desk,Resolved
+TKT00768,10162,2015-04-01 08:56:00,Access,Low,25.11,IT Access Management,Resolved
+TKT00769,10162,2015-02-28 10:19:00,Learning,Low,,HR Support,In Progress
+TKT00770,10149,2015-02-03 10:36:00,Access,Medium,22.89,IT Access Management,Closed
+TKT00771,10149,2015-02-09 16:17:00,Learning,Medium,17.33,HR Support,Resolved
+TKT00772,10149,2015-01-25 13:02:00,Access,Low,,IT Service Desk,In Progress
+TKT00773,10086,2017-01-07 14:39:00,Hardware,Medium,20.21,Endpoint Support,Resolved
+TKT00774,10086,2017-02-21 13:42:00,Hardware,Medium,32.18,IT Service Desk,Resolved
+TKT00775,10086,2017-01-24 16:37:00,Payroll,Low,84.5,Payroll Support,Closed
+TKT00776,10086,2017-02-04 15:36:00,Access,High,10.68,IT Access Management,Resolved
+TKT00777,10086,2017-01-11 12:28:00,Access,Low,66.09,IT Access Management,Resolved
+TKT00778,10054,2014-01-09 10:55:00,Hardware,High,15.02,IT Service Desk,Resolved
+TKT00779,10054,2014-01-13 14:32:00,Access,Medium,10.5,IT Service Desk,Resolved
+TKT00780,10054,2014-01-18 13:02:00,Access,Medium,40.85,IT Service Desk,Resolved
+TKT00781,10054,2014-01-26 12:26:00,Hardware,High,14.12,Endpoint Support,Resolved
+TKT00782,10054,2014-01-10 08:37:00,Hardware,Medium,20.52,IT Service Desk,Closed
+TKT00783,10054,2014-01-14 12:02:00,HR policy,Medium,19.91,HR Support,Resolved
+TKT00784,10065,2011-04-17 17:34:00,Hardware,Medium,48.57,Endpoint Support,Resolved
+TKT00785,10065,2011-05-14 12:08:00,Access,Low,32.18,IT Service Desk,Closed
+TKT00786,10065,2011-04-11 16:28:00,Access,Low,42.38,IT Service Desk,Resolved
+TKT00787,10065,2011-04-05 08:02:00,Payroll,Medium,26.94,HR Support,Resolved
+TKT00788,10198,2013-02-10 08:59:00,Hardware,Medium,16.77,Endpoint Support,Resolved
+TKT00789,10222,2012-02-07 15:16:00,Learning,High,4.79,Learning & Development,Resolved
+TKT00790,10222,2012-01-12 14:26:00,Access,Medium,14.06,IT Access Management,Closed
+TKT00791,10222,2012-02-21 16:09:00,Learning,Medium,11.62,Learning & Development,Resolved
+TKT00792,10222,2012-02-07 14:59:00,Hardware,Medium,45.89,IT Service Desk,Closed
+TKT00793,10222,2012-01-17 16:50:00,Payroll,Medium,15.29,HR Support,Resolved
+TKT00794,10222,2012-02-16 15:52:00,Hardware,Medium,22.74,IT Service Desk,Resolved
+TKT00795,10126,2012-11-27 15:41:00,Learning,Medium,,Learning & Development,In Progress
+TKT00796,10126,2012-12-10 10:53:00,Hardware,Medium,,IT Service Desk,In Progress
+TKT00797,10126,2012-11-26 13:20:00,Payroll,Medium,21.0,Payroll Support,Resolved
+TKT00798,10126,2012-12-03 12:14:00,Hardware,Medium,25.71,IT Service Desk,Closed
+TKT00799,10126,2012-12-19 11:42:00,Access,Medium,14.23,IT Access Management,Resolved
+TKT00800,10126,2012-12-12 12:30:00,Access,High,7.27,IT Access Management,Resolved
+TKT00801,10295,2016-07-23 09:32:00,Access,Medium,36.55,IT Access Management,Resolved
+TKT00802,10295,2016-08-09 12:09:00,Learning,Medium,11.65,Learning & Development,Closed
+TKT00803,10295,2016-07-07 13:09:00,Access,Medium,,IT Service Desk,In Progress
+TKT00804,10295,2016-08-02 09:12:00,Access,Low,35.99,IT Service Desk,Closed
+TKT00805,10295,2016-08-15 09:05:00,Payroll,Low,23.05,HR Support,Closed
+TKT00806,10260,2009-01-10 12:55:00,Hardware,Medium,10.84,IT Service Desk,Resolved
+TKT00807,10260,2009-02-01 14:23:00,Other,Medium,37.74,IT Service Desk,Resolved
+TKT00808,10260,2009-02-06 17:37:00,Hardware,High,13.62,Endpoint Support,Resolved
+TKT00809,10260,2009-01-26 08:41:00,HR policy,Medium,9.85,People Operations,Resolved
+TKT00810,10260,2009-01-17 14:59:00,Access,Medium,16.94,IT Access Management,Closed
+TKT00811,10233,2010-09-10 16:44:00,Learning,High,5.57,Learning & Development,Closed
+TKT00812,10233,2010-09-30 13:34:00,Other,Low,37.39,IT Service Desk,Closed
+TKT00813,10233,2010-09-14 14:45:00,Access,Medium,23.95,IT Service Desk,Closed
+TKT00814,10233,2010-10-10 10:00:00,Other,Low,,HR Support,Open
+TKT00815,10229,2015-01-25 10:28:00,Access,Medium,19.22,IT Service Desk,Resolved
+TKT00816,10229,2015-01-29 16:55:00,Payroll,Low,,Payroll Support,In Progress
+TKT00817,10229,2015-02-01 16:34:00,Access,Medium,21.62,IT Service Desk,Resolved
+TKT00818,10169,2014-10-01 17:14:00,Hardware,Low,73.02,IT Service Desk,Resolved
+TKT00819,10169,2014-10-12 10:01:00,Other,Medium,15.4,IT Service Desk,Resolved
+TKT00820,10169,2014-11-03 08:30:00,HR policy,Low,17.15,HR Support,Resolved
+TKT00821,10071,2013-10-01 08:33:00,Learning,Medium,36.63,Learning & Development,Resolved
+TKT00822,10071,2013-11-11 08:48:00,Learning,Medium,16.8,Learning & Development,Closed
+TKT00823,10071,2013-10-10 09:27:00,Other,Medium,11.33,HR Support,Resolved
+TKT00824,10071,2013-11-02 13:45:00,HR policy,Medium,17.61,People Operations,Closed
+TKT00825,10071,2013-10-29 10:36:00,Payroll,Medium,32.42,Payroll Support,Resolved
+TKT00826,10179,2014-10-01 17:51:00,Access,Medium,31.62,IT Access Management,Resolved
+TKT00827,10179,2014-11-05 17:59:00,Hardware,Medium,23.99,IT Service Desk,Resolved
+TKT00828,10179,2014-10-25 08:50:00,Hardware,Medium,40.49,IT Service Desk,Resolved
+TKT00829,10179,2014-11-08 09:13:00,Access,Low,47.16,IT Service Desk,Resolved
+TKT00830,10179,2014-10-07 09:10:00,Payroll,Low,69.54,Payroll Support,Resolved
+TKT00831,10179,2014-10-12 13:48:00,Access,Medium,12.01,IT Access Management,Resolved
+TKT00832,10091,2013-09-16 16:38:00,Access,Medium,52.04,IT Access Management,Resolved
+TKT00833,10091,2013-09-24 08:23:00,HR policy,Low,10.47,People Operations,Closed
+TKT00834,10091,2013-08-23 08:00:00,HR policy,Low,,HR Support,In Progress
+TKT00835,10091,2013-09-18 13:59:00,Hardware,Medium,26.18,Endpoint Support,Resolved
+TKT00836,10178,2015-02-07 15:47:00,Access,Medium,31.09,IT Access Management,Resolved
+TKT00837,10178,2015-01-19 14:30:00,Hardware,Medium,28.19,IT Service Desk,Closed
+TKT00838,10178,2015-02-03 08:06:00,Other,Medium,8.33,IT Service Desk,Closed
+TKT00839,10178,2015-01-15 11:21:00,Learning,High,9.8,Learning & Development,Closed
+TKT00840,10178,2015-02-09 08:11:00,Hardware,High,14.21,Endpoint Support,Resolved
+TKT00841,10178,2015-01-10 12:43:00,Hardware,Medium,54.76,IT Service Desk,Resolved
+TKT00842,10039,2015-05-28 12:09:00,Payroll,Low,30.27,HR Support,Closed
+TKT00843,10039,2015-05-18 16:37:00,HR policy,High,3.44,People Operations,Resolved
+TKT00844,10039,2015-05-18 11:25:00,Hardware,Low,40.46,IT Service Desk,Resolved
+TKT00845,10039,2015-05-07 15:04:00,Access,High,12.7,IT Access Management,Resolved
+TKT00846,10039,2015-05-05 14:58:00,Learning,Low,17.47,Learning & Development,Resolved
+TKT00847,10095,2009-10-30 11:36:00,Access,Medium,13.25,IT Service Desk,Resolved
+TKT00848,10095,2009-10-27 15:35:00,Access,Medium,12.11,IT Access Management,Resolved
+TKT00849,10095,2009-11-14 16:14:00,Other,Low,22.79,HR Support,Resolved
+TKT00850,10027,2014-11-09 12:54:00,Payroll,Medium,28.6,Payroll Support,Resolved
+TKT00851,10027,2014-10-15 13:43:00,Payroll,Medium,46.08,HR Support,Resolved
+TKT00852,10027,2014-10-02 13:05:00,HR policy,Medium,8.15,HR Support,Closed
+TKT00853,10027,2014-10-14 08:42:00,Hardware,Medium,33.96,Endpoint Support,Resolved
+TKT00854,10027,2014-10-04 13:57:00,Access,Medium,8.88,IT Service Desk,Resolved
+TKT00855,10291,2014-05-22 09:43:00,Hardware,Low,29.14,Endpoint Support,Resolved
+TKT00856,10291,2014-07-01 11:39:00,Access,High,8.71,IT Access Management,Resolved
+TKT00857,10291,2014-06-20 08:38:00,Payroll,Medium,57.42,Payroll Support,Closed
+TKT00858,10291,2014-05-29 15:58:00,HR policy,Medium,18.16,HR Support,Resolved
+TKT00859,10291,2014-06-28 16:43:00,Other,Critical,6.66,HR Support,Closed
+TKT00860,10291,2014-05-21 14:13:00,HR policy,Medium,27.98,HR Support,Resolved
+TKT00861,10291,2014-06-13 15:27:00,Hardware,Low,65.06,IT Service Desk,Resolved
+TKT00862,10291,2014-05-27 10:06:00,Hardware,Low,,IT Service Desk,In Progress
+TKT00863,10153,2011-10-21 13:40:00,HR policy,Medium,26.07,HR Support,Resolved
+TKT00864,10153,2011-11-08 08:53:00,Payroll,Medium,36.91,HR Support,Resolved
+TKT00865,10153,2011-10-14 08:48:00,HR policy,High,,People Operations,In Progress
+TKT00866,10153,2011-11-01 14:26:00,Access,Medium,12.45,IT Access Management,Resolved
+TKT00867,10157,2013-12-20 14:31:00,Access,Medium,13.96,IT Access Management,Resolved
+TKT00868,10157,2013-12-02 14:49:00,Hardware,Medium,21.29,Endpoint Support,Closed
+TKT00869,10157,2013-11-21 14:34:00,Learning,Medium,13.69,HR Support,Closed
+TKT00870,10157,2013-12-11 08:16:00,Hardware,Medium,23.29,Endpoint Support,Closed
+TKT00871,10119,2011-06-14 11:02:00,Other,Low,42.72,HR Support,Closed
+TKT00872,10119,2011-07-09 08:42:00,HR policy,High,13.0,People Operations,Resolved
+TKT00873,10180,2016-08-11 15:58:00,Learning,High,12.9,HR Support,Resolved
+TKT00874,10180,2016-07-29 12:43:00,Access,Medium,9.85,IT Service Desk,Resolved
+TKT00875,10180,2016-07-13 11:20:00,Other,Medium,21.12,IT Service Desk,Resolved
+TKT00876,10180,2016-07-24 16:10:00,Payroll,Medium,25.68,Payroll Support,Resolved
+TKT00877,10302,2012-03-25 15:00:00,Access,High,,IT Access Management,In Progress
+TKT00878,10302,2012-03-26 17:19:00,Access,Medium,18.11,IT Service Desk,Resolved
+TKT00879,10302,2012-04-02 09:04:00,Access,High,4.58,IT Service Desk,Resolved
+TKT00880,10090,2012-11-08 09:03:00,Hardware,Low,35.61,Endpoint Support,Resolved
+TKT00881,10090,2012-10-20 15:44:00,Access,High,6.21,IT Service Desk,Resolved
+TKT00882,10090,2012-10-27 13:59:00,Access,Critical,4.7,IT Access Management,Resolved
+TKT00883,10090,2012-10-14 13:04:00,Payroll,Medium,21.7,HR Support,Closed
+TKT00884,10090,2012-10-11 12:07:00,Access,Low,15.08,IT Access Management,Resolved
+TKT00885,10090,2012-10-12 17:06:00,Other,Low,40.21,HR Support,Resolved
+TKT00886,10090,2012-11-15 09:22:00,Other,Medium,16.93,HR Support,Resolved
+TKT00887,10090,2012-10-26 11:59:00,Access,Low,12.53,IT Service Desk,Resolved
+TKT00888,10030,2013-05-19 08:23:00,Access,High,6.2,IT Service Desk,Closed
+TKT00889,10030,2013-06-14 08:39:00,Hardware,Low,37.96,IT Service Desk,Resolved
+TKT00890,10030,2013-06-19 10:27:00,Hardware,Low,,Endpoint Support,In Progress
+TKT00891,10030,2013-06-20 11:47:00,Learning,Low,24.58,Learning & Development,Resolved
+TKT00892,10030,2013-05-18 09:58:00,Access,Medium,11.09,IT Service Desk,Resolved
+TKT00893,10278,2011-01-25 16:15:00,Access,Medium,14.61,IT Service Desk,Resolved
+TKT00894,10278,2011-02-24 13:09:00,HR policy,Low,,HR Support,In Progress
+TKT00895,10278,2011-02-10 08:31:00,Payroll,High,9.26,HR Support,Closed
+TKT00896,10278,2011-01-23 14:45:00,Access,Low,,IT Service Desk,In Progress
+TKT00897,10307,2014-06-01 12:39:00,Hardware,Low,59.51,IT Service Desk,Resolved
+TKT00898,10307,2014-06-03 10:16:00,Access,Low,52.03,IT Access Management,Resolved
+TKT00899,10307,2014-05-16 15:51:00,Learning,Medium,15.82,Learning & Development,Resolved
+TKT00900,10307,2014-05-21 13:04:00,HR policy,Critical,2.67,People Operations,Resolved
+TKT00901,10147,2014-10-25 12:47:00,Hardware,High,6.95,Endpoint Support,Resolved
+TKT00902,10147,2014-10-20 08:10:00,Payroll,Medium,19.08,Payroll Support,Closed
+TKT00903,10147,2014-09-29 11:06:00,Hardware,Critical,,Endpoint Support,In Progress
+TKT00904,10147,2014-11-06 12:23:00,Access,Medium,13.94,IT Access Management,Resolved
+TKT00905,10266,2014-03-01 14:33:00,Payroll,Medium,15.64,Payroll Support,Closed
+TKT00906,10266,2014-02-28 15:47:00,Other,Medium,18.34,HR Support,Resolved
+TKT00907,10241,2010-11-11 15:56:00,Payroll,Medium,15.56,Payroll Support,Closed
+TKT00908,10241,2010-10-29 17:16:00,HR policy,Low,52.08,HR Support,Resolved
+TKT00909,10241,2010-10-20 14:42:00,Access,Low,34.1,IT Service Desk,Resolved
+TKT00910,10241,2010-10-10 08:13:00,Other,Low,97.14,HR Support,Resolved
+TKT00911,10241,2010-10-21 14:49:00,Hardware,High,10.71,IT Service Desk,Resolved
+TKT00912,10241,2010-11-03 08:27:00,HR policy,Critical,2.47,People Operations,Closed
+TKT00913,10158,2009-02-18 16:42:00,Hardware,Low,63.88,Endpoint Support,Closed
+TKT00914,10158,2009-02-11 13:09:00,Access,Medium,10.12,IT Service Desk,Resolved
+TKT00915,10158,2009-02-16 13:55:00,Hardware,Low,24.97,IT Service Desk,Resolved
+TKT00916,10158,2009-01-24 14:32:00,Hardware,Medium,40.79,Endpoint Support,Closed
+TKT00917,10158,2009-01-14 09:55:00,Access,High,9.01,IT Service Desk,Closed
+TKT00918,10158,2009-01-16 11:12:00,Access,High,7.86,IT Service Desk,Resolved
+TKT00919,10158,2009-02-08 08:04:00,Other,High,3.81,HR Support,Resolved
+TKT00920,10158,2009-02-19 12:20:00,Other,Medium,14.13,HR Support,Resolved
+TKT00921,10117,2015-02-02 11:18:00,Hardware,Low,53.25,IT Service Desk,Closed
+TKT00922,10117,2015-01-14 08:43:00,Hardware,Medium,,IT Service Desk,In Progress
+TKT00923,10209,2012-06-23 12:21:00,Access,Medium,18.14,IT Service Desk,Resolved
+TKT00924,10209,2012-05-15 09:40:00,Hardware,Medium,27.26,Endpoint Support,Resolved
+TKT00925,10209,2012-05-28 15:32:00,Access,Medium,15.2,IT Service Desk,Resolved
+TKT00926,10209,2012-06-11 09:34:00,Access,Medium,15.43,IT Access Management,Resolved
+TKT00927,10024,2014-08-11 15:53:00,Hardware,High,16.52,Endpoint Support,Resolved
+TKT00928,10024,2014-07-27 17:54:00,Learning,Medium,10.89,HR Support,Closed
+TKT00929,10173,2017-05-06 13:21:00,Hardware,Medium,,IT Service Desk,In Progress
+TKT00930,10173,2017-04-30 15:25:00,Access,Low,16.25,IT Access Management,Resolved
+TKT00931,10173,2017-04-20 09:12:00,Access,Medium,13.96,IT Service Desk,Closed
+TKT00932,10221,2009-05-07 13:48:00,Payroll,High,6.3,HR Support,Resolved
+TKT00933,10221,2009-06-01 10:44:00,Access,Low,32.05,IT Service Desk,Resolved
+TKT00934,10221,2009-05-02 16:42:00,Access,Low,17.67,IT Service Desk,Resolved
+TKT00935,10221,2009-05-19 09:44:00,Access,Low,,IT Access Management,Open
+TKT00936,10146,2011-05-20 12:21:00,Hardware,Low,,IT Service Desk,In Progress
+TKT00937,10146,2011-06-24 15:44:00,Learning,Low,18.82,Learning & Development,Resolved
+TKT00938,10146,2011-06-06 11:29:00,Hardware,Low,58.06,IT Service Desk,Resolved
+TKT00939,10146,2011-05-29 13:30:00,Other,High,7.14,HR Support,Resolved
+TKT00940,10146,2011-06-11 15:02:00,Hardware,High,,IT Service Desk,In Progress
+TKT00941,10146,2011-05-16 09:56:00,Access,Medium,26.0,IT Access Management,Resolved
+TKT00942,10161,2014-10-18 11:54:00,Access,Medium,,IT Service Desk,In Progress
+TKT00943,10161,2014-10-16 10:03:00,Learning,Medium,11.82,HR Support,Resolved
+TKT00944,10161,2014-11-11 12:59:00,Access,Medium,14.28,IT Access Management,Resolved
+TKT00945,10141,2011-07-31 09:22:00,Learning,Medium,9.17,Learning & Development,Closed
+TKT00946,10141,2011-08-02 08:35:00,Learning,Medium,11.75,HR Support,Resolved
+TKT00947,10141,2011-08-09 13:02:00,HR policy,Medium,11.74,People Operations,Resolved
+TKT00948,10268,2007-07-03 09:13:00,Access,Medium,16.54,IT Access Management,Closed
+TKT00949,10123,2013-03-01 11:43:00,Access,Medium,16.57,IT Access Management,Closed
+TKT00950,10013,2006-01-11 10:06:00,Payroll,Low,30.18,Payroll Support,Closed
+TKT00951,10013,2006-02-07 14:52:00,Access,Medium,10.92,IT Access Management,Resolved
+TKT00952,10013,2006-02-20 08:17:00,Other,Low,26.73,HR Support,Resolved
+TKT00953,10013,2006-02-08 14:07:00,Access,Critical,3.69,IT Access Management,Resolved
+TKT00954,10013,2006-01-25 08:00:00,Access,Critical,,IT Access Management,In Progress
+TKT00955,10044,2015-02-18 11:01:00,Payroll,Critical,2.39,HR Support,Resolved
+TKT00956,10044,2015-02-15 17:49:00,Hardware,High,13.37,Endpoint Support,Resolved
+TKT00957,10102,2013-03-21 15:08:00,Other,Medium,19.55,IT Service Desk,Closed
+TKT00958,10102,2013-03-20 11:24:00,Learning,Medium,10.8,HR Support,Closed
+TKT00959,10102,2013-04-02 16:32:00,Learning,Medium,15.14,Learning & Development,Resolved
+TKT00960,10102,2013-02-20 09:56:00,Hardware,High,7.27,IT Service Desk,Resolved
+TKT00961,10102,2013-04-02 16:37:00,HR policy,Low,7.34,People Operations,Resolved
+TKT00962,10102,2013-03-16 12:22:00,Other,Low,,IT Service Desk,In Progress
+TKT00963,10270,2011-02-23 15:41:00,Hardware,Low,37.58,Endpoint Support,Resolved
+TKT00964,10270,2011-02-14 10:47:00,Access,Medium,12.19,IT Access Management,Resolved
+TKT00965,10270,2011-02-20 14:41:00,Other,Low,23.17,HR Support,Resolved
+TKT00966,10045,2015-04-20 08:31:00,Hardware,Medium,,IT Service Desk,In Progress
+TKT00967,10045,2015-04-16 17:39:00,Other,Medium,19.65,HR Support,Closed
+TKT00968,10045,2015-04-21 11:40:00,Learning,Medium,14.05,HR Support,Resolved
+TKT00969,10045,2015-04-17 10:17:00,Access,Medium,23.88,IT Access Management,Closed
+TKT00970,10205,2011-07-24 15:30:00,HR policy,Low,6.41,HR Support,Resolved
+TKT00971,10205,2011-07-22 15:43:00,Hardware,Low,54.38,IT Service Desk,Resolved
+TKT00972,10014,2012-08-31 15:51:00,Access,Medium,14.83,IT Access Management,Resolved
+TKT00973,10014,2012-09-18 14:51:00,Access,Medium,18.53,IT Service Desk,Resolved
+TKT00974,10014,2012-09-15 08:26:00,Hardware,Low,47.8,Endpoint Support,Resolved
+TKT00975,10014,2012-09-12 17:13:00,Learning,Medium,17.17,HR Support,Resolved
+TKT00976,10144,2011-09-11 13:07:00,Hardware,Low,60.05,Endpoint Support,Resolved
+TKT00977,10144,2011-09-04 10:40:00,Other,Medium,32.96,IT Service Desk,Resolved
+TKT00978,10144,2011-09-14 17:41:00,Hardware,Low,74.38,Endpoint Support,Resolved
+TKT00979,10144,2011-09-10 12:26:00,HR policy,High,9.38,HR Support,Resolved
+TKT00980,10253,2012-04-05 17:50:00,Other,Medium,26.4,IT Service Desk,Resolved
+TKT00981,10253,2012-04-10 12:51:00,Access,Medium,16.07,IT Access Management,Resolved
+TKT00982,10253,2012-03-17 17:11:00,Hardware,High,8.84,IT Service Desk,Resolved
+TKT00983,10118,2015-03-20 14:15:00,Payroll,Medium,19.84,HR Support,Resolved
+TKT00984,10118,2015-03-19 12:42:00,Other,Medium,17.65,HR Support,Resolved
+TKT00985,10118,2015-02-25 17:47:00,Other,Low,42.31,IT Service Desk,Closed
+TKT00986,10118,2015-03-04 08:24:00,HR policy,Medium,11.83,People Operations,Resolved
+TKT00987,10118,2015-03-22 11:19:00,HR policy,High,7.45,HR Support,Resolved
+TKT00988,10022,2011-10-16 10:02:00,Access,Medium,13.04,IT Access Management,Closed
+TKT00989,10183,2015-08-08 15:36:00,Learning,Low,13.48,Learning & Development,Resolved
+TKT00990,10183,2015-08-12 13:41:00,Access,Low,25.59,IT Access Management,Resolved
+TKT00991,10183,2015-07-29 17:07:00,Access,Medium,17.95,IT Access Management,Closed
+TKT00992,10190,2014-08-21 08:39:00,HR policy,Medium,10.09,HR Support,Resolved
+TKT00993,10274,2011-10-17 13:10:00,HR policy,High,4.35,HR Support,Resolved
+TKT00994,10274,2011-11-08 11:39:00,HR policy,High,10.08,People Operations,Resolved
+TKT00995,10274,2011-10-03 11:56:00,Payroll,Low,14.21,Payroll Support,Resolved
+TKT00996,10274,2011-11-10 15:53:00,Other,Low,,IT Service Desk,In Progress
+TKT00997,10274,2011-10-27 11:51:00,HR policy,Medium,8.52,People Operations,Closed
+TKT00998,10274,2011-10-16 10:00:00,Access,Medium,20.92,IT Access Management,Resolved
+TKT00999,10293,2012-08-15 10:05:00,Access,Low,48.53,IT Access Management,Resolved
+TKT01000,10293,2012-09-09 09:15:00,Payroll,High,12.16,HR Support,Resolved
+TKT01001,10172,2017-03-04 11:25:00,HR policy,Low,,HR Support,In Progress
+TKT01002,10172,2017-02-26 10:41:00,Access,Medium,26.09,IT Access Management,Resolved
+TKT01003,10172,2017-03-24 08:23:00,Learning,Medium,16.24,Learning & Development,Resolved
+TKT01004,10072,2011-02-09 12:51:00,Other,Medium,,IT Service Desk,In Progress
+TKT01005,10072,2011-02-03 08:07:00,Learning,Low,12.99,Learning & Development,Resolved
+TKT01006,10072,2011-02-04 08:53:00,Other,Medium,22.26,IT Service Desk,Resolved
+TKT01007,10072,2011-01-20 16:24:00,Payroll,Medium,,Payroll Support,In Progress
+TKT01008,10072,2011-02-10 09:21:00,HR policy,Low,22.5,HR Support,Resolved
+TKT01009,10072,2011-02-05 14:39:00,Hardware,Medium,,IT Service Desk,In Progress
+TKT01010,10072,2011-01-21 15:29:00,Hardware,Medium,43.49,Endpoint Support,Closed
+TKT01011,10072,2011-02-10 11:08:00,Payroll,Medium,7.38,Payroll Support,Resolved
+TKT01012,10072,2011-02-01 17:05:00,Hardware,High,14.34,Endpoint Support,Resolved
+TKT01013,10072,2011-01-29 17:46:00,Hardware,Medium,,IT Service Desk,In Progress
+TKT01014,10048,2011-06-17 13:52:00,Hardware,Medium,40.01,Endpoint Support,Resolved
+TKT01015,10048,2011-06-02 09:02:00,Other,Medium,24.8,IT Service Desk,Resolved
+TKT01016,10048,2011-06-09 17:13:00,Hardware,Medium,,IT Service Desk,Open
+TKT01017,10048,2011-06-22 10:31:00,Access,Critical,1.45,IT Access Management,Resolved
+TKT01018,10048,2011-06-11 15:07:00,Access,High,,IT Service Desk,In Progress
+TKT01019,10048,2011-05-26 09:08:00,Hardware,Low,112.63,IT Service Desk,Resolved
+TKT01020,10048,2011-06-24 12:04:00,Access,Medium,22.62,IT Access Management,Resolved
+TKT01021,10204,2011-01-18 14:21:00,Learning,Medium,18.72,HR Support,Resolved
+TKT01022,10204,2011-01-15 15:56:00,Learning,Medium,12.29,Learning & Development,Resolved
+TKT01023,10204,2011-02-22 13:55:00,Hardware,Low,,Endpoint Support,In Progress
+TKT01024,10204,2011-01-29 15:41:00,Hardware,Medium,21.17,Endpoint Support,Resolved
+TKT01025,10264,2012-01-23 09:16:00,Learning,Medium,25.59,HR Support,Resolved
+TKT01026,10264,2012-02-20 10:58:00,Payroll,High,9.02,HR Support,Resolved
+TKT01027,10264,2012-02-04 13:53:00,Payroll,Medium,,HR Support,In Progress
+TKT01028,10264,2012-02-12 10:15:00,Access,Medium,11.2,IT Service Desk,Resolved
+TKT01029,10264,2012-01-26 12:40:00,Access,Medium,,IT Access Management,In Progress
+TKT01030,10264,2012-02-16 17:42:00,Hardware,Medium,16.69,Endpoint Support,Resolved
+TKT01031,10264,2012-02-06 10:34:00,Other,Medium,17.42,HR Support,Resolved
+TKT01032,10033,2013-02-20 11:40:00,Other,Medium,14.7,IT Service Desk,Closed
+TKT01033,10174,2014-10-19 17:12:00,Access,Low,,IT Access Management,Open
+TKT01034,10174,2014-11-09 11:59:00,Payroll,Medium,23.09,HR Support,Resolved
+TKT01035,10174,2014-10-18 09:58:00,Other,Medium,36.32,IT Service Desk,Resolved
+TKT01036,10174,2014-10-06 13:07:00,Learning,High,8.44,Learning & Development,Resolved
+TKT01037,10135,2014-08-19 12:39:00,Access,Low,25.45,IT Service Desk,Resolved
+TKT01038,10135,2014-07-07 09:59:00,Other,Medium,7.1,HR Support,Resolved
+TKT01039,10135,2014-08-20 09:59:00,Access,Medium,,IT Service Desk,In Progress
+TKT01040,10301,2008-09-25 11:07:00,Access,Medium,29.77,IT Service Desk,Closed
+TKT01041,10010,2010-04-26 08:05:00,Payroll,High,,Payroll Support,In Progress
+TKT01042,10010,2010-05-08 17:58:00,Other,Medium,9.66,IT Service Desk,Resolved
+TKT01043,10043,2015-05-03 15:55:00,Hardware,Medium,15.76,IT Service Desk,Resolved
+TKT01044,10043,2015-04-25 09:38:00,Payroll,Medium,,HR Support,In Progress
+TKT01045,10043,2015-04-10 17:44:00,Hardware,High,12.55,IT Service Desk,Resolved
+TKT01046,10271,2014-10-05 11:56:00,HR policy,Medium,6.32,HR Support,Closed
+TKT01047,10271,2014-10-29 14:22:00,HR policy,Critical,2.82,HR Support,Closed
+TKT01048,10271,2014-11-13 10:30:00,Hardware,High,6.99,Endpoint Support,Closed
