@@ -1,33 +1,43 @@
 # Virtual Environment
+
 .venv/
 
 # Python
-__pycache__/
+
+**pycache**/
 *.py[cod]
 
 # VS Code
+
 .vscode/
 
 # Jupyter
+
 .ipynb_checkpoints/
 
 # Environment variables
+
 .env
 
 # Test cache
+
 .pytest_cache/
 
 # Coverage
+
 .coverage
 htmlcov/
 
 # Logs
+
 *.log
 
 # OS files
+
 .DS_Store
 Thumbs.db
 
 # Raw project datasets
+
 data/raw/*.csv
 data/raw/*.json
