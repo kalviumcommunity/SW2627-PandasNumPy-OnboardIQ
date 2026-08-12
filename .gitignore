@@ -29,3 +29,8 @@ htmlcov/
 Thumbs.db
 
 *.pyc
+
+# SQLite database
+database/*.db
+database/*.sqlite
+database/*.sqlite3

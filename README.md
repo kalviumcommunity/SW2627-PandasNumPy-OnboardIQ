@@ -24,6 +24,7 @@ Build an interactive analytics dashboard that consolidates onboarding data, anal
 
 ```text
 src/
+    database/
 data/
     raw/
     processed/
@@ -55,11 +56,11 @@ The project currently works with five datasets covering the major dimensions of 
 5. **Learning Management Dataset**
    - Training assignments, completion status, assessment scores, and completion time
 
-All datasets are currently stored in the raw data layer and are subject to validation and processing before analytical use.
+All datasets are stored in the raw data layer and are validated and processed before analytical use.
 
 ## Data Validation & Profiling
 
-Dataset intake, validation, and profiling have been completed for all five source datasets.
+Dataset intake, validation, profiling, cleaning, and standardization have been performed across all five source datasets.
 
 The profiling workflow includes:
 
@@ -91,19 +92,150 @@ The profiling workflow includes:
 - No learning records were found where course completion occurred before assignment.
 - 1,788 onboarding tasks were completed before their due dates.
 - 960 onboarding tasks were completed after their due dates.
-- Late onboarding tasks will be retained as a potential indicator of onboarding delays and operational bottlenecks.
+- Early completions are retained as a potential indicator of onboarding efficiency.
+- Late onboarding tasks are retained as a potential indicator of onboarding delays and operational bottlenecks.
 
 ### Data Quality Findings
 
-The profiling stage identified data-quality considerations that will be addressed during processing and cleaning, including:
+The profiling stage identified data-quality considerations that were addressed or documented during preprocessing, including:
 
 - Missing values in fields where nulls may represent legitimate business states
-- Date columns currently stored as string/object types
+- Date columns requiring datetime standardization
 - Categorical values requiring whitespace normalization
 - Controlled-value standardization
 - Business-rule validation for task, learning, and support statuses
 
-Raw source datasets are not modified during the profiling stage.
+Raw source datasets remain unchanged. Processing and standardization are performed through the data-processing workflow.
+
+## Data Preprocessing & Standardization
+
+A preprocessing workflow has been implemented to improve consistency across the five source datasets.
+
+### Missing Value Handling
+
+Missing values were analyzed across all datasets and handled according to the meaning of each field rather than applying a single global imputation strategy.
+
+Examples include:
+
+- Preserving legitimate missing termination dates for active employees
+- Preserving missing completion dates for incomplete onboarding and learning records
+- Handling optional assessment and completion-time fields according to course status
+- Retaining missing resolution times where support tickets are not yet resolved
+
+This approach prevents legitimate business states from being incorrectly converted into artificial values.
+
+### Data Type Standardization
+
+Relevant fields were standardized to appropriate analytical types, including:
+
+- Employee identifiers → integer
+- Foreign-key employee identifiers → integer
+- Numeric measures → integer/float
+- Dates → datetime-compatible format
+- Categorical attributes → standardized string values
+
+Whitespace and inconsistent categorical representations were also identified and normalized where required.
+
+### Preprocessing Objective
+
+```text
+Raw CSV Data
+     ↓
+Validation
+     ↓
+Missing Value Handling
+     ↓
+Data Type Standardization
+     ↓
+Cleaned / Processed Data
+     ↓
+SQLite Database
+     ↓
+Analytics
+```
+
+## SQLite Database
+
+A relational SQLite database has been designed and populated to provide the analytical data layer for OnboardIQ.
+
+### Database Schema
+
+```text
+employees
+    │
+    ├── onboarding_tasks
+    ├── tool_usage
+    ├── support_tickets
+    └── learning_records
+```
+
+The `employees` table acts as the parent/reference table.
+
+The remaining four tables reference `employees.employee_id` through foreign-key relationships.
+
+### Database Tables
+
+| SQLite Table | Source Dataset | Rows |
+| --- | --- | ---: |
+| `employees` | Employee | 311 |
+| `onboarding_tasks` | Onboarding Progress | 4,222 |
+| `tool_usage` | Internal Tool Usage | 13,995 |
+| `support_tickets` | Support Tickets | 1,048 |
+| `learning_records` | Learning Management | 3,192 |
+
+### Database Validation
+
+The populated database has been validated for:
+
+- Correct table creation
+- Correct row counts
+- Primary-key uniqueness
+- Foreign-key relationships
+- Employee-to-dataset relationships
+- Successful relational queries
+
+Validation results:
+
+- **0 duplicate primary-key IDs** across all five tables
+- **0 invalid employee foreign-key references**
+- Successful employee-to-onboarding relational queries
+- All five source datasets successfully loaded into SQLite
+
+### SQLite Data Loading Workflow
+
+A reusable Python loader has been implemented to populate the database from the validated CSV datasets.
+
+The loading sequence is:
+
+```text
+Employee CSV
+     ↓
+employees table
+     ↓
+Dependent datasets
+     ├── onboarding_tasks
+     ├── tool_usage
+     ├── support_tickets
+     └── learning_records
+```
+
+Employees are loaded first so that foreign-key relationships can be maintained when dependent datasets are inserted.
+
+Database transactions are used during the loading process so that failures can be rolled back instead of leaving a partially populated database.
+
+### Database Files
+
+```text
+src/
+└── database/
+    ├── database.py
+    └── loader.py
+
+database/
+└── schema.sql
+```
+
+The generated SQLite database is treated as a runtime/generated artifact and is not committed to the repository.
 
 ## Current Progress
 
@@ -122,19 +254,26 @@ Raw source datasets are not modified during the profiling stage.
 
 - ✅ Five source datasets identified and added to the project.
 - ✅ Raw data directory structure created.
-- ✅ CSV data ingestion workflow established.
+- ✅ CSV/JSON data ingestion workflow established.
 - ✅ Dataset loading and initial validation implemented.
 - ✅ Dataset profiling notebook created.
 - ✅ All five datasets profiled for data quality.
 - ✅ Primary-key and duplicate validation completed.
 - ✅ Referential-integrity checks completed.
 - ✅ Missing-value analysis completed.
-- ✅ Date and numeric validation completed.
+- ✅ Missing-value handling implemented.
+- ✅ Date validation completed.
+- ✅ Numeric validation completed.
 - ✅ Categorical and status profiling completed.
-- 🚧 Data cleaning and transformation in progress / next stage.
-- ⏳ Processed analytical dataset creation pending.
-- ⏳ SQLite database integration pending.
-- ⏳ Analytical metrics and KPI development pending.
+- ✅ Data type standardization implemented.
+- ✅ SQLite relational schema designed.
+- ✅ SQLite tables created.
+- ✅ All five datasets populated into SQLite.
+- ✅ SQLite row-count validation completed.
+- ✅ SQLite primary-key validation completed.
+- ✅ SQLite foreign-key validation completed.
+- ✅ Relational database query validation completed.
+- ⏳ Analytical KPI and metric development pending.
 
 ### Dashboard & Application
 
@@ -164,7 +303,9 @@ Review
 Merge
 ```
 
-Development work is organized through GitHub Issues, milestones, branches, commits, and pull requests.
+Development work is organized through GitHub Issues, milestones, feature branches, commits, and pull requests.
+
+Each major implementation task is developed independently and merged into the main branch through a pull request.
 
 ## Design
 
@@ -185,6 +326,32 @@ notebooks/
 
 The notebook can be executed from a fresh kernel using **Run All** to reproduce the profiling results.
 
+## Database Setup
+
+The SQLite database can be initialized using:
+
+```bash
+python src/database/database.py
+```
+
+The validated source datasets can then be loaded using:
+
+```bash
+python -m src.database.loader
+```
+
+Expected successful loading output:
+
+```text
+Loaded 311 records into employees.
+Loaded 4222 records into onboarding_tasks.
+Loaded 13995 records into tool_usage.
+Loaded 1048 records into support_tickets.
+Loaded 3192 records into learning_records.
+
+All datasets loaded successfully.
+```
+
 ## Run the App
 
 The Streamlit application will be run using:
@@ -197,7 +364,7 @@ Application implementation is currently pending.
 
 ## Project Status
 
-🚧 **Data Preparation & Development Phase**
+🚧 **Data Engineering & Application Development Phase**
 
 ### Completed
 
@@ -209,15 +376,21 @@ Application implementation is currently pending.
 - ✅ CSV/JSON Data Ingestion Workflow Established
 - ✅ Dataset Profiling Completed
 - ✅ Data Quality Assessment Completed
+- ✅ Missing Value Handling Completed
+- ✅ Data Type Standardization Completed
+- ✅ SQLite Schema Designed
+- ✅ SQLite Database Tables Created
+- ✅ SQLite Data Population Completed
+- ✅ Database Relationship Validation Completed
 - ✅ GitHub Project Workflow Established
 
 ### In Progress / Next
 
-- 🚧 Data Cleaning & Transformation
-- ⏳ Processed Dataset Creation
-- ⏳ SQLite Database Setup
 - ⏳ Analytical KPI Development
+- ⏳ Processed Analytical Dataset Refinement
 - ⏳ Streamlit Dashboard Development
+- ⏳ Interactive Dashboard Filters
+- ⏳ Productivity and Onboarding Analytics
 - ⏳ Power BI-Compatible Data Exports
 - ⏳ Testing & Validation
 - ⏳ Final Dashboard Integration
@@ -237,9 +410,13 @@ Support Tickets
       +
 Learning Management
       ↓
-Data Cleaning & Transformation
+Data Validation & Profiling
       ↓
-SQLite / Analytical Layer
+Missing Value Handling
+      +
+Data Type Standardization
+      ↓
+SQLite Relational Data Layer
       ↓
 KPI & Metric Calculation
       ↓
