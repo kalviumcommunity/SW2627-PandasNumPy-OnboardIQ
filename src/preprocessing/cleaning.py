@@ -165,6 +165,42 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     return df.copy()
 
 
+def add_date_features(df: pd.DataFrame, dataset_name: str) -> pd.DataFrame:
+    """Create meaningful date-derived features."""
+    result = df.copy()
+
+    if dataset_name == "employee" and "DateofHire" in result.columns:
+        end_date = result.get("DateofTermination", pd.Series(pd.NaT, index=result.index))
+        end_date = end_date.fillna(pd.Timestamp.today().normalize())
+        result["tenure_days"] = (end_date - result["DateofHire"]).dt.days
+
+    elif dataset_name == "onboarding_progress" and {"due_date", "completed_date"}.issubset(result.columns):
+        result["days_overdue"] = (result["completed_date"] - result["due_date"]).dt.days.clip(lower=0)
+
+    elif dataset_name == "learning_management" and {"assigned_date", "completed_date"}.issubset(result.columns):
+        result["learning_duration_days"] = (result["completed_date"] - result["assigned_date"]).dt.days
+
+    return result
+
+
+def detect_iqr_outliers(df: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
+    """Flag IQR-based statistical outliers without removing rows."""
+    result = df.copy()
+    for column in columns:
+        if column not in result.columns:
+            continue
+        values = result[column].dropna()
+        if values.empty:
+            continue
+        q1 = values.quantile(0.25)
+        q3 = values.quantile(0.75)
+        iqr = q3 - q1
+        lower = q1 - 1.5 * iqr
+        upper = q3 + 1.5 * iqr
+        result[f'{column}_outlier'] = result[column].notna() & ((result[column] < lower) | (result[column] > upper))
+    return result
+
+
 def validate_processed_data(
     df: pd.DataFrame,
     dataset_name: str,
@@ -279,6 +315,14 @@ def preprocess_dataset(
         DATASET_SCHEMAS[dataset_name],
     )
     result = handle_missing_values(result)
+    result = add_date_features(result, dataset_name)
+
+    outlier_columns = [
+        "Salary", "Absences", "DaysLateLast30",
+        "SpecialProjectsCount", "resolution_time_hours",
+        "assessment_score", "completion_time_hours",
+    ]
+    result = detect_iqr_outliers(result, outlier_columns)
 
     validate_processed_data(result, dataset_name)
 
@@ -303,3 +347,42 @@ def process_csv(
     processed.to_csv(output_path, index=False)
 
     return processed
+
+def test_date_features_are_created():
+    df = pd.DataFrame(
+        {
+            "EmpID": [1],
+            "DateofHire": ["2024-01-01"],
+            "DateofTermination": ["2024-01-11"],
+        }
+    )
+
+    result = preprocess_dataset(df, "employee")
+
+    assert pd.api.types.is_datetime64_any_dtype(
+        result["DateofHire"]
+    )
+    assert result.loc[0, "tenure_days"] == 10
+
+
+def test_iqr_outlier_is_flagged_without_removing_rows():
+    df = pd.DataFrame(
+        {
+            "EmpID": [1, 2, 3, 4, 5],
+            "Salary": [50000, 51000, 52000, 53000, 200000],
+            "DateofHire": [
+                "2024-01-01",
+                "2024-01-01",
+                "2024-01-01",
+                "2024-01-01",
+                "2024-01-01",
+            ],
+            "DateofTermination": [None, None, None, None, None],
+        }
+    )
+
+    result = preprocess_dataset(df, "employee")
+
+    assert len(result) == 5
+    assert result.loc[4, "Salary_outlier"] is True
+    assert result.loc[0, "Salary_outlier"] is False
