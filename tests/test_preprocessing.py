@@ -53,3 +53,32 @@ def test_meaningful_nulls_are_preserved():
     result = preprocess_dataset(df, "employee")
 
     assert pd.isna(result.loc[0, "DateofTermination"])
+
+
+
+def test_date_features_are_created():
+    df = pd.DataFrame({
+        "EmpID": [1],
+        "DateofHire": ["2024-01-01"],
+        "DateofTermination": ["2024-01-11"],
+    })
+
+    result = preprocess_dataset(df, "employee")
+
+    assert pd.api.types.is_datetime64_any_dtype(result["DateofHire"])
+    assert result.loc[0, "tenure_days"] == 10
+
+
+def test_iqr_outlier_is_flagged_without_removing_rows():
+    df = pd.DataFrame({
+        "EmpID": [1, 2, 3, 4, 5],
+        "Salary": [50000, 51000, 52000, 53000, 200000],
+        "DateofHire": ["2024-01-01"] * 5,
+        "DateofTermination": [None] * 5,
+    })
+
+    result = preprocess_dataset(df, "employee")
+
+    assert len(result) == 5
+    assert bool(result.loc[4, "Salary_outlier"]) is True
+    assert bool(result.loc[0, "Salary_outlier"]) is False
