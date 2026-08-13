@@ -37,7 +37,14 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
+*.pyc
 # Raw project datasets
 
 data/raw/*.csv
 data/raw/*.json
+
+
+# SQLite database
+database/*.db
+database/*.sqlite
+database/*.sqlite3
