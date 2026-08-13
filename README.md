@@ -20,66 +20,22 @@ Build an interactive analytics dashboard that consolidates onboarding data, anal
 - Git & GitHub
 - Figma
 
-## Repository Structure
-
-```text
-src/
-    database/
-data/
-    raw/
-    processed/
-database/
-notebooks/
-reports/
-tests/
-docs/
-design/
-```
-
 ## Data Sources
 
-The project currently works with five datasets covering the major dimensions of the onboarding process:
+The project currently works with five datasets:
 
-1. **Employee Dataset**
-   - Employee master/reference information
-   - Used as the primary employee dimension
-
-2. **Onboarding Progress Dataset**
-   - Onboarding tasks, stages, statuses, due dates, and completion progress
-
-3. **Internal Tool Usage Dataset**
-   - Aggregate employee activity across approved internal productivity tools
-
-4. **Support Ticket Dataset**
-   - Structured support requests, issue categories, priorities, statuses, and resolution times
-
-5. **Learning Management Dataset**
-   - Training assignments, completion status, assessment scores, and completion time
-
-All datasets are stored in the raw data layer and are validated and processed before analytical use.
+1. **Employee Dataset** — employee master/reference information.
+2. **Onboarding Progress Dataset** — onboarding tasks, stages, statuses, due dates, and completion progress.
+3. **Internal Tool Usage Dataset** — employee activity across internal productivity tools.
+4. **Support Ticket Dataset** — support requests, issue categories, priorities, statuses, and resolution times.
+5. **Learning Management Dataset** — training assignments, completion status, assessment scores, and completion time.
 
 ## Data Validation & Profiling
 
-Dataset intake, validation, profiling, cleaning, and standardization have been performed across all five source datasets.
-
-The profiling workflow includes:
-
-- Dataset shape and schema inspection
-- Column and data-type validation
-- Primary-key uniqueness checks
-- Null primary-key checks
-- Missing-value analysis
-- Referential-integrity validation
-- Date-order validation
-- Numeric range validation
-- Categorical-value profiling
-- Status and business-rule validation
-- Data-quality findings documentation
-
-### Current Profiling Results
+Dataset intake, validation, profiling, cleaning, and standardization have been performed across all five datasets.
 
 | Dataset | Rows | Columns | Primary Key | Duplicate IDs | Null IDs | Referential Integrity |
-| --- | ---: | ---: | --- | ---: | ---: | --- |
+|---|---:|---:|---|---:|---:|---|
 | Employee | 311 | 36 | EmpID | 0 | 0 | N/A |
 | Onboarding Progress | 4,222 | 9 | onboarding_task_id | 0 | 0 | Pass |
 | Internal Tool Usage | 13,995 | 9 | usage_id | 0 | 0 | Pass |
@@ -93,70 +49,68 @@ The profiling workflow includes:
 - 1,788 onboarding tasks were completed before their due dates.
 - 960 onboarding tasks were completed after their due dates.
 - Early completions are retained as a potential indicator of onboarding efficiency.
-- Late onboarding tasks are retained as a potential indicator of onboarding delays and operational bottlenecks.
-
-### Data Quality Findings
-
-The profiling stage identified data-quality considerations that were addressed or documented during preprocessing, including:
-
-- Missing values in fields where nulls may represent legitimate business states
-- Date columns requiring datetime standardization
-- Categorical values requiring whitespace normalization
-- Controlled-value standardization
-- Business-rule validation for task, learning, and support statuses
-
-Raw source datasets remain unchanged. Processing and standardization are performed through the data-processing workflow.
+- Late tasks are retained as a potential indicator of onboarding delays.
 
 ## Data Preprocessing & Standardization
 
-A preprocessing workflow has been implemented to improve consistency across the five source datasets.
+A reusable preprocessing workflow has been implemented across the five source datasets.
 
 ### Missing Value Handling
 
-Missing values were analyzed across all datasets and handled according to the meaning of each field rather than applying a single global imputation strategy.
+Missing values are handled according to the meaning of each field rather than through a single global imputation strategy.
 
 Examples include:
 
-- Preserving legitimate missing termination dates for active employees
-- Preserving missing completion dates for incomplete onboarding and learning records
-- Handling optional assessment and completion-time fields according to course status
-- Retaining missing resolution times where support tickets are not yet resolved
-
-This approach prevents legitimate business states from being incorrectly converted into artificial values.
+- Preserving missing termination dates for active employees.
+- Preserving missing completion dates for incomplete onboarding and learning records.
+- Handling optional assessment and completion-time fields according to course status.
+- Retaining missing resolution times where tickets are not yet resolved.
 
 ### Data Type Standardization
 
-Relevant fields were standardized to appropriate analytical types, including:
+Relevant fields are standardized to appropriate analytical types:
 
-- Employee identifiers → integer
-- Foreign-key employee identifiers → integer
+- Employee and foreign-key identifiers → integer
 - Numeric measures → integer/float
 - Dates → datetime-compatible format
-- Categorical attributes → standardized string values
+- Categorical attributes → standardized strings
 
-Whitespace and inconsistent categorical representations were also identified and normalized where required.
+### Duplicate Detection & Text Normalization
 
-### Preprocessing Objective
+The preprocessing workflow includes:
+
+- Exact duplicate-row detection and removal.
+- Primary-key duplicate validation.
+- Leading/trailing whitespace normalization.
+- Internal whitespace standardization.
+- Preservation of meaningful null values.
+- Dataset-specific text normalization without modifying raw source files.
+
+Validation found **0 exact duplicate rows** and **0 duplicate primary-key values** across all five datasets.
+
+The Employee `Department` field contained trailing whitespace in `Production       ` and is normalized to `Production`. A whitespace issue in the `Position` field was also normalized.
+
+## Automated Testing
+
+The preprocessing and ingestion workflows are supported by automated tests using `pytest`.
+
+The suite covers configuration, file utilities, CSV/JSON ingestion, validation, logging, preprocessing, text standardization, null preservation, duplicate removal, and end-to-end preprocessing behavior.
+
+Current test result:
 
 ```text
-Raw CSV Data
-     ↓
-Validation
-     ↓
-Missing Value Handling
-     ↓
-Data Type Standardization
-     ↓
-Cleaned / Processed Data
-     ↓
-SQLite Database
-     ↓
-Analytics
+20 passed
+```
+
+Run tests with:
+
+```bash
+python -m pytest -v
 ```
 
 ## SQLite Database
 
-A relational SQLite database has been designed and populated to provide the analytical data layer for OnboardIQ.
+A relational SQLite database has been designed and populated as the analytical data layer.
 
 ### Database Schema
 
@@ -169,14 +123,12 @@ employees
     └── learning_records
 ```
 
-The `employees` table acts as the parent/reference table.
-
-The remaining four tables reference `employees.employee_id` through foreign-key relationships.
+The `employees` table is the parent/reference table. The other four tables reference `employees.employee_id`.
 
 ### Database Tables
 
 | SQLite Table | Source Dataset | Rows |
-| --- | --- | ---: |
+|---|---|---:|
 | `employees` | Employee | 311 |
 | `onboarding_tasks` | Onboarding Progress | 4,222 |
 | `tool_usage` | Internal Tool Usage | 13,995 |
@@ -185,43 +137,12 @@ The remaining four tables reference `employees.employee_id` through foreign-key 
 
 ### Database Validation
 
-The populated database has been validated for:
+- 0 duplicate primary-key IDs across all five tables.
+- 0 invalid employee foreign-key references.
+- Successful employee-to-onboarding relational queries.
+- All five source datasets successfully loaded into SQLite.
 
-- Correct table creation
-- Correct row counts
-- Primary-key uniqueness
-- Foreign-key relationships
-- Employee-to-dataset relationships
-- Successful relational queries
-
-Validation results:
-
-- **0 duplicate primary-key IDs** across all five tables
-- **0 invalid employee foreign-key references**
-- Successful employee-to-onboarding relational queries
-- All five source datasets successfully loaded into SQLite
-
-### SQLite Data Loading Workflow
-
-A reusable Python loader has been implemented to populate the database from the validated CSV datasets.
-
-The loading sequence is:
-
-```text
-Employee CSV
-     ↓
-employees table
-     ↓
-Dependent datasets
-     ├── onboarding_tasks
-     ├── tool_usage
-     ├── support_tickets
-     └── learning_records
-```
-
-Employees are loaded first so that foreign-key relationships can be maintained when dependent datasets are inserted.
-
-Database transactions are used during the loading process so that failures can be rolled back instead of leaving a partially populated database.
+A reusable Python loader populates the database from the validated CSV datasets. Employees are loaded first so foreign-key relationships can be maintained, and transactions are used during loading.
 
 ### Database Files
 
@@ -241,51 +162,46 @@ The generated SQLite database is treated as a runtime/generated artifact and is 
 
 ### Product & Design
 
-- ✅ Product Requirements Document (PRD) completed.
-- ✅ MVP scope finalized, including features and exclusions.
+- ✅ PRD completed.
+- ✅ MVP scope finalized.
 - ✅ Data requirements and source definitions documented.
 - ✅ Data dictionary completed for all five datasets.
 - ✅ Low-fidelity wireframes designed.
-- ✅ Unified dashboard and supporting pages structured for the MVP.
-- ✅ Settings page updated with Light and Dark theme options.
-- ✅ Reports & Export page updated to support CSV and PDF exports.
+- ✅ Dashboard and supporting pages structured for the MVP.
+- ✅ Light/Dark theme options defined.
+- ✅ CSV and PDF report export requirements defined.
 
 ### Data Engineering & Analysis
 
-- ✅ Five source datasets identified and added to the project.
-- ✅ Raw data directory structure created.
-- ✅ CSV/JSON data ingestion workflow established.
-- ✅ Dataset loading and initial validation implemented.
-- ✅ Dataset profiling notebook created.
-- ✅ All five datasets profiled for data quality.
+- ✅ Five source datasets finalized.
+- ✅ Raw data structure created.
+- ✅ CSV/JSON ingestion workflow established.
+- ✅ Initial validation implemented.
+- ✅ Dataset profiling completed.
 - ✅ Primary-key and duplicate validation completed.
 - ✅ Referential-integrity checks completed.
-- ✅ Missing-value analysis completed.
-- ✅ Missing-value handling implemented.
-- ✅ Date validation completed.
-- ✅ Numeric validation completed.
+- ✅ Missing-value analysis and handling completed.
+- ✅ Date and numeric validation completed.
 - ✅ Categorical and status profiling completed.
-- ✅ Data type standardization implemented.
+- ✅ Data type standardization completed.
+- ✅ Duplicate-row detection/removal completed.
+- ✅ Text and categorical normalization completed.
 - ✅ SQLite relational schema designed.
 - ✅ SQLite tables created.
 - ✅ All five datasets populated into SQLite.
-- ✅ SQLite row-count validation completed.
-- ✅ SQLite primary-key validation completed.
-- ✅ SQLite foreign-key validation completed.
-- ✅ Relational database query validation completed.
+- ✅ SQLite row-count, primary-key, and foreign-key validation completed.
+- ✅ Relational query validation completed.
+- ✅ Automated test suite passing.
 - ⏳ Analytical KPI and metric development pending.
 
 ### Dashboard & Application
 
-- ⏳ Dashboard implementation pending.
-- ⏳ Streamlit application development pending.
+- ⏳ Streamlit dashboard implementation pending.
 - ⏳ Interactive filters and visualizations pending.
 - ⏳ Productivity and onboarding KPI implementation pending.
 - ⏳ Final reports and export integration pending.
 
 ## GitHub Development Workflow
-
-The project follows a structured GitHub workflow:
 
 ```text
 Issue
@@ -303,9 +219,31 @@ Review
 Merge
 ```
 
-Development work is organized through GitHub Issues, milestones, feature branches, commits, and pull requests.
+Development is organized through GitHub Issues, milestones, feature branches, commits, and pull requests.
 
-Each major implementation task is developed independently and merged into the main branch through a pull request.
+## Repository Structure
+
+```text
+src/
+    database/
+    ingestion/
+    preprocessing/
+    validation/
+    analysis/
+    transformation/
+    visualization/
+data/
+    raw/
+    processed/
+    sample/
+database/
+notebooks/
+reports/
+tests/
+docs/
+assets/
+config/
+```
 
 ## Design
 
@@ -313,11 +251,9 @@ Each major implementation task is developed independently and merged into the ma
 
 **Figma Link:**
 
-> https://www.figma.com/make/i6QNepl4k69jR7MHq3uifz/Data-Analytics-Dashboard---Low-Fid--Copy-?fullscreen=1&t=tpzJzT7vpdmrSJqB-1&code-node-id=0-6
+https://www.figma.com/make/i6QNepl4k69jR7MHq3uifz/Data-Analytics-Dashboard---Low-Fid--Copy-?fullscreen=1&t=tpzJzT7vpdmrSJqB-1&code-node-id=0-6
 
 ## Data Profiling Notebook
-
-The initial data-quality profiling workflow is available at:
 
 ```text
 notebooks/
@@ -328,19 +264,19 @@ The notebook can be executed from a fresh kernel using **Run All** to reproduce 
 
 ## Database Setup
 
-The SQLite database can be initialized using:
+Initialize the SQLite database:
 
 ```bash
 python src/database/database.py
 ```
 
-The validated source datasets can then be loaded using:
+Load the validated datasets:
 
 ```bash
 python -m src.database.loader
 ```
 
-Expected successful loading output:
+Expected output:
 
 ```text
 Loaded 311 records into employees.
@@ -368,36 +304,33 @@ Application implementation is currently pending.
 
 ### Completed
 
-- ✅ PRD Completed
-- ✅ MVP Scope Defined
-- ✅ Low-Fidelity Wireframes Completed
-- ✅ Data Sources Finalized
-- ✅ Data Dictionary Completed
-- ✅ CSV/JSON Data Ingestion Workflow Established
-- ✅ Dataset Profiling Completed
-- ✅ Data Quality Assessment Completed
-- ✅ Missing Value Handling Completed
-- ✅ Data Type Standardization Completed
-- ✅ SQLite Schema Designed
-- ✅ SQLite Database Tables Created
-- ✅ SQLite Data Population Completed
-- ✅ Database Relationship Validation Completed
-- ✅ GitHub Project Workflow Established
+- ✅ PRD
+- ✅ MVP scope
+- ✅ Low-fidelity wireframes
+- ✅ Data sources and data dictionary
+- ✅ CSV/JSON ingestion workflow
+- ✅ Dataset profiling and quality assessment
+- ✅ Missing-value handling
+- ✅ Data type standardization
+- ✅ Duplicate detection and removal
+- ✅ Text/categorical normalization
+- ✅ SQLite schema and tables
+- ✅ SQLite data population
+- ✅ Database relationship validation
+- ✅ Automated tests
+- ✅ GitHub development workflow
 
 ### In Progress / Next
 
-- ⏳ Analytical KPI Development
-- ⏳ Processed Analytical Dataset Refinement
-- ⏳ Streamlit Dashboard Development
-- ⏳ Interactive Dashboard Filters
-- ⏳ Productivity and Onboarding Analytics
-- ⏳ Power BI-Compatible Data Exports
-- ⏳ Testing & Validation
-- ⏳ Final Dashboard Integration
+- ⏳ Analytical KPI development
+- ⏳ Processed analytical dataset refinement
+- ⏳ Streamlit dashboard development
+- ⏳ Interactive dashboard filters
+- ⏳ Productivity and onboarding analytics
+- ⏳ Power BI-compatible exports
+- ⏳ Final dashboard integration
 
 ## Project Objective Outcome
-
-The final OnboardIQ product will provide a consolidated view of employee onboarding health by combining:
 
 ```text
 Employee Data
@@ -415,6 +348,8 @@ Data Validation & Profiling
 Missing Value Handling
       +
 Data Type Standardization
+      +
+Duplicate & Text Normalization
       ↓
 SQLite Relational Data Layer
       ↓
