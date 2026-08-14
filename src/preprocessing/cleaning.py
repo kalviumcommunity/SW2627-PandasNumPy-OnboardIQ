@@ -90,15 +90,38 @@ MISSING_RULES = {
 
 
 def standardize_text_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Remove surrounding whitespace from text/categorical columns."""
+    """
+    Normalize text and categorical columns.
+
+    Rules:
+    - Convert text-like columns to Pandas string dtype.
+    - Remove leading and trailing whitespace.
+    - Collapse repeated internal whitespace.
+    """
     result = df.copy()
 
     for column in result.select_dtypes(
         include=["object", "string", "category"]
     ).columns:
-        result[column] = result[column].astype("string").str.strip()
+        result[column] = (
+            result[column]
+            .astype("string")
+            .str.strip()
+            .str.replace(r"\s+", " ", regex=True)
+        )
 
     return result
+
+
+def remove_duplicate_rows(
+    df: pd.DataFrame,
+) -> pd.DataFrame:
+    """
+    Remove exact duplicate records while preserving the first occurrence.
+    """
+    result = df.copy()
+
+    return result.drop_duplicates().reset_index(drop=True)
 
 
 def convert_data_types(
@@ -286,6 +309,7 @@ def preprocess_dataset(
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
     result = standardize_text_columns(df)
+    result = remove_duplicate_rows(result)
     result = convert_data_types(
         result,
         DATASET_SCHEMAS[dataset_name],

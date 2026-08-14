@@ -11,7 +11,7 @@ Problem statement — A rapidly scaling startup stores employee onboarding progr
 | Field | Detail |
 | --- | --- |
 | Version | 1.0.0 |
-| Status | Waiting for Approval – Ready for Development |
+| Status | Approved – Development in Progress |
 | Created | 2026-08-04 |
 | Last Updated | 2026-08-06 |
 | Document Type | Product Requirements Document |
@@ -265,78 +265,159 @@ The source HR dataset includes additional attributes such as employee name, sala
 
 ## 6.2 Onboarding Progress Dataset
 
-This dataset captures the structured onboarding checklist and stage progression. A single employee can have many task records. The pipeline aggregates task-level records into employee-level completion and stage metrics while retaining task-level detail for bottleneck analysis.
+The Onboarding Progress Dataset captures structured onboarding checklist tasks and stage progression for employees in the eligible onboarding cohort. A single employee can have multiple task records. The dataset is synthetically generated for the MVP using the finalized Employee Dataset as the employee master, ensuring that `employee_id` values can be integrated across sources.
+
+The dataset is maintained at task level so that the analytical pipeline can calculate employee-level completion, stage progression, overdue tasks, blocked tasks, and onboarding bottlenecks while retaining the underlying task-level detail.
+
+**Source:** Synthetic CSV dataset generated for the MVP using the finalized Employee Dataset as the employee reference.
+
+**Record grain:** One onboarding task assigned to one employee.
+
+**Approximate dataset size:** 4,222 task records across 311 employees.
 
 | Field | Type | Description | Validation |
 | --- | --- | --- | --- |
-| onboarding_task_id | VARCHAR(50) | Unique checklist task record | Required; unique |
-| employee_id | VARCHAR(50) | Link to employee dataset | Required; must match employee dimension |
-| task_name | VARCHAR(150) | Human-readable task title | Required |
-| task_category | VARCHAR(80) | HR, IT, manager, compliance, role-specific | Required; controlled values |
-| current_stage | VARCHAR(50) | Preboarding, setup, orientation, enablement, productive | Required; controlled sequence |
-| task_status | VARCHAR(30) | Not Started, In Progress, Complete, Blocked, Overdue | Required; controlled values |
-| due_date | DATE | Expected completion date | Required for mandatory tasks |
-| completed_date | DATE | Actual completion date | Null only when incomplete |
-| completion_percentage | DECIMAL(5,2) | Employee or task completion indicator | Must be 0–100 |
+| onboarding_task_id | VARCHAR(50) | Unique onboarding checklist task record | Required; unique; non-null |
+| employee_id | VARCHAR(50) | Employee identifier linked to Employee Dataset | Required; valid foreign key |
+| task_name | VARCHAR(150) | Human-readable onboarding task title | Required; non-null |
+| task_category | VARCHAR(80) | HR, IT, Manager, Compliance, or Role-specific task category | Required; controlled values |
+| current_stage | VARCHAR(50) | Preboarding, Setup, Orientation, Enablement, or Productive stage | Required; controlled sequence |
+| task_status | VARCHAR(30) | Not Started, In Progress, Complete, Blocked, or Overdue | Required; controlled values |
+| due_date | DATE | Expected task completion date | Required; valid date |
+| completed_date | DATE | Actual completion date | Required when task is Complete; null otherwise |
+| completion_percentage | DECIMAL(5,2) | Percentage of task completion | Required; value between 0 and 100 |
 
-Owner: People Operations. Refresh frequency: daily. Data quality checks include valid status transitions, completion dates not preceding joining dates, completed tasks having a completion date, and percentage values within range.
+Owner: People Operations. Refresh frequency: Daily in the target MVP operating model. The current implementation uses a synthetic static CSV to represent the source.
+
+Data quality checks include unique onboarding task IDs, valid employee foreign keys, valid task categories and stages, valid status values, completion percentages between 0 and 100, completed tasks having a completion date, incomplete tasks not having a completion date, and completion dates not preceding the employee joining date.
+
+The dataset will be retained in the raw layer without modification. Validation, standardization, and derived employee-level onboarding metrics will be performed during processing.
+
+---
 
 ## 6.3 Internal Tool Usage Dataset
 
-Tool-usage data provides a limited, privacy-conscious adoption signal. The MVP uses aggregate daily activity indicators rather than message content, file content, or individual surveillance. Usage is interpreted as a productivity proxy only in combination with task, training, and support data.
+The Internal Tool Usage Dataset provides privacy-conscious aggregate indicators of employee adoption of required internal tools during the onboarding period. The MVP does not collect message content, document content, source-code content, or other detailed surveillance information. Only aggregate activity counts are retained.
+
+The dataset is synthetically generated for the MVP using the finalized Employee Dataset as the employee reference. Activity patterns are role- and department-aware so that tools that are not relevant to a particular role can have lower or zero activity.
+
+**Source:** Synthetic CSV dataset generated for the MVP using the finalized Employee Dataset as the employee reference. The dataset represents aggregated daily activity indicators rather than actual production employee surveillance data.
+
+**Record grain:** One employee per usage date.
+
+**Approximate dataset size:** 13,995 daily usage records covering 311 employees across a 45-day onboarding activity window.
 
 | Field | Type | Description | Validation |
 | --- | --- | --- | --- |
-| usage_id | VARCHAR(50) | Unique daily usage record | Required; unique |
-| employee_id | VARCHAR(50) | Link to employee dataset | Required; valid foreign key |
-| usage_date | DATE | Activity date | Required; valid date |
-| slack_activity_count | INTEGER | Aggregate collaboration interactions | Non-negative |
-| jira_usage_count | INTEGER | Aggregate issue/project activity | Non-negative |
-| github_activity_count | INTEGER | Aggregate code/repository activity where role-appropriate | Non-negative |
-| teams_activity_count | INTEGER | Aggregate Microsoft Teams interactions | Non-negative |
-| workspace_activity_count | INTEGER | Aggregate Google Workspace activity | Non-negative |
-| daily_active_usage | BOOLEAN | Whether minimum tool-adoption threshold was met | Required |
+| usage_id | VARCHAR(50) | Unique daily usage record | Required; unique; non-null |
+| employee_id | VARCHAR(50) | Employee identifier linked to Employee Dataset | Required; valid foreign key |
+| usage_date | DATE | Date on which tool activity was recorded | Required; valid date |
+| slack_activity_count | INTEGER | Aggregate Slack collaboration activity indicator | Required; non-negative |
+| jira_usage_count | INTEGER | Aggregate Jira issue/project activity indicator | Required; non-negative |
+| github_activity_count | INTEGER | Aggregate GitHub repository/code activity indicator where role-appropriate | Required; non-negative |
+| teams_activity_count | INTEGER | Aggregate Microsoft Teams activity indicator | Required; non-negative |
+| workspace_activity_count | INTEGER | Aggregate Google Workspace activity indicator | Required; non-negative |
+| daily_active_usage | BOOLEAN | Indicates whether the employee met the defined daily tool-adoption threshold | Required; TRUE or FALSE |
 
-Owner: IT / Platform Operations. Refresh frequency: daily. Data quality checks include non-negative counts, one record per employee per date per source grain, role-aware handling of tools not required for all employees, and an approved retention approach for de-identified analytics data.
+Owner: IT / Platform Operations. Refresh frequency: Daily in the target MVP operating model. The current implementation uses a synthetic static CSV to represent the source.
+
+Data quality checks include unique usage IDs, valid employee foreign keys, valid usage dates, non-negative activity counts, one record per employee per usage date, and valid boolean values for `daily_active_usage`.
+
+Tool activity will be interpreted only as a productivity-readiness proxy and will not be treated as a direct employee performance measure. Role-aware tool requirements will be applied during processing so that the absence of activity on a tool that is not required for a particular role does not incorrectly reduce an employee's adoption score.
+
+The dataset will be retained in the raw layer without modification. Cleaning, validation, role-aware standardization, and derived adoption metrics will be performed during processing.
+
+---
 
 ## 6.4 Support Ticket Dataset
 
-Support-ticket data explains friction encountered during onboarding, including account provisioning, equipment, access, HR policy, and learning issues. The dataset must not include ticket body text in the MVP; only structured metadata is required.
+The Support Ticket Dataset captures structured support friction encountered by employees during onboarding. It covers issues such as account access, hardware provisioning, payroll setup, HR policy questions, learning access, and other onboarding-related support requests.
+
+The MVP does not retain ticket body text or other unstructured message content. Only structured ticket metadata required for onboarding friction analysis is included.
+
+The dataset is synthetically generated for the MVP using the finalized Employee Dataset as the employee reference. Its structure and support-ticket categories are based on the public **Help Desk Tickets** dataset published through Mendeley Data, which provides a reference structure for help-desk ticket categories, priorities, assignment information, and resolution data.
+
+**Reference source:** Public Help Desk Tickets dataset, Mendeley Data, used as a structural and categorical reference.
+
+**MVP source:** Synthetic employee-linked CSV dataset generated using the finalized Employee Dataset and the reference help-desk structure.
+
+**Record grain:** One support ticket associated with one employee.
+
+**Approximate dataset size:** 1,048 support tickets across 311 employees.
 
 | Field | Type | Description | Validation |
 | --- | --- | --- | --- |
-| ticket_id | VARCHAR(50) | Unique support ticket ID | Required; unique |
-| employee_id | VARCHAR(50) | Requester / affected employee | Required; valid foreign key |
-| created_date | DATETIME | Ticket creation timestamp | Required; valid timestamp |
-| issue_category | VARCHAR(80) | Access, hardware, payroll, HR policy, learning, other | Required; controlled values |
-| priority | VARCHAR(20) | Low, Medium, High, Critical | Required; controlled values |
-| resolution_time_hours | DECIMAL(10,2) | Hours from creation to resolution | Non-negative if resolved |
-| assigned_team | VARCHAR(100) | Responsible support team | Required |
-| status | VARCHAR(30) | Open, In Progress, Resolved, Closed | Required; controlled values |
+| ticket_id | VARCHAR(50) | Unique support ticket identifier | Required; unique; non-null |
+| employee_id | VARCHAR(50) | Requester or affected employee linked to Employee Dataset | Required; valid foreign key |
+| created_date | DATETIME | Timestamp when the support ticket was created | Required; valid timestamp |
+| issue_category | VARCHAR(80) | Access, Hardware, Payroll, HR policy, Learning, or Other | Required; controlled values |
+| priority | VARCHAR(20) | Low, Medium, High, or Critical | Required; controlled values |
+| resolution_time_hours | DECIMAL(10,2) | Hours from ticket creation to resolution | Non-negative when resolved; null when unresolved |
+| assigned_team | VARCHAR(100) | Responsible support team | Required; non-null |
+| status | VARCHAR(30) | Open, In Progress, Resolved, or Closed | Required; controlled values |
 
-Owner: IT Service Desk / HR Support. Refresh frequency: daily. Quality checks include valid lifecycle timestamps, no negative resolution durations, required category and priority, and association with an employee included in the eligible onboarding cohort.
+Owner: IT Service Desk / HR Support. Refresh frequency: Daily in the target MVP operating model. The current implementation uses a synthetic static CSV to represent the source.
+
+Data quality checks include unique ticket IDs, valid employee foreign keys, valid ticket timestamps, controlled issue categories and priorities, non-negative resolution durations, consistency between ticket status and resolution time, and valid assigned-team values.
+
+Ticket body text is intentionally excluded from the MVP to reduce privacy risk and keep the analysis focused on structured operational friction.
+
+The dataset will be retained in the raw layer without modification. Validation, category standardization, resolution-time checks, and derived support-friction metrics will be performed during processing.
+
+---
 
 ## 6.5 Learning Management Dataset
 
-Learning data establishes whether mandatory compliance and role-specific enablement are complete. It supports comparisons between learning completion, assessment performance, onboarding stage, and time-to-productivity.
+The Learning Management Dataset captures employee learning assignments and completion progress for mandatory compliance, orientation, role-specific enablement, and optional professional development activities.
+
+The dataset is synthetically generated for the MVP using the finalized Employee Dataset as the employee reference. Each employee can have multiple learning records, allowing the analytical pipeline to calculate course completion, overdue learning, assessment performance, and learning progress alongside onboarding and tool-adoption metrics.
+
+**Source:** Synthetic CSV dataset generated for the MVP using the finalized Employee Dataset as the employee reference.
+
+**Record grain:** One learning assignment for one employee.
+
+**Approximate dataset size:** 3,192 learning records across 311 employees.
 
 | Field | Type | Description | Validation |
 | --- | --- | --- | --- |
-| learning_record_id | VARCHAR(50) | Unique learning assignment record | Required; unique |
-| employee_id | VARCHAR(50) | Link to employee dataset | Required; valid foreign key |
-| course_name | VARCHAR(150) | Course title | Required |
-| course_type | VARCHAR(50) | Compliance, orientation, role-specific, optional | Required; controlled values |
-| assigned_date | DATE | Date assigned | Required |
-| completed_date | DATE | Completion date | Null until completed |
-| assessment_score | DECIMAL(5,2) | Assessment result where applicable | 0–100 or null when not assessed |
-| completion_time_hours | DECIMAL(10,2) | Time to complete assignment | Non-negative when complete |
-| course_status | VARCHAR(30) | Assigned, In Progress, Completed, Overdue | Required; controlled values |
+| learning_record_id | VARCHAR(50) | Unique learning assignment record | Required; unique; non-null |
+| employee_id | VARCHAR(50) | Employee identifier linked to Employee Dataset | Required; valid foreign key |
+| course_name | VARCHAR(150) | Assigned course or learning activity title | Required; non-null |
+| course_type | VARCHAR(50) | Compliance, Orientation, Role-specific, or Optional | Required; controlled values |
+| assigned_date | DATE | Date the learning activity was assigned | Required; valid date |
+| completed_date | DATE | Date the learning activity was completed | Required when Completed; null otherwise |
+| assessment_score | DECIMAL(5,2) | Assessment result where applicable | Null when not assessed; otherwise 0–100 |
+| completion_time_hours | DECIMAL(10,2) | Time taken to complete the learning assignment | Non-negative when completed; null when incomplete |
+| course_status | VARCHAR(30) | Assigned, In Progress, Completed, or Overdue | Required; controlled values |
 
-Owner: Learning and Development. Refresh frequency: daily. Quality checks include valid assignment/completion order, course-status consistency, scores in range, and removal of duplicate assignment records.
+Owner: Learning and Development. Refresh frequency: Daily in the target MVP operating model. The current implementation uses a synthetic static CSV to represent the source.
+
+Data quality checks include unique learning record IDs, valid employee foreign keys, valid course types and statuses, valid assignment and completion dates, completed courses having completion dates, incomplete courses not having completion dates, assessment scores within the 0–100 range, and non-negative completion times.
+
+Course status must remain consistent with completion information. For example, a record with `course_status = Completed` must contain a valid `completed_date`, while Assigned, In Progress, and Overdue records must not contain a completion date.
+
+The dataset will be retained in the raw layer without modification. Cleaning, validation, duplicate detection, status standardization, and derived learning-completion metrics will be performed during processing.
+
+---
 
 ## 6.6 Cross-Source Data Quality and Integration Rules
 
-All sources must be validated against the schema contracts in Appendix B. Employee ID is the primary integration key. The analytical pipeline must create a data-quality report showing record counts, rejected-record counts, duplicate counts, null rates for critical fields, and referential-integrity failures. Department, role, location, task category, and support category values will be standardized through reference mappings. The processed analytical layer will retain source lineage and refresh timestamp so a stakeholder can identify the source and run that produced a metric.
+All five source datasets must be validated against the schema contracts defined in Appendix B before entering the processed analytical layer. The Employee Dataset acts as the master employee dimension and provides the primary integration key for all other datasets.
+
+The integration model is:
+
+```text
+Employee Dataset
+       |
+       +--------------------+
+       |                    |
+       v                    v
+Onboarding Progress     Tool Usage
+       |                    |
+       v                    v
+Support Tickets        Learning Management
+
+```
 
 # 7\. Success Metrics
 
