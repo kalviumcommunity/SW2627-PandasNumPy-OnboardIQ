@@ -1,0 +1,12 @@
+Department,risk_category,employee_count
+Admin Offices,Low,8
+Admin Offices,Medium,1
+Executive Office,Low,1
+IT/IS,Low,47
+IT/IS,Medium,3
+Production       ,Low,195
+Production       ,Medium,13
+Production       ,High,1
+Sales,Low,30
+Sales,Medium,1
+Software Engineering,Low,11
