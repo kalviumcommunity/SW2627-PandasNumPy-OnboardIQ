@@ -1,0 +1,7 @@
+factor,high_risk_mean,other_mean,difference
+learning_completion_rate,80.0,69.94,10.06
+onboarding_completion_rate,64.29,72.85,-8.56
+total_support_tickets,10.0,3.53,6.47
+open_support_tickets,9.0,2.8,6.2
+late_onboarding_tasks,5.0,3.08,1.92
+average_resolution_time_hours,20.49,19.83,0.67

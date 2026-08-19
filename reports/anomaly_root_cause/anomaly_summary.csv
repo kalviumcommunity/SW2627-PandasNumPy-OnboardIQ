@@ -1,0 +1,6 @@
+metric,anomaly_count,anomaly_percentage
+onboarding_completion_rate,1,0.32
+late_onboarding_tasks,2,0.64
+total_support_tickets,1,0.32
+open_support_tickets,1,0.32
+average_resolution_time_hours,15,4.82
