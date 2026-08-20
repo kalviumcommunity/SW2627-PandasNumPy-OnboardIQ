@@ -1,0 +1,7 @@
+issue_category,total_tickets,open_tickets,resolved_tickets,average_resolution_time_hours,critical_tickets,high_tickets
+Access,313,9,284,19.07,15,51
+Hardware,219,4,195,29.76,8,44
+Learning,152,2,138,15.46,5,25
+Other,136,6,122,18.87,5,22
+HR policy,119,1,105,14.85,4,19
+Payroll,109,0,99,23.05,4,25

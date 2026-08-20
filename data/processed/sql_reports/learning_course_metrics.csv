@@ -1,0 +1,12 @@
+course_name,course_type,total_records,completed_records,completion_rate,average_assessment_score,average_completion_time_hours
+Communication and Collaboration Tools,Orientation,311,201,64.63,85.28,2.49
+Company Orientation,Orientation,311,206,66.24,84.05,2.41
+Department Process Training,Role-specific,311,229,73.63,84.81,3.99
+HR Policies and Benefits,Orientation,311,223,71.7,85.27,1.98
+Role Fundamentals,Role-specific,311,211,67.85,85.0,6.01
+Role Tools and Systems,Role-specific,311,212,68.17,85.53,4.5
+Code of Conduct,Compliance,303,222,73.27,84.77,1.51
+Workplace Safety,Compliance,302,225,74.5,85.93,2.03
+Data Privacy and Protection,Compliance,301,234,77.74,84.59,1.99
+Information Security Awareness,Compliance,295,211,71.53,85.13,2.52
+Professional Development,Optional,125,57,45.6,83.77,4.92
