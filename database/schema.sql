@@ -140,3 +140,18 @@ CREATE TABLE IF NOT EXISTS learning_records (
     FOREIGN KEY (employee_id)
         REFERENCES employees(employee_id)
 );
+-- ============================================================
+-- ANALYTICAL INDEXES
+-- ============================================================
+
+CREATE INDEX IF NOT EXISTS idx_onboarding_tasks_employee_id
+    ON onboarding_tasks(employee_id);
+
+CREATE INDEX IF NOT EXISTS idx_learning_records_employee_id
+    ON learning_records(employee_id);
+
+CREATE INDEX IF NOT EXISTS idx_tool_usage_employee_id
+    ON tool_usage(employee_id);
+
+CREATE INDEX IF NOT EXISTS idx_support_tickets_employee_id
+    ON support_tickets(employee_id);
