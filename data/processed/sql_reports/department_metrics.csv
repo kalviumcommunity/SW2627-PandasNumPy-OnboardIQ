@@ -1,0 +1,7 @@
+department,employee_count,active_employee_count,average_salary,average_engagement_score,average_satisfaction_score,average_special_projects
+Production       ,209,126,59953.55,4.13,3.86,0.02
+IT/IS,50,40,97064.64,4.15,3.96,5.92
+Sales,31,26,69061.26,3.82,4.03,0.0
+Software Engineering,11,7,94989.45,4.06,4.09,4.18
+Admin Offices,9,7,71791.89,4.39,3.56,3.67
+Executive Office,1,1,250000.0,4.83,3.0,0.0

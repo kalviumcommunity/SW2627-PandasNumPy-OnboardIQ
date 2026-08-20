@@ -1,0 +1,312 @@
+employee_id,employee_name,department,usage_record_count,average_daily_active_usage,average_slack_activity,average_jira_usage,average_github_activity,average_teams_activity,average_workspace_activity
+10225,"Punjabhi, Louis  ",Production       ,45,0.71,2.38,1.58,1.62,0.36,3.29
+10267,"Bondwell, Betsy",Production       ,45,0.71,3.27,1.49,2.29,0.6,2.49
+10072,"Whittier, Scott",Production       ,45,0.69,3.02,1.84,2.44,0.93,2.09
+10088,"Alagbe,Trina",Production       ,45,0.69,3.22,1.62,2.51,0.69,1.8
+10043,"Zhou, Julia",IT/IS,45,0.67,2.91,1.73,2.51,0.87,2.02
+10049,"Fidelia,  Libby",Production       ,45,0.64,2.73,1.62,1.87,0.76,1.78
+10056,"Darson, Jene'ya ",Production       ,45,0.64,2.49,1.56,2.51,0.73,2.33
+10111,"Garcia, Raul",Production       ,45,0.64,2.62,1.6,1.96,0.76,1.87
+10117,"Sullivan, Timothy",Production       ,45,0.64,2.18,1.49,1.91,0.71,2.49
+10235,"England, Rex",Production       ,45,0.64,2.31,1.33,1.49,0.42,2.22
+10301,"Ybarra, Catherine ",Production       ,45,0.64,2.67,1.36,2.11,0.64,1.64
+10029,"Clukey, Elijian",Production       ,45,0.62,2.24,1.56,1.8,0.6,2.36
+10045,"Turpin, Jumil",IT/IS,45,0.62,2.42,1.78,1.8,0.47,2.73
+10062,"Athwal, Sam",Production       ,45,0.62,2.13,1.56,2.49,1.09,2.44
+10073,"Mancuso, Karen",Production       ,45,0.62,2.6,1.78,2.04,0.47,1.84
+10079,"Navathe, Kurt",IT/IS,45,0.62,2.89,1.27,2.18,0.58,1.93
+10087,"Leach, Dallas",Production       ,45,0.62,1.91,1.91,1.96,0.73,2.22
+10162,"Roby, Lori ",IT/IS,45,0.62,2.64,1.44,1.67,0.58,2.47
+10185,"Ndzi, Horia",Production       ,45,0.62,2.71,1.47,1.89,0.71,1.84
+10186,"Linares, Marilyn ",Production       ,45,0.62,2.71,1.42,1.8,0.69,2.2
+10194,"Andreola, Colby",Software Engineering,45,0.62,2.22,1.51,2.33,0.58,1.91
+10271,"Zima, Colleen",Production       ,45,0.62,1.93,1.64,1.87,0.29,2.82
+10287,"Trang, Mei",Production       ,45,0.62,2.38,1.49,1.53,0.69,2.73
+10295,"Saar-Beckles, Melinda",Production       ,45,0.62,2.71,1.36,2.24,0.29,1.67
+10003,"Billis, Helen",Production       ,45,0.6,2.0,1.58,1.56,0.42,2.0
+10005,"Patronick, Lucas",Software Engineering,45,0.6,2.49,1.51,1.53,0.62,2.91
+10023,"Beak, Kimberly  ",Production       ,45,0.6,2.6,1.71,2.04,0.78,2.62
+10044,"Tredinnick, Neville ",IT/IS,45,0.6,3.16,1.53,1.91,1.16,1.02
+10050,"Pham, Hong",Production       ,45,0.6,2.69,1.42,1.98,0.82,2.47
+10061,"Bates, Norman",Production       ,45,0.6,3.2,1.73,2.38,0.6,1.96
+10066,"Barton, Nader",Production       ,45,0.6,3.4,1.82,1.89,1.11,1.96
+10069,"Anderson, Carol ",Production       ,45,0.6,2.58,1.58,1.93,0.76,2.18
+10070,"DeGweck,  James",Production       ,45,0.6,2.73,1.16,1.62,0.42,2.18
+10076,"Carthy, B'rigit",Production       ,45,0.6,3.04,1.64,2.02,0.82,2.51
+10119,"Soto, Julia ",IT/IS,45,0.6,2.96,1.44,1.78,0.24,2.33
+10139,"Ivey, Rose ",Production       ,45,0.6,2.2,2.0,1.8,0.22,2.22
+10145,"Mckenna, Sandy",Production       ,45,0.6,2.09,1.33,1.69,1.2,2.02
+10171,"Perry, Shakira",Production       ,45,0.6,2.38,1.44,2.18,0.31,1.78
+10189,"Ferguson, Susan",Production       ,45,0.6,2.67,1.56,1.73,0.22,2.56
+10207,"Dobrin, Denisa  S",Production       ,45,0.6,2.36,1.49,1.89,0.62,1.96
+10214,"Hutter, Rosalie",Production       ,45,0.6,2.24,1.6,1.71,0.6,2.51
+10221,"Tavares, Desiree  ",Production       ,45,0.6,3.49,1.69,1.76,1.22,2.62
+10257,"Gaul, Barbara",Production       ,45,0.6,2.31,1.8,1.89,0.73,2.16
+10262,"Purinton, Janine",Production       ,45,0.6,2.58,1.98,2.02,0.8,2.42
+10281,"Owad, Clinton",Production       ,45,0.6,2.24,1.13,1.87,0.33,2.44
+10288,"Monroe, Peter",IT/IS,45,0.6,2.73,1.89,1.89,0.78,2.51
+10002,"Anderson, Linda  ",Production       ,45,0.58,2.49,1.18,2.0,0.62,1.71
+10018,"Girifalco, Evelyn",Production       ,45,0.58,1.69,1.27,1.64,0.2,2.44
+10024,"Szabo, Andrew",Software Engineering,45,0.58,2.84,1.56,1.69,0.2,2.51
+10026,"Adinolfi, Wilson  K",Production       ,45,0.58,2.13,1.76,2.0,0.89,2.44
+10027,"Smith, Joe",Production       ,45,0.58,2.76,1.4,1.76,0.51,2.89
+10034,"Johnson, George",Production       ,45,0.58,2.64,1.84,2.07,0.36,2.0
+10047,"Robinson, Alain  ",Production       ,45,0.58,1.93,1.56,1.71,0.93,2.36
+10053,"Maurice, Shana",Production       ,45,0.58,2.2,1.33,1.93,0.93,1.89
+10054,"Rose, Ashley  ",Production       ,45,0.58,3.29,1.49,1.76,0.51,1.78
+10059,"Gross, Paula",Production       ,45,0.58,2.02,1.53,2.18,0.82,2.0
+10074,"Hankard, Earnest",Production       ,45,0.58,2.02,1.67,1.82,0.22,2.67
+10083,"Cross, Noah",IT/IS,45,0.58,1.91,1.67,1.76,1.18,3.07
+10084,"Ait Sidi, Karthikeyan   ",IT/IS,45,0.58,2.2,1.53,1.8,0.64,1.78
+10113,"Lajiri,  Jyoti",IT/IS,45,0.58,2.91,1.58,1.67,0.84,2.0
+10120,"Moumanil, Maliki ",Production       ,45,0.58,3.02,2.02,2.64,0.53,1.71
+10133,"Dolan, Linda",IT/IS,45,0.58,1.96,1.71,2.47,1.27,1.96
+10135,"Woodson, Jason",Production       ,45,0.58,2.58,1.42,2.33,1.0,3.29
+10150,"Cady, Max ",Software Engineering,45,0.58,2.18,1.69,1.8,0.4,2.44
+10151,"Morway, Tanya",IT/IS,45,0.58,2.82,1.09,1.89,0.31,2.09
+10168,"Cierpiszewski, Caroline  ",Production       ,45,0.58,2.51,1.44,2.24,0.58,1.16
+10173,"Tannen, Biff",IT/IS,45,0.58,2.42,1.47,1.71,0.42,1.62
+10191,"MacLennan, Samuel",Production       ,45,0.58,2.62,1.29,2.27,0.64,1.82
+10193,"Costello, Frank",IT/IS,45,0.58,3.13,1.42,1.64,0.13,2.56
+10197,"DeVito, Tommy",IT/IS,45,0.58,2.0,1.33,2.31,0.56,2.58
+10201,"Hunts, Julissa",Production       ,45,0.58,2.73,1.62,2.2,0.78,1.96
+10209,"Sutwell, Barbara",Production       ,45,0.58,2.02,1.6,1.71,0.31,2.31
+10213,"Monkfish, Erasumus",Production       ,45,0.58,2.09,1.44,1.93,0.76,2.42
+10215,"Ndzi, Colombui",Production       ,45,0.58,2.47,1.4,2.16,0.76,2.18
+10223,"Moran, Patrick",Production       ,45,0.58,2.6,1.8,1.78,1.02,2.07
+10227,"Jackson, Maryellen",Production       ,45,0.58,1.67,1.78,1.53,0.56,1.98
+10230,"Roberson, May",Production       ,45,0.58,2.53,1.56,2.11,0.42,2.56
+10240,"Chivukula, Enola",Production       ,45,0.58,2.49,1.0,2.13,0.64,2.18
+10256,"Goyal, Roxana",Production       ,45,0.58,2.53,1.69,1.62,0.24,1.84
+10261,"Cockel, James",Production       ,45,0.58,2.76,1.31,1.87,0.64,2.36
+10273,"Galia, Lisa",IT/IS,45,0.58,1.53,1.29,1.51,0.64,1.73
+10284,"DiNocco, Lily ",Production       ,45,0.58,2.53,1.64,2.02,0.87,2.29
+10285,"Robinson, Cherly",Production       ,45,0.58,3.29,1.53,1.69,0.36,1.47
+10298,"Miller, Ned",Production       ,45,0.58,2.42,1.36,2.0,0.56,2.29
+10007,"Harrison, Kara",Production       ,45,0.56,2.42,1.4,1.76,0.16,2.2
+10011,"Rivera, Haley  ",Production       ,45,0.56,2.24,1.04,2.02,0.27,2.44
+10012,"Barbossa, Hector",IT/IS,45,0.56,2.67,1.64,1.96,0.09,2.58
+10021,"Osturnka, Adeel",Production       ,45,0.56,1.82,1.2,1.84,0.6,2.64
+10033,"Winthrop, Jordan  ",Production       ,45,0.56,3.18,1.16,2.02,0.8,2.62
+10035,"Lunquist, Lisa",Production       ,45,0.56,2.4,1.56,1.84,0.8,1.11
+10052,"Langton, Enrico",Production       ,45,0.56,2.98,1.73,1.87,0.49,1.93
+10055,"Beatrice, Courtney ",Production       ,45,0.56,2.91,1.29,2.04,0.6,1.89
+10057,"Lydon, Allison",Production       ,45,0.56,1.93,1.76,1.6,0.38,1.87
+10060,"Jhaveri, Sneha  ",Production       ,45,0.56,2.67,1.51,1.38,0.87,2.29
+10082,"Carr, Claudia  N",IT/IS,45,0.56,2.02,1.51,2.16,0.58,2.22
+10093,"Fitzpatrick, Michael  J",Production       ,45,0.56,1.96,1.0,1.91,0.93,2.78
+10104,"Nowlan, Kristie",Production       ,45,0.56,2.69,1.62,1.78,0.51,1.89
+10107,"Burke, Joelle",Production       ,45,0.56,1.53,1.4,1.89,0.38,1.42
+10118,"Voldemort, Lord",IT/IS,45,0.56,3.31,1.02,1.93,0.67,1.93
+10122,"Gerke, Melisa",Production       ,45,0.56,2.73,1.09,2.69,0.89,1.76
+10127,"Warfield, Sarah",IT/IS,45,0.56,2.36,1.16,2.02,0.87,0.96
+10128,"Meads, Elizabeth",Production       ,45,0.56,2.27,1.56,1.96,0.49,3.22
+10131,"Quinn, Sean",Software Engineering,45,0.56,3.18,1.36,1.96,0.31,2.29
+10132,"Crimmings,   Jean",Production       ,45,0.56,3.31,1.29,1.84,0.53,2.36
+10134,"LeBlanc, Brandon  R",Admin Offices,45,0.56,1.89,0.87,0.07,1.16,1.96
+10137,"Linden, Mathew",Production       ,45,0.56,2.62,2.02,1.62,0.47,2.31
+10143,"Davis, Daniel",Production       ,45,0.56,2.04,1.18,2.29,0.78,1.49
+10159,"Gentry, Mildred",Production       ,45,0.56,2.84,1.64,1.62,0.38,1.98
+10164,"Pitt, Brad ",Production       ,45,0.56,2.82,1.62,1.98,0.31,2.18
+10169,"Sander, Kamrin",Production       ,45,0.56,2.42,1.33,1.89,0.87,1.96
+10172,"Wang, Charlie",IT/IS,45,0.56,2.29,1.6,1.76,0.51,2.0
+10179,"Shepard, Anita ",IT/IS,45,0.56,2.38,2.13,2.18,0.69,2.11
+10181,"Burkett, Benjamin ",Production       ,45,0.56,2.44,1.58,1.67,0.53,2.56
+10187,"Power, Morissa",Production       ,45,0.56,2.82,1.53,1.82,0.22,2.6
+10190,"Walker, Roger",Production       ,45,0.56,2.07,1.93,1.91,0.89,1.93
+10192,"Keatts, Kramer ",Production       ,45,0.56,2.24,1.31,2.13,0.44,2.58
+10199,"Booth, Frank",IT/IS,45,0.56,2.78,1.31,2.24,0.67,2.33
+10203,"Bugali, Josephine ",Production       ,45,0.56,2.29,1.8,1.11,0.71,2.33
+10204,"Wilkes, Annie",Production       ,45,0.56,2.69,1.49,1.51,0.84,2.58
+10211,"Dunne, Amy",Production       ,45,0.56,2.93,1.47,1.84,0.36,2.09
+10220,"Clayton, Rick",IT/IS,45,0.56,2.2,1.36,1.98,0.31,1.36
+10224,"Robertson, Peter",Production       ,45,0.56,2.93,1.76,2.0,0.49,1.84
+10226,"Biden, Lowan  M",Production       ,45,0.56,1.71,1.49,2.44,0.2,2.51
+10228,"Goeth, Amon",IT/IS,45,0.56,2.4,1.47,1.82,0.8,2.58
+10232,"Le, Binh",IT/IS,45,0.56,2.22,1.62,1.98,0.64,2.4
+10233,"Sahoo, Adil",Production       ,45,0.56,1.98,1.6,1.6,0.18,1.67
+10243,"Gold, Shenice  ",Production       ,45,0.56,2.2,1.36,1.93,0.67,1.67
+10245,"Becker, Renee",IT/IS,45,0.56,2.49,0.96,2.16,0.64,2.16
+10246,"Goble, Taisha",IT/IS,45,0.56,2.49,1.93,1.69,0.38,1.22
+10249,"Latif, Mohammed",Production       ,45,0.56,2.49,1.96,1.53,0.73,2.2
+10252,"Baczenski, Rachael  ",Production       ,45,0.56,2.16,1.67,2.44,0.29,2.36
+10254,"Motlagh,  Dawn",Production       ,45,0.56,2.04,1.71,1.91,0.93,1.87
+10263,"Faller, Megan ",Production       ,45,0.56,2.78,1.67,1.42,0.76,1.96
+10269,"Close, Phil",Production       ,45,0.56,2.91,1.69,1.8,0.58,2.02
+10279,"Mangal, Debbie",Production       ,45,0.56,2.4,1.76,2.38,0.47,2.0
+10280,"Estremera, Miguel",Production       ,45,0.56,2.07,1.36,1.69,0.91,1.73
+10283,"Gilles, Alex",Production       ,45,0.56,1.98,1.56,1.53,0.51,2.44
+10290,"Exantus, Susan",Software Engineering,45,0.56,2.8,1.4,1.96,0.98,2.27
+10293,"Wallace, Theresa",Production       ,45,0.56,2.18,1.47,2.04,0.44,2.64
+10300,"Gonzalez, Juan",Production       ,45,0.56,2.4,1.8,1.76,0.16,2.96
+10311,"Dee, Randy",Production       ,45,0.56,1.78,1.33,1.64,0.64,1.84
+10004,"Lynch, Lindsay",Production       ,45,0.53,2.13,1.69,1.8,1.0,1.96
+10020,"Robinson, Elias",Production       ,45,0.53,2.93,1.44,1.62,0.71,2.33
+10031,"Gonzalez, Cayo",Production       ,45,0.53,2.89,1.58,2.0,0.64,1.56
+10037,"Ngodup, Shari ",Production       ,45,0.53,2.27,1.56,1.67,0.56,1.96
+10039,"Singh, Nan ",Admin Offices,45,0.53,2.0,0.98,0.58,1.51,2.13
+10051,"Gordon, David",Production       ,45,0.53,2.82,1.51,1.71,1.04,2.02
+10058,"Rhoads, Thomas",Production       ,45,0.53,2.07,1.31,1.4,0.84,2.62
+10064,"Eaton, Marianne",Production       ,45,0.53,2.27,1.67,1.71,0.18,2.33
+10067,"Chace, Beatrice ",Production       ,45,0.53,2.62,1.33,1.44,0.53,2.98
+10071,"Sewkumar, Nori",Production       ,45,0.53,2.04,1.49,1.8,0.38,1.31
+10077,"Manchester, Robyn",Production       ,45,0.53,2.69,1.78,1.62,0.44,2.71
+10100,"Demita, Carla",Production       ,45,0.53,2.51,1.42,2.44,0.6,2.09
+10101,"Gonzalez, Maria",IT/IS,45,0.53,2.62,1.47,2.38,0.27,1.6
+10102,"True, Edward",Software Engineering,45,0.53,2.2,1.56,1.31,0.47,2.33
+10112,"Horton, Jayne",IT/IS,45,0.53,3.29,1.07,1.78,0.24,2.6
+10121,"Onque, Jasmine",Sales,45,0.53,3.16,0.56,0.44,1.49,2.8
+10123,"Tippett, Jeanette",Production       ,45,0.53,2.62,1.51,1.96,0.89,2.16
+10125,"Handschiegl, Joanne",Production       ,45,0.53,2.31,1.0,1.84,0.67,1.4
+10129,"Heitzman, Anthony",Production       ,45,0.53,2.98,1.51,1.84,0.31,2.6
+10138,"Jung, Judy  ",Production       ,45,0.53,2.49,1.31,1.67,0.67,1.98
+10141,"Theamstern, Sophia",Production       ,45,0.53,2.51,1.22,1.42,0.38,2.8
+10148,"Panjwani, Nina",Production       ,45,0.53,2.47,1.16,1.91,0.69,2.16
+10152,"Rarrick, Quinn",Production       ,45,0.53,2.6,1.13,2.13,0.78,1.93
+10154,"Chang, Donovan  E",Production       ,45,0.53,2.31,1.91,1.6,0.71,2.4
+10155,"Del Bosque, Keyla",Software Engineering,45,0.53,2.24,1.29,2.02,0.13,1.8
+10157,"Smith, Sade",Production       ,45,0.53,1.96,1.44,1.76,0.47,3.13
+10158,"Sullivan, Kissy ",Production       ,45,0.53,2.89,0.56,0.11,1.8,2.53
+10166,"Kinsella, Kathleen  ",Production       ,45,0.53,2.58,1.53,1.78,0.89,2.13
+10183,"Von Massenbach, Anna",Production       ,45,0.53,3.02,1.6,1.82,0.69,2.07
+10184,"Buccheri, Joseph  ",Production       ,45,0.53,2.89,1.22,2.24,0.58,2.27
+10205,"Valentin,Jackie",Sales,45,0.53,2.31,0.64,0.16,1.6,2.89
+10208,"Knapp, Bradley  J",Production       ,45,0.53,2.13,1.51,1.84,0.71,1.62
+10212,"Daniele, Ann  ",IT/IS,45,0.53,2.07,1.22,1.96,0.47,2.29
+10234,"Gruber, Hans",IT/IS,45,0.53,2.64,1.71,2.2,0.82,1.62
+10236,"Jacobi, Hannah  ",Production       ,45,0.53,2.51,1.47,2.2,0.8,2.33
+10237,"Good, Susan",Production       ,45,0.53,2.38,1.33,1.67,0.78,1.98
+10247,"Engdahl, Jean",Production       ,45,0.53,2.82,1.91,1.67,0.38,1.98
+10248,"Hudson, Jane",Production       ,45,0.53,2.24,1.33,2.11,0.67,2.6
+10259,"Pearson, Randall",IT/IS,45,0.53,3.07,1.24,1.84,0.64,1.24
+10260,"Sadki, Nore  ",Production       ,45,0.53,2.6,1.38,1.47,0.07,2.38
+10265,"Barone, Francesco  A",Production       ,45,0.53,1.87,1.27,1.91,0.4,2.67
+10268,"Thibaud, Kenneth",Production       ,45,0.53,2.27,1.69,1.47,0.44,1.84
+10277,"Becker, Scott",Production       ,45,0.53,2.82,1.8,1.64,0.62,2.09
+10278,"Stanford,Barbara  M",Production       ,45,0.53,2.2,1.29,2.02,0.56,2.27
+10294,"Blount, Dianna",Production       ,45,0.53,2.89,1.53,1.53,0.6,2.51
+10296,"Evensen, April",Production       ,45,0.53,1.84,1.6,2.49,0.47,1.33
+10297,"Pelletier, Ermine",Production       ,45,0.53,2.62,1.31,1.8,0.4,2.13
+10302,"Sparks, Taylor  ",Production       ,45,0.53,2.18,1.31,1.71,0.6,2.22
+10310,"Desimone, Carl ",Production       ,45,0.53,2.71,1.24,1.96,0.18,2.22
+10010,"Zamora, Jennifer",IT/IS,45,0.51,2.42,1.82,1.56,0.51,1.4
+10016,"Petrowsky, Thelma",IT/IS,45,0.51,2.29,1.76,1.78,0.76,2.49
+10030,"Squatrito, Kristen",Production       ,45,0.51,2.18,1.64,1.67,0.69,2.76
+10048,"Wilber, Barry",Production       ,45,0.51,3.0,1.71,1.58,0.4,2.22
+10065,"Rossetti, Bruno",Production       ,45,0.51,2.22,1.73,1.96,0.71,0.69
+10068,"Medeiros, Jennifer",Production       ,45,0.51,2.13,1.16,1.36,0.76,2.51
+10090,"Spirea, Kelley",Production       ,45,0.51,1.62,0.82,0.18,1.67,3.38
+10091,"Shields, Seffi",Production       ,45,0.51,2.67,0.93,1.69,0.89,1.82
+10094,"Cornett, Lisa ",Production       ,45,0.51,2.64,1.02,1.58,0.64,2.0
+10095,"Sloan, Constance",Production       ,45,0.51,2.78,1.58,1.56,0.38,2.22
+10097,"Harrington, Christie ",Production       ,45,0.51,2.98,1.38,1.73,0.78,1.76
+10106,"Langford, Lindsey",Production       ,45,0.51,2.47,1.24,2.09,0.42,2.6
+10110,"Martin, Sandra",Software Engineering,45,0.51,2.4,1.33,1.56,0.69,2.78
+10114,"Bachiochi, Linda",Production       ,45,0.51,2.67,1.07,2.13,0.51,2.56
+10136,"Fancett, Nicole",Production       ,45,0.51,2.82,1.4,1.93,0.6,1.91
+10156,"Johnson, Noelle ",IT/IS,45,0.51,1.93,1.71,1.33,0.27,2.11
+10160,"Huynh, Ming",Production       ,45,0.51,2.53,1.6,2.02,0.27,2.02
+10161,"Terry, Sharlene ",Sales,45,0.51,2.27,0.51,0.11,2.24,2.29
+10170,"Kirill, Alexandra  ",Production       ,45,0.51,2.2,1.8,1.82,0.91,2.13
+10196,"Akinkuolie, Sarah",Production       ,45,0.51,2.67,1.22,1.89,0.58,2.24
+10210,"Chan, Lin",Production       ,45,0.51,1.47,1.16,1.4,0.6,1.91
+10217,"Petingill, Shana  ",Production       ,45,0.51,2.2,1.71,2.31,0.27,1.91
+10219,"Mahoney, Lauren  ",Production       ,45,0.51,2.44,1.18,1.58,0.31,1.38
+10229,"Salter, Jason",IT/IS,45,0.51,2.4,1.38,1.8,0.13,2.44
+10239,"Rachael, Maggie",IT/IS,45,0.51,2.09,1.4,1.89,0.71,2.36
+10251,"Lecter, Hannibal",Production       ,45,0.51,2.13,1.67,1.71,0.49,1.93
+10266,"Stoica, Rick",Production       ,45,0.51,2.82,1.47,1.6,0.91,2.58
+10275,"Cloninger, Jennifer",Production       ,45,0.51,2.69,1.27,1.98,0.51,2.18
+10276,"Dickinson, Geoff ",Production       ,45,0.51,3.13,1.47,2.11,0.71,2.27
+10292,"Cole, Spencer",Production       ,45,0.51,2.09,1.73,1.67,0.2,0.78
+10308,"Fernandes, Nilson  ",Production       ,45,0.51,1.78,1.67,1.93,0.89,1.98
+10309,"Fett, Boba",IT/IS,45,0.51,2.44,1.2,1.67,0.96,2.02
+10008,"Lindsay, Leonara ",IT/IS,45,0.49,2.38,1.24,1.4,0.16,2.27
+10015,"Foss, Jason",IT/IS,45,0.49,2.64,1.22,1.58,0.64,2.02
+10025,"Monterro, Luisa",Production       ,45,0.49,1.93,0.87,1.69,0.4,2.18
+10028,"Dougall, Eric",IT/IS,45,0.49,2.53,1.67,1.87,0.16,1.71
+10032,"Peters, Lauren",Production       ,45,0.49,2.38,1.44,1.93,0.53,1.44
+10036,"Johnston, Yen",Production       ,45,0.49,3.18,1.07,1.82,0.53,1.42
+10040,"Carter, Michelle ",Sales,45,0.49,2.24,0.42,0.04,1.62,3.6
+10063,"Newman, Richard ",Production       ,45,0.49,2.93,1.47,1.96,0.58,1.93
+10075,"Hendrickson, Trina",Production       ,45,0.49,2.29,1.27,1.4,0.4,1.6
+10078,"Oliver, Brooke ",Production       ,45,0.49,2.31,1.22,2.02,0.33,1.87
+10086,"Roper, Katie",IT/IS,45,0.49,2.16,1.64,1.64,0.71,1.56
+10096,"Lundy, Susan",Production       ,45,0.49,2.89,1.56,2.27,0.33,1.98
+10115,"Carey, Michael  ",Production       ,45,0.49,2.02,1.16,2.02,1.13,2.64
+10126,"Saada, Adell",Software Engineering,45,0.49,2.58,1.09,1.69,0.64,1.67
+10140,"Ren, Kylo",Sales,45,0.49,2.6,0.71,0.13,0.89,2.91
+10146,"Tejeda, Lenora ",Production       ,45,0.49,2.71,1.13,1.33,0.27,1.8
+10149,"Roehrich, Bianca",IT/IS,45,0.49,1.62,1.62,1.27,0.38,2.09
+10163,"Foreman, Tanya",Production       ,45,0.49,2.11,1.84,2.2,0.49,2.56
+10165,"Kreuger, Freddy",Sales,45,0.49,2.51,0.8,0.0,1.67,3.42
+10174,"Wolk, Hang  T",Production       ,45,0.49,2.27,1.89,2.38,0.58,1.29
+10180,"Soze, Keyser",IT/IS,45,0.49,2.22,1.51,1.82,0.93,1.53
+10195,"Homberger, Adrienne  J",Production       ,45,0.49,1.93,1.58,1.93,0.76,2.42
+10198,"Roup,Simon",IT/IS,45,0.49,1.96,0.93,1.93,0.76,2.27
+10216,"Myers, Michael",Production       ,45,0.49,2.49,1.47,1.76,0.42,3.07
+10222,"Ruiz, Ricardo",IT/IS,45,0.49,2.76,1.4,1.84,0.73,2.62
+10250,"Bacong, Alejandro ",IT/IS,45,0.49,2.33,1.71,2.11,0.91,1.78
+10264,"Williams, Jacquelyn  ",Production       ,45,0.49,2.07,1.04,2.07,0.6,2.22
+10270,"Trzeciak, Cybil",Production       ,45,0.49,2.58,1.87,1.78,0.27,1.76
+10286,"Smith, Martin",Production       ,45,0.49,3.44,1.67,1.67,0.47,1.31
+10291,"Smith, John",Sales,45,0.49,2.38,0.4,0.13,1.84,3.04
+10303,"O'hare, Lynn",Production       ,45,0.49,2.27,1.09,1.71,1.02,1.18
+10001,"Candie, Calvin",Production       ,45,0.47,2.51,1.31,0.31,1.04,2.56
+10009,"Jeannite, Tayana",Production       ,45,0.47,1.98,1.47,1.53,0.56,2.73
+10014,"Veera, Abdellah ",Production       ,45,0.47,2.36,1.27,1.42,1.02,2.24
+10022,"Volk, Colleen",Production       ,45,0.47,2.11,1.71,1.93,0.64,1.91
+10089,"King, Janet",Executive Office,45,0.47,1.93,0.6,0.13,2.02,2.62
+10103,"Leruth, Giovanni",Sales,45,0.47,2.27,0.29,0.0,1.73,3.87
+10124,"Potts, Xana",Sales,45,0.47,2.4,0.44,0.04,1.0,3.56
+10153,"Smith, Leigh Ann",Admin Offices,45,0.47,1.51,0.93,0.73,1.4,2.82
+10167,"Hitchcock, Alfred",Sales,45,0.47,2.47,0.47,0.04,1.22,2.0
+10176,"Kretschmer, John",Production       ,45,0.47,1.64,1.4,1.76,0.27,2.33
+10182,"Howard, Estelle",Admin Offices,45,0.47,1.47,0.91,0.6,0.96,3.16
+10202,"McKinzie, Jac",Sales,45,0.47,2.27,0.18,0.11,2.07,3.02
+10218,"Gosciminski, Phylicia  ",Production       ,45,0.47,2.53,0.84,1.91,0.76,1.49
+10231,"Khemmich, Bartholemew",Sales,45,0.47,1.91,0.38,0.09,1.33,3.09
+10241,"Strong, Caitrin",Sales,45,0.47,2.18,0.36,0.16,1.42,3.11
+10242,"Barbara, Thomas",Production       ,45,0.47,2.47,1.51,1.8,0.38,2.11
+10255,"Givens, Myriam",Sales,45,0.47,2.62,0.62,0.07,1.58,2.93
+10272,"Houlihan, Debra",Sales,45,0.47,2.2,0.33,0.09,1.11,2.62
+10299,"Erilus, Angela",Production       ,45,0.47,2.6,1.09,2.36,0.44,1.42
+10306,"Delarge, Alex",Sales,45,0.47,2.2,0.58,0.11,1.91,3.8
+10017,"Liebig, Ketsia",Production       ,45,0.44,1.93,0.82,0.09,1.27,2.93
+10085,"Carabbio, Judith",Software Engineering,45,0.44,1.78,1.09,1.62,0.93,2.22
+10108,"Champaigne, Brian",IT/IS,45,0.44,2.33,1.44,1.62,0.64,1.62
+10147,"Steans, Tyrone  ",Admin Offices,45,0.44,1.76,0.36,0.0,1.62,3.22
+10178,"Simard, Kramer",IT/IS,45,0.44,2.07,1.44,1.31,0.38,2.24
+10206,"Nguyen, Lei-Ming",Production       ,45,0.44,2.51,1.62,1.84,0.38,1.33
+10244,"Kampew, Donysha",Sales,45,0.44,3.18,0.13,0.09,1.69,2.38
+10258,"Fraval, Maruk ",Sales,45,0.44,2.53,0.67,0.0,2.18,2.56
+10305,"Forrest, Alex",Sales,45,0.44,2.73,0.33,0.29,1.93,2.89
+10042,"Nguyen, Dheepa",Sales,45,0.42,2.16,0.71,0.04,1.56,2.76
+10046,"Bernstein, Sean",Production       ,45,0.42,1.64,1.18,1.67,0.16,2.09
+10080,"Foster-Baker, Amy",Admin Offices,45,0.42,1.73,0.64,0.0,1.87,1.71
+10081,"Boutwell, Bonalyn",Admin Offices,45,0.42,1.56,0.51,0.07,0.96,3.2
+10099,"Daneault, Lynn",Sales,45,0.42,1.6,0.8,0.22,1.4,1.69
+10105,"Dunn, Amy  ",Production       ,45,0.42,1.67,1.2,0.11,1.31,2.76
+10177,"Brill, Donna",Production       ,45,0.42,1.69,1.49,1.82,0.58,1.8
+10188,"Bunbury, Jessica",Sales,45,0.42,2.16,0.36,0.0,1.51,2.64
+10253,"Villanueva, Noah",Sales,45,0.42,2.87,0.4,0.18,1.93,2.71
+10304,"Dietrich, Jenna  ",Sales,45,0.42,2.4,0.47,0.33,1.84,2.73
+10307,"Stansfield, Norman",Sales,45,0.42,2.44,0.2,0.0,1.49,2.89
+10013,"Torrence, Jack",Sales,45,0.4,1.71,0.11,0.2,1.96,2.78
+10038,"LaRotonda, William  ",Admin Offices,45,0.4,1.56,0.44,0.0,1.13,3.16
+10092,"Landa, Hans",Production       ,45,0.4,1.69,0.91,0.36,0.98,2.73
+10109,"Guilianno, Mike",Sales,45,0.4,2.02,0.13,0.0,1.8,2.91
+10142,"Gill, Whitney  ",Sales,45,0.4,2.09,0.53,0.0,1.4,2.33
+10175,"Bozzi, Charles",Production       ,45,0.4,2.47,0.67,0.13,0.84,2.67
+10238,"Brown, Mia",Admin Offices,45,0.4,1.42,0.6,0.11,1.64,3.29
+10289,"Immediato, Walter",Production       ,45,0.4,2.0,0.84,0.27,1.49,2.82
+10006,"Driver, Elle",Sales,45,0.38,2.33,0.78,0.18,1.11,2.58
+10200,"Chigurh, Anton",Sales,45,0.38,2.13,0.22,0.29,1.47,2.53
+10282,"Corleone, Michael",Production       ,45,0.38,1.98,0.78,0.16,1.04,3.02
+10041,"Ozark, Travis",Sales,45,0.36,2.13,0.69,0.16,0.58,3.0
+10116,"Miller, Brannon",Production       ,45,0.36,2.11,0.56,0.18,0.89,2.31
+10130,"Peterson, Ebonee  ",Production       ,45,0.36,1.51,0.53,0.11,0.84,2.24
+10274,"Wallace, Courtney  E",Production       ,45,0.36,2.04,0.82,0.09,1.24,2.64
+10019,"Corleone, Vito",Production       ,45,0.33,1.73,1.44,0.31,1.36,2.84
+10098,"Gray, Elijiah  ",Production       ,45,0.31,2.11,0.56,0.0,1.24,2.29
+10144,"Vega, Vincent",Production       ,45,0.29,2.31,0.58,0.22,1.09,2.24
