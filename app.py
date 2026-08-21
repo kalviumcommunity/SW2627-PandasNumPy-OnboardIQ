@@ -4,13 +4,18 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
-from src.ingestion.loader import IngestionError, load_csv, load_json
-
-
-st.set_page_config(
-    page_title="OnboardIQ - Dataset Upload",
-    page_icon="📊",
-    layout="wide",
+from src.config.settings import APP_NAME
+from src.dashboard.layout import (
+    configure_page,
+    render_sidebar_footer,
+)
+from src.dashboard.navigation import render_navigation
+from src.dashboard.pages import (
+    analytics,
+    dashboard,
+    data_preview,
+    employees,
+    onboarding,
 )
 
 
@@ -20,7 +25,9 @@ def load_uploaded_dataset(uploaded_file) -> pd.DataFrame:
     extension = Path(file_name).suffix.lower()
 
     if extension not in {".csv", ".json"}:
-        raise ValueError("Unsupported file type. Please upload a CSV or JSON file.")
+        raise ValueError(
+            "Unsupported file type. Please upload a CSV or JSON file."
+        )
 
     file_content = uploaded_file.getvalue()
 
@@ -39,7 +46,8 @@ def load_uploaded_dataset(uploaded_file) -> pd.DataFrame:
         dataframe = pd.read_json(io.BytesIO(file_content))
     except ValueError as exc:
         raise ValueError(
-            "Unable to read the uploaded dataset. Please verify the file format."
+            "Unable to read the uploaded dataset. "
+            "Please verify the file format."
         ) from exc
 
     if dataframe.empty:
@@ -58,14 +66,17 @@ def initialize_session_state() -> None:
 
 
 def display_dataset() -> None:
-    """Display metadata, controls, preview, and missing-value summary."""
+    """Display uploaded dataset metadata, preview, and missing values."""
     dataframe = st.session_state.get("uploaded_dataframe")
 
     if dataframe is None:
-        st.info("Upload a CSV or JSON dataset to begin.")
         return
 
-    filename = st.session_state.get("uploaded_filename", "Uploaded dataset")
+    filename = st.session_state.get(
+        "uploaded_filename",
+        "Uploaded dataset",
+    )
+
     file_type = Path(filename).suffix.upper().replace(".", "")
 
     st.subheader("Dataset Summary")
@@ -80,6 +91,7 @@ def display_dataset() -> None:
     )
 
     memory_usage = dataframe.memory_usage(deep=True).sum()
+
     col4.metric(
         "Memory Usage",
         f"{memory_usage / 1024:.1f} KB",
@@ -95,7 +107,9 @@ def display_dataset() -> None:
     if column_names:
         st.write(", ".join(str(column) for column in column_names))
     else:
-        st.warning("The uploaded dataset does not contain any columns.")
+        st.warning(
+            "The uploaded dataset does not contain any columns."
+        )
         return
 
     st.subheader("Dataset Preview")
@@ -118,7 +132,9 @@ def display_dataset() -> None:
             use_container_width=True,
         )
     else:
-        st.info("Select at least one column to display the preview.")
+        st.info(
+            "Select at least one column to display the preview."
+        )
 
     st.subheader("Missing-Value Summary")
 
@@ -136,11 +152,10 @@ def display_dataset() -> None:
         st.rerun()
 
 
-def main() -> None:
-    """Run the OnboardIQ Streamlit application."""
+def render_dataset_upload() -> None:
+    """Render the dataset upload interface."""
     initialize_session_state()
 
-    st.title("OnboardIQ")
     st.header("Dataset Upload")
 
     st.write(
@@ -153,24 +168,33 @@ def main() -> None:
     )
 
     if uploaded_file is not None:
-        current_filename = st.session_state.get("uploaded_filename")
+        current_filename = st.session_state.get(
+            "uploaded_filename"
+        )
 
         if current_filename != uploaded_file.name:
             try:
                 dataframe = load_uploaded_dataset(uploaded_file)
 
                 st.session_state["uploaded_dataframe"] = dataframe
-                st.session_state["uploaded_filename"] = uploaded_file.name
+                st.session_state["uploaded_filename"] = (
+                    uploaded_file.name
+                )
 
                 st.success(
                     f"Successfully uploaded {uploaded_file.name}."
                 )
 
-            except (ValueError, IngestionError, OSError, pd.errors.ParserError):
+            except (
+                ValueError,
+                OSError,
+                pd.errors.ParserError,
+            ):
                 st.error(
                     "Unable to read the uploaded dataset. "
                     "Please verify the file format."
                 )
+
             except Exception:
                 st.error(
                     "Unable to read the uploaded dataset. "
@@ -178,6 +202,38 @@ def main() -> None:
                 )
 
     display_dataset()
+
+
+def main() -> None:
+    """Run the OnboardIQ Streamlit application."""
+    configure_page()
+
+    selected_page = render_navigation()
+
+    render_sidebar_footer()
+
+    if selected_page == "dashboard":
+        dashboard.render()
+
+    elif selected_page == "onboarding":
+        onboarding.render()
+
+    elif selected_page == "employees":
+        employees.render()
+
+    elif selected_page == "analytics":
+        analytics.render()
+
+    elif selected_page == "data_preview":
+        data_preview.render()
+
+    elif selected_page == "dataset_upload":
+        render_dataset_upload()
+
+    else:
+        st.error(
+            f"Unknown dashboard page selected for {APP_NAME}."
+        )
 
 
 if __name__ == "__main__":

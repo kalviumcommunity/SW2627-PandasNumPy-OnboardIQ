@@ -49,7 +49,6 @@ CREATE TABLE IF NOT EXISTS employees (
     absences INTEGER
 );
 
-
 -- ============================================================
 -- 2. ONBOARDING PROGRESS
 -- ============================================================
@@ -73,7 +72,6 @@ CREATE TABLE IF NOT EXISTS onboarding_tasks (
         REFERENCES employees(employee_id)
 );
 
-
 -- ============================================================
 -- 3. INTERNAL TOOL USAGE
 -- ============================================================
@@ -88,15 +86,14 @@ CREATE TABLE IF NOT EXISTS tool_usage (
     slack_activity_count INTEGER,
     jira_usage_count INTEGER,
     github_activity_count INTEGER,
-    teams_activity_count INTEGER,
-    workspace_activity_count INTEGER,
+    teams_activity_count,
+    workspace_activity_count,
 
     daily_active_usage INTEGER NOT NULL,
 
     FOREIGN KEY (employee_id)
         REFERENCES employees(employee_id)
 );
-
 
 -- ============================================================
 -- 4. SUPPORT TICKETS
@@ -119,7 +116,6 @@ CREATE TABLE IF NOT EXISTS support_tickets (
     FOREIGN KEY (employee_id)
         REFERENCES employees(employee_id)
 );
-
 
 -- ============================================================
 -- 5. LEARNING MANAGEMENT
