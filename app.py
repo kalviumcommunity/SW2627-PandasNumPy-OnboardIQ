@@ -1,3 +1,5 @@
+"""Main Streamlit entry point for OnboardIQ."""
+
 import io
 from pathlib import Path
 
@@ -5,14 +7,22 @@ import pandas as pd
 import streamlit as st
 
 from src.analysis.kpis import calculate_kpis
-from src.dashboard.layout import render_kpi_cards
-from src.ingestion.loader import IngestionError, load_csv, load_json
-
-
-st.set_page_config(
-    page_title="OnboardIQ",
-    page_icon="📊",
-    layout="wide",
+from src.config.settings import APP_NAME
+from src.dashboard.filters import render_filter_sidebar
+from src.dashboard.layout import (
+    configure_page,
+    render_active_filters,
+    render_kpi_cards,
+    render_sidebar_footer,
+)
+from src.dashboard.navigation import render_navigation
+from src.dashboard.session import initialize_session_state
+from src.dashboard.pages import (
+    analytics,
+    dashboard,
+    data_preview,
+    employees,
+    onboarding,
 )
 
 
@@ -43,9 +53,7 @@ def load_uploaded_dataset(uploaded_file) -> pd.DataFrame:
         raise ValueError("The uploaded file is empty.")
 
     if extension == ".csv":
-        dataframe = pd.read_csv(
-            io.BytesIO(file_content)
-        )
+        dataframe = pd.read_csv(io.BytesIO(file_content))
 
         if dataframe.empty:
             raise ValueError(
@@ -55,9 +63,7 @@ def load_uploaded_dataset(uploaded_file) -> pd.DataFrame:
         return dataframe
 
     try:
-        dataframe = pd.read_json(
-            io.BytesIO(file_content)
-        )
+        dataframe = pd.read_json(io.BytesIO(file_content))
     except ValueError as exc:
         raise ValueError(
             "Unable to read the uploaded dataset. "
@@ -72,16 +78,6 @@ def load_uploaded_dataset(uploaded_file) -> pd.DataFrame:
     return dataframe
 
 
-def initialize_session_state() -> None:
-    """Initialize session-state values used by the application."""
-
-    if "uploaded_dataframe" not in st.session_state:
-        st.session_state["uploaded_dataframe"] = None
-
-    if "uploaded_filename" not in st.session_state:
-        st.session_state["uploaded_filename"] = None
-
-
 def load_default_dataset() -> pd.DataFrame:
     """Load the default processed employee analytics dataset."""
 
@@ -90,29 +86,48 @@ def load_default_dataset() -> pd.DataFrame:
             f"Default dataset not found: {DEFAULT_DATASET_PATH}"
         )
 
-    dataframe = pd.read_csv(
-        DEFAULT_DATASET_PATH
-    )
+    dataframe = pd.read_csv(DEFAULT_DATASET_PATH)
 
     if dataframe.empty:
-        raise ValueError(
-            "Default dataset contains no data."
-        )
+        raise ValueError("Default dataset contains no data.")
 
     return dataframe
 
 
-def display_dataset() -> None:
-    """Display metadata, controls, preview, and missing-value summary."""
+def get_dashboard_dataframe() -> pd.DataFrame | None:
+    """
+    Return the dataset currently available to the dashboard.
 
-    dataframe = st.session_state.get(
+    Uploaded data takes priority over the processed project dataset.
+    """
+
+    uploaded_dataframe = st.session_state.get(
         "uploaded_dataframe"
     )
 
+    if uploaded_dataframe is not None:
+        return uploaded_dataframe.copy()
+
+    if DEFAULT_DATASET_PATH.exists():
+        try:
+            dataframe = pd.read_csv(DEFAULT_DATASET_PATH)
+
+            if not dataframe.empty:
+                return dataframe
+
+        except (OSError, pd.errors.ParserError):
+            return None
+
+    return None
+
+
+def display_dataset() -> None:
+    """Display uploaded dataset metadata and preview."""
+
+    dataframe = st.session_state.get("uploaded_dataframe")
+
     if dataframe is None:
-        st.info(
-            "Upload a CSV or JSON dataset to begin."
-        )
+        st.info("Upload a CSV or JSON dataset to begin.")
         return
 
     filename = st.session_state.get(
@@ -131,16 +146,8 @@ def display_dataset() -> None:
 
     col1, col2, col3, col4 = st.columns(4)
 
-    col1.metric(
-        "Rows",
-        len(dataframe),
-    )
-
-    col2.metric(
-        "Columns",
-        len(dataframe.columns),
-    )
-
+    col1.metric("Rows", len(dataframe))
+    col2.metric("Columns", len(dataframe.columns))
     col3.metric(
         "Missing Values",
         int(dataframe.isna().sum().sum()),
@@ -155,32 +162,22 @@ def display_dataset() -> None:
         f"{memory_usage / 1024:.1f} KB",
     )
 
-    st.write(
-        f"**Filename:** {filename}"
-    )
-
-    st.write(
-        f"**File Type:** {file_type}"
-    )
+    st.write(f"**Filename:** {filename}")
+    st.write(f"**File Type:** {file_type}")
 
     st.subheader("Columns")
 
-    column_names = list(
-        dataframe.columns
-    )
+    column_names = list(dataframe.columns)
 
-    if column_names:
-        st.write(
-            ", ".join(
-                str(column)
-                for column in column_names
-            )
-        )
-    else:
+    if not column_names:
         st.warning(
             "The uploaded dataset does not contain any columns."
         )
         return
+
+    st.write(
+        ", ".join(str(column) for column in column_names)
+    )
 
     st.subheader("Dataset Preview")
 
@@ -188,25 +185,19 @@ def display_dataset() -> None:
         "Select columns to preview",
         options=column_names,
         default=column_names,
+        key="preview_columns",
     )
 
     selected_rows = st.selectbox(
         "Number of rows to preview",
-        options=[
-            5,
-            10,
-            25,
-            50,
-            100,
-        ],
+        options=[5, 10, 25, 50, 100],
         index=0,
+        key="preview_row_count",
     )
 
     if selected_columns:
         st.dataframe(
-            dataframe[
-                selected_columns
-            ].head(selected_rows),
+            dataframe[selected_columns].head(selected_rows),
             use_container_width=True,
         )
     else:
@@ -217,8 +208,7 @@ def display_dataset() -> None:
     st.subheader("Missing-Value Summary")
 
     missing_values = (
-        dataframe
-        .isna()
+        dataframe.isna()
         .sum()
         .reset_index()
     )
@@ -234,18 +224,11 @@ def display_dataset() -> None:
     )
 
     if st.button(
-        "Clear uploaded dataset"
+        "Clear uploaded dataset",
+        key="clear_uploaded_dataset",
     ):
-        st.session_state.pop(
-            "uploaded_dataframe",
-            None,
-        )
-
-        st.session_state.pop(
-            "uploaded_filename",
-            None,
-        )
-
+        st.session_state["uploaded_dataframe"] = None
+        st.session_state["uploaded_filename"] = None
         st.rerun()
 
 
@@ -254,9 +237,7 @@ def display_kpi_dashboard(
 ) -> None:
     """Display KPI cards for the supplied dataframe."""
 
-    st.title(
-        "OnboardIQ KPI Dashboard"
-    )
+    st.title("OnboardIQ KPI Dashboard")
 
     st.write(
         "Monitor employee onboarding, learning, "
@@ -265,14 +246,10 @@ def display_kpi_dashboard(
     )
 
     try:
-        kpi_dataframe = calculate_kpis(
-            dataframe
-        )
+        kpi_dataframe = calculate_kpis(dataframe)
 
         if kpi_dataframe.empty:
-            st.warning(
-                "No KPI results are available."
-            )
+            st.warning("No KPI results are available.")
             return
 
         kpis = (
@@ -283,49 +260,33 @@ def display_kpi_dashboard(
 
         render_kpi_cards(kpis)
 
-    except (
-        KeyError,
-        ValueError,
-        TypeError,
-    ) as exc:
+    except (KeyError, ValueError, TypeError) as exc:
         st.warning(
             "KPI dashboard cannot be calculated "
             "for this dataset."
         )
-
-        st.caption(
-            str(exc)
-        )
+        st.caption(str(exc))
 
 
-def main() -> None:
-    """Run the OnboardIQ Streamlit application."""
+def render_dataset_upload() -> None:
+    """Render the dataset upload interface."""
 
-    initialize_session_state()
+    st.header("Dataset Upload")
 
-    st.title("OnboardIQ")
-
-    page = st.sidebar.radio(
-        "Navigation",
-        [
-            "Dataset Upload",
-            "KPI Dashboard",
-        ],
+    st.write(
+        "Upload a CSV or JSON dataset to preview "
+        "its contents dynamically."
     )
 
     uploaded_file = st.sidebar.file_uploader(
         "Upload a dataset",
-        type=[
-            "csv",
-            "json",
-        ],
+        type=["csv", "json"],
+        key="dataset_uploader",
     )
 
     if uploaded_file is not None:
-        current_filename = (
-            st.session_state.get(
-                "uploaded_filename"
-            )
+        current_filename = st.session_state.get(
+            "uploaded_filename"
         )
 
         if current_filename != uploaded_file.name:
@@ -342,59 +303,81 @@ def main() -> None:
                     "uploaded_filename"
                 ] = uploaded_file.name
 
-                st.sidebar.success(
-                    f"Successfully uploaded "
-                    f"{uploaded_file.name}."
+                st.success(
+                    f"Successfully uploaded {uploaded_file.name}."
                 )
 
             except (
                 ValueError,
-                IngestionError,
                 OSError,
                 pd.errors.ParserError,
             ):
-                st.sidebar.error(
-                    "Unable to read the uploaded dataset. "
-                    "Please verify the file format."
-                )
-
-            except Exception:
-                st.sidebar.error(
-                    "Unable to read the uploaded dataset. "
-                    "Please verify the file format."
-                )
-
-    uploaded_dataframe = st.session_state.get(
-        "uploaded_dataframe"
-    )
-
-    if page == "Dataset Upload":
-        display_dataset()
-
-    elif page == "KPI Dashboard":
-
-        if uploaded_dataframe is not None:
-            display_kpi_dashboard(
-                uploaded_dataframe
-            )
-        else:
-            try:
-                default_dataframe = (
-                    load_default_dataset()
-                )
-
-                display_kpi_dashboard(
-                    default_dataframe
-                )
-
-            except (
-                FileNotFoundError,
-                ValueError,
-                pd.errors.ParserError,
-            ) as exc:
                 st.error(
-                    f"Unable to load dashboard dataset: {exc}"
+                    "Unable to read the uploaded dataset. "
+                    "Please verify the file format."
                 )
+
+    display_dataset()
+
+
+def main() -> None:
+    """Run the OnboardIQ Streamlit application."""
+
+    configure_page()
+    initialize_session_state()
+
+    selected_page = render_navigation()
+
+    dataframe = get_dashboard_dataframe()
+
+    filters = render_filter_sidebar(dataframe)
+
+    render_active_filters(filters)
+    render_sidebar_footer()
+
+    if selected_page == "dashboard":
+        dashboard.render(
+            dataframe=dataframe,
+            filters=filters,
+        )
+
+    elif selected_page == "onboarding":
+        onboarding.render(
+            dataframe=dataframe,
+            filters=filters,
+        )
+
+    elif selected_page == "employees":
+        employees.render(
+            dataframe=dataframe,
+            filters=filters,
+        )
+
+    elif selected_page == "analytics":
+        analytics.render(
+            dataframe=dataframe,
+            filters=filters,
+        )
+
+    elif selected_page == "data_preview":
+        data_preview.render()
+
+    elif selected_page == "kpi_dashboard":
+        if dataframe is not None:
+            display_kpi_dashboard(dataframe)
+        else:
+            st.error(
+                "Unable to load dashboard dataset."
+            )
+
+    elif selected_page == "dataset_upload":
+        render_dataset_upload()
+
+    else:
+        st.error(
+            f"Unknown dashboard page selected for "
+            f"{APP_NAME}."
+        )
 
 
 if __name__ == "__main__":
