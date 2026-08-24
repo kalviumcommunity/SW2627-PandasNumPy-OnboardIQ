@@ -1,12 +1,20 @@
+"""Main dashboard page."""
+
+import pandas as pd
 import streamlit as st
 
+from src.dashboard.filters import filter_dataframe
 from src.dashboard.layout import (
+    render_empty_state,
     render_header,
     render_metric_cards,
 )
 
 
-def render() -> None:
+def render(
+    dataframe: pd.DataFrame | None = None,
+    filters: dict[str, str] | None = None,
+) -> None:
     """Render the main dashboard page."""
     render_header(
         "OnboardIQ Dashboard",
@@ -22,55 +30,62 @@ def render() -> None:
         """
     )
 
+    if dataframe is None or dataframe.empty:
+        render_empty_state(
+            "No dataset available",
+            (
+                "Upload a dataset from the Data Preview page "
+                "to enable interactive filtering."
+            ),
+        )
+
+        return
+
+    filters = filters or {}
+
+    filtered_dataframe = filter_dataframe(
+        dataframe,
+        department=filters.get(
+            "department",
+            "All",
+        ),
+        employee_type=filters.get(
+            "employee_type",
+            "All",
+        ),
+        onboarding_status=filters.get(
+            "onboarding_status",
+            "All",
+        ),
+    )
+
     st.divider()
 
     render_metric_cards(
         [
             {
-                "label": "Employees",
-                "value": "311",
-                "help": "Total employees currently available in the project dataset.",
+                "label": "Filtered Employees",
+                "value": str(len(filtered_dataframe)),
+                "help": (
+                    "Number of employees remaining "
+                    "after applying the active filters."
+                ),
             },
             {
-                "label": "Onboarding Completion",
-                "value": "100%",
-                "help": "Current onboarding task coverage from the SQL reporting layer.",
-            },
-            {
-                "label": "Learning Completion",
-                "value": "69.89%",
-                "help": "Learning record completion rate.",
-            },
-            {
-                "label": "Support Tickets",
-                "value": "1,048",
-                "help": "Total support tickets in the reporting dataset.",
+                "label": "Total Columns",
+                "value": str(
+                    len(filtered_dataframe.columns)
+                ),
+                "help": "Columns available in the filtered dataset.",
             },
         ]
     )
 
     st.divider()
 
-    st.subheader("Dashboard Overview")
+    st.subheader("Filtered Dataset")
 
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.info(
-            """
-            **Onboarding**
-
-            Track onboarding progress, task completion,
-            delayed tasks, and onboarding health.
-            """
-        )
-
-    with col2:
-        st.info(
-            """
-            **Analytics**
-
-            Explore employee, department, learning,
-            tool usage, and support metrics.
-            """
-        )
+    st.dataframe(
+        filtered_dataframe.head(100),
+        use_container_width=True,
+    )

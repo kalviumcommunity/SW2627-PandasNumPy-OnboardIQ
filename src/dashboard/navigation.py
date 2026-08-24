@@ -1,6 +1,10 @@
+"""Sidebar navigation for the OnboardIQ dashboard."""
+
 from dataclasses import dataclass
 
 import streamlit as st
+
+from src.dashboard.session import initialize_session_state
 
 
 @dataclass(frozen=True)
@@ -41,30 +45,41 @@ NAVIGATION_ITEMS = (
 )
 
 
+def _select_page(page_key: str) -> None:
+    """Update the currently selected dashboard page."""
+    st.session_state["selected_page"] = page_key
+
+
 def render_navigation() -> str:
     """
-    Render the sidebar navigation and return the selected page key.
+    Render sidebar navigation using clickable buttons.
+
+    The selected page is stored in Streamlit session state so that
+    navigation persists across Streamlit reruns.
     """
+    initialize_session_state()
+
     st.sidebar.title("OnboardIQ")
     st.sidebar.caption("Employee Onboarding Analytics")
 
     st.sidebar.divider()
 
-    labels = [
-        f"{item.icon}  {item.label}"
-        for item in NAVIGATION_ITEMS
-    ]
-
-    selected_label = st.sidebar.radio(
-        "Navigation",
-        labels,
-        label_visibility="collapsed",
+    selected_key = st.session_state.get(
+        "selected_page",
+        "dashboard",
     )
 
-    selected_item = next(
-        item
-        for item in NAVIGATION_ITEMS
-        if f"{item.icon}  {item.label}" == selected_label
-    )
+    for item in NAVIGATION_ITEMS:
+        is_selected = item.key == selected_key
 
-    return selected_item.key
+        button_label = f"{item.icon}  {item.label}"
+
+        if st.sidebar.button(
+            button_label,
+            key=f"navigation_{item.key}",
+            use_container_width=True,
+            type="primary" if is_selected else "secondary",
+        ):
+            _select_page(item.key)
+
+    return st.session_state["selected_page"]
