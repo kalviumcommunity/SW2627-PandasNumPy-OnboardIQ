@@ -81,98 +81,108 @@ def render_metric_cards(
             )
 
 
-def render_kpi_cards(kpis: dict) -> None:
-    """Render KPI values as Streamlit metric cards."""
+def _get_health_emoji(health_status: str | None) -> str:
+    """Return an emoji based on the KPI health status."""
+    if health_status == "healthy":
+        return "🟢"
+    if health_status == "attention":
+        return "🟡"
+    if health_status == "critical":
+        return "🔴"
+    return "⚪"
+
+
+def render_kpi_cards(
+    kpis: dict,
+    health: dict | None = None,
+) -> None:
+    """Render KPI values as Streamlit metric cards with health indicators."""
+
+    if health is None:
+        health = {}
 
     cards = [
         (
             "Total Employees",
             kpis.get("employee_count"),
             "number",
+            None,
         ),
         (
             "Onboarding Completion",
             kpis.get("onboarding_completion_rate"),
             "percentage",
+            health.get("onboarding_health"),
         ),
         (
             "Learning Completion",
             kpis.get("learning_completion_rate"),
             "percentage",
+            health.get("learning_health"),
         ),
         (
             "Tool Adoption",
             kpis.get("tool_adoption_rate"),
             "percentage",
+            health.get("tool_adoption_health"),
         ),
         (
             "Avg. Support Tickets",
             kpis.get("average_support_tickets"),
             "decimal",
+            health.get("support_health"),
         ),
         (
             "Assessment Score",
             kpis.get("average_assessment_score"),
             "decimal",
+            None,
         ),
         (
             "Productivity Readiness",
             kpis.get("productivity_readiness_score"),
             "decimal",
+            None,
         ),
     ]
 
     columns = st.columns(4)
 
-    for index, (label, value, value_type) in enumerate(cards):
+    for index, (label, value, value_type, health_status) in enumerate(cards):
         column = columns[index % 4]
 
-        if value is None:
-            display_value = "N/A"
-        elif value_type == "number":
-            display_value = f"{int(value):,}"
-        elif value_type == "percentage":
-            display_value = f"{float(value):.1f}%"
-        else:
-            display_value = f"{float(value):.2f}"
+        with column:
+            emoji = _get_health_emoji(health_status)
+            display_label = f"{emoji} {label}"
 
-        column.metric(label, display_value)
+            if value is None:
+                display_value = "N/A"
+            elif value_type == "number":
+                display_value = f"{int(value):,}"
+            elif value_type == "percentage":
+                display_value = f"{float(value):.1f}%"
+            else:
+                display_value = f"{float(value):.2f}"
+
+            st.metric(label=display_label, value=display_value)
 
 
-def render_empty_state(
-    title: str,
-    message: str,
+def render_insight_narratives(
+    kpis: dict,
+    health: dict | None = None,
 ) -> None:
-    """Render a reusable empty-state message."""
-    st.info(
-        f"**{title}**\n\n{message}"
-    )
+    """Render data storytelling and executive insight narratives."""
 
+    if health is None:
+        health = {}
 
-def render_active_filters(
-    filters: dict[str, str],
-) -> None:
-    """Display currently active filters."""
-    active_filters = {
-        key: value
-        for key, value in filters.items()
-        if value != "All"
-    }
+    st.subheader("📊 Executive Insights")
 
-    if not active_filters:
-        st.caption("No filters applied.")
-        return
+    insights = []
 
-    st.caption("Active filters:")
-
-    columns = st.columns(len(active_filters))
-
-    for column, (key, value) in zip(
-        columns,
-        active_filters.items(),
-    ):
-        label = key.replace("_", " ").title()
-
-        column.info(
-            f"**{label}**\n\n{value}"
-        )
+    # 1. Onboarding Insight
+    onboard_health = health.get("onboarding_health")
+    onboard_val = kpis.get("onboarding_completion_rate", 0)
+    if onboard_health == "healthy":
+        insights.append(
+            f"✅ **Onboarding is strong:** Completion rate is at a healthy {onboard_val:.
