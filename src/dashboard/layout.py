@@ -1,4 +1,32 @@
+"""Reusable Streamlit layout components."""
+
+from __future__ import annotations
+
 import streamlit as st
+
+from src.config.settings import APP_NAME, VERSION
+from src.dashboard.session import reset_dashboard_session
+
+
+def configure_page() -> None:
+    """Configure the Streamlit page."""
+    st.set_page_config(
+        page_title=APP_NAME,
+        page_icon="📊",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
+
+
+def render_header(
+    title: str,
+    subtitle: str | None = None,
+) -> None:
+    """Render a reusable page header."""
+    st.title(title)
+
+    if subtitle:
+        st.caption(subtitle)
 
 
 def render_page_header(
@@ -10,6 +38,47 @@ def render_page_header(
 
     if description:
         st.write(description)
+
+
+def render_sidebar_footer() -> None:
+    """Render application information and session controls."""
+    st.sidebar.divider()
+
+    st.sidebar.caption(APP_NAME)
+    st.sidebar.caption(f"Version {VERSION}")
+
+    st.sidebar.divider()
+
+    if st.sidebar.button(
+        "Reset Dashboard Session",
+        use_container_width=True,
+    ):
+        reset_dashboard_session()
+        st.rerun()
+
+
+def render_metric_cards(
+    metrics: list[dict[str, str]],
+) -> None:
+    """
+    Render reusable metric cards.
+
+    Each metric dictionary should contain:
+    - label
+    - value
+    - optional help
+    """
+    columns = st.columns(len(metrics))
+
+    for column, metric in zip(columns, metrics):
+        with column:
+            help_text = metric.get("help")
+
+            st.metric(
+                label=metric["label"],
+                value=metric["value"],
+                help=help_text,
+            )
 
 
 def _get_health_emoji(health_status: str | None) -> str:
@@ -116,53 +185,4 @@ def render_insight_narratives(
     onboard_val = kpis.get("onboarding_completion_rate", 0)
     if onboard_health == "healthy":
         insights.append(
-            f"✅ **Onboarding is strong:** Completion rate is at a healthy {onboard_val:.1f}%."
-        )
-    elif onboard_health == "attention":
-        insights.append(
-            f"⚠️ **Onboarding needs attention:** Completion rate is at {onboard_val:.1f}%, below the ideal target."
-        )
-    elif onboard_health == "critical":
-        insights.append(
-            f"🚨 **Critical onboarding drop:** Completion rate is critically low at {onboard_val:.1f}%."
-        )
-
-    # 2. Learning Insight
-    learn_health = health.get("learning_health")
-    learn_val = kpis.get("learning_completion_rate", 0)
-    if learn_health == "healthy":
-        insights.append(
-            f"✅ **Learning progress is on track** with a {learn_val:.1f}% completion rate."
-        )
-    else:
-        insights.append(
-            f"⚠️ **Learning completion ({learn_val:.1f}%)** requires more focus to ensure employee readiness."
-        )
-
-    # 3. Tool Adoption Insight
-    adopt_health = health.get("tool_adoption_health")
-    adopt_val = kpis.get("tool_adoption_rate", 0)
-    if adopt_health == "healthy":
-        insights.append(
-            f"✅ **Tool adoption is excellent** at {adopt_val:.1f}%, showing great digital readiness."
-        )
-    else:
-        insights.append(
-            f"⚠️ **Tool adoption is at {adopt_val:.1f}**. Some employees may need additional training."
-        )
-
-    # 4. Support Insight
-    support_health = health.get("support_health")
-    support_val = kpis.get("open_ticket_rate", 0)
-    if support_health == "healthy":
-        insights.append(
-            f"✅ **Support burden is low**, with only {support_val:.1f}% of employees having open tickets."
-        )
-    else:
-        insights.append(
-            f"⚠️ **Support demand is elevated**, with {support_val:.1f}% of employees having open tickets."
-        )
-
-    # Render the insights as a clean bulleted list
-    for insight in insights:
-        st.markdown(f"- {insight}")
+            f"✅ **Onboarding is strong:** Completion rate is at a healthy {onboard_val:.
