@@ -81,14 +81,47 @@ def render_metric_cards(
             )
 
 
+def render_active_filters(
+    filters: dict[str, str],
+) -> None:
+    """Render the currently active dashboard filters."""
+
+    active_filters = {
+        key: value
+        for key, value in filters.items()
+        if value and value != "All"
+    }
+
+    if not active_filters:
+        return
+
+    st.caption("Active Filters")
+
+    columns = st.columns(len(active_filters))
+
+    for column, (key, value) in zip(
+        columns,
+        active_filters.items(),
+    ):
+        display_key = key.replace("_", " ").title()
+
+        with column:
+            st.info(
+                f"**{display_key}:** {value}"
+            )
+
+
 def _get_health_emoji(health_status: str | None) -> str:
     """Return an emoji based on the KPI health status."""
     if health_status == "healthy":
         return "🟢"
+
     if health_status == "attention":
         return "🟡"
+
     if health_status == "critical":
         return "🔴"
+
     return "⚪"
 
 
@@ -148,7 +181,12 @@ def render_kpi_cards(
 
     columns = st.columns(4)
 
-    for index, (label, value, value_type, health_status) in enumerate(cards):
+    for index, (
+        label,
+        value,
+        value_type,
+        health_status,
+    ) in enumerate(cards):
         column = columns[index % 4]
 
         with column:
@@ -157,14 +195,20 @@ def render_kpi_cards(
 
             if value is None:
                 display_value = "N/A"
+
             elif value_type == "number":
                 display_value = f"{int(value):,}"
+
             elif value_type == "percentage":
                 display_value = f"{float(value):.1f}%"
+
             else:
                 display_value = f"{float(value):.2f}"
 
-            st.metric(label=display_label, value=display_value)
+            st.metric(
+                label=display_label,
+                value=display_value,
+            )
 
 
 def render_insight_narratives(
@@ -178,11 +222,138 @@ def render_insight_narratives(
 
     st.subheader("📊 Executive Insights")
 
-    insights = []
+    insights: list[str] = []
 
     # 1. Onboarding Insight
     onboard_health = health.get("onboarding_health")
-    onboard_val = kpis.get("onboarding_completion_rate", 0)
+    onboard_val = kpis.get(
+        "onboarding_completion_rate",
+        0,
+    )
+
     if onboard_health == "healthy":
         insights.append(
-            f"✅ **Onboarding is strong:** Completion rate is at a healthy {onboard_val:.
+            f"✅ **Onboarding is strong:** "
+            f"Completion rate is at a healthy "
+            f"{float(onboard_val):.1f}%."
+        )
+
+    elif onboard_health == "attention":
+        insights.append(
+            f"🟡 **Onboarding needs attention:** "
+            f"Completion rate is "
+            f"{float(onboard_val):.1f}%."
+        )
+
+    elif onboard_health == "critical":
+        insights.append(
+            f"🔴 **Onboarding is below target:** "
+            f"Completion rate is only "
+            f"{float(onboard_val):.1f}%."
+        )
+
+    # 2. Learning Insight
+    learning_health = health.get("learning_health")
+    learning_val = kpis.get(
+        "learning_completion_rate",
+        0,
+    )
+
+    if learning_health == "healthy":
+        insights.append(
+            f"✅ **Learning progress is healthy:** "
+            f"Course completion is "
+            f"{float(learning_val):.1f}%."
+        )
+
+    elif learning_health == "attention":
+        insights.append(
+            f"🟡 **Learning progress needs attention:** "
+            f"Course completion is "
+            f"{float(learning_val):.1f}%."
+        )
+
+    elif learning_health == "critical":
+        insights.append(
+            f"🔴 **Learning completion is low:** "
+            f"Course completion is "
+            f"{float(learning_val):.1f}%."
+        )
+
+    # 3. Tool Adoption Insight
+    tool_health = health.get("tool_adoption_health")
+    tool_val = kpis.get(
+        "tool_adoption_rate",
+        0,
+    )
+
+    if tool_health == "healthy":
+        insights.append(
+            f"✅ **Tool adoption is strong:** "
+            f"Adoption rate is "
+            f"{float(tool_val):.1f}%."
+        )
+
+    elif tool_health == "attention":
+        insights.append(
+            f"🟡 **Tool adoption needs attention:** "
+            f"Adoption rate is "
+            f"{float(tool_val):.1f}%."
+        )
+
+    elif tool_health == "critical":
+        insights.append(
+            f"🔴 **Tool adoption is low:** "
+            f"Adoption rate is "
+            f"{float(tool_val):.1f}%."
+        )
+
+    # 4. Support Insight
+    support_health = health.get("support_health")
+    support_val = kpis.get(
+        "average_support_tickets",
+        0,
+    )
+
+    if support_health == "healthy":
+        insights.append(
+            f"✅ **Support demand is manageable:** "
+            f"Employees average "
+            f"{float(support_val):.2f} support tickets."
+        )
+
+    elif support_health == "attention":
+        insights.append(
+            f"🟡 **Support demand requires attention:** "
+            f"Employees average "
+            f"{float(support_val):.2f} support tickets."
+        )
+
+    elif support_health == "critical":
+        insights.append(
+            f"🔴 **Support demand is high:** "
+            f"Employees average "
+            f"{float(support_val):.2f} support tickets."
+        )
+
+    # 5. Productivity Insight
+    productivity_val = kpis.get(
+        "productivity_readiness_score",
+    )
+
+    if productivity_val is not None:
+        insights.append(
+            f"📈 **Productivity readiness:** "
+            f"The current readiness score is "
+            f"{float(productivity_val):.2f}."
+        )
+
+    # Render insights
+    if insights:
+        for insight in insights:
+            st.markdown(insight)
+    else:
+        st.info(
+            "No executive insights are available "
+            "for the current dataset."
+        )
