@@ -19,6 +19,6 @@ def render() -> None:
         "Dataset upload",
         (
             "Dataset upload and dynamic preview functionality "
-            "will be implemented in Issue #22."
+            "is not yet implemented. Please upload a dataset to "
         ),
     )

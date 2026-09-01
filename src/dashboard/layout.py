@@ -357,3 +357,15 @@ def render_insight_narratives(
             "No executive insights are available "
             "for the current dataset."
         )
+
+
+def render_empty_state(
+    title: str = "No data available",
+    message: str | None = None,
+) -> None:
+    """Render a simple empty-state panel used by dashboard pages."""
+    st.subheader(title)
+    if message:
+        st.info(message)
+    else:
+        st.info("There is no data to display for the current selection.")

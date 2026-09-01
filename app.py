@@ -330,9 +330,26 @@ def main() -> None:
 
     dataframe = get_dashboard_dataframe()
 
-    filters = render_filter_sidebar(dataframe)
+    # ------------------------------------------------------------------
+    # Filters temporarily disabled.
+    # The original filter functionality is kept below for future use.
+    # ------------------------------------------------------------------
 
-    render_active_filters(filters)
+    # filters = render_filter_sidebar(dataframe)
+
+    # ------------------------------------------------------------------
+    # Use an empty filter dictionary while filters are disabled.
+    # This keeps the existing page interfaces unchanged.
+    # ------------------------------------------------------------------
+
+    filters = {}
+
+    # ------------------------------------------------------------------
+    # Active filter display temporarily disabled.
+    # ------------------------------------------------------------------
+
+    # render_active_filters(filters)
+
     render_sidebar_footer()
 
     if selected_page == "dashboard":
