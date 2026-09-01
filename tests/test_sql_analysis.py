@@ -8,13 +8,17 @@ from src.analysis.sql_analysis import (
     employee_onboarding_summary,
     employee_ranking_by_department,
 )
+
 from src.database.database import (
     create_analytical_indexes,
     create_analytical_views,
     get_connection,
     get_index_names,
     get_view_names,
+    initialize_database,
 )
+
+from src.database.loader import load_all_datasets
 
 
 # ============================================================
@@ -24,9 +28,14 @@ from src.database.database import (
 @pytest.fixture(scope="module", autouse=True)
 def prepare_database():
     """
-    Ensure analytical indexes and views exist before tests run.
+    Initialize and populate the analytical database before SQL tests.
+
+    The database loader clears existing records before loading the
+    datasets, allowing the fixture to be executed repeatedly.
     """
 
+    initialize_database()
+    load_all_datasets()
     create_analytical_indexes()
     create_analytical_views()
 
