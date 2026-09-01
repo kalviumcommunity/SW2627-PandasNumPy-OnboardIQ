@@ -216,15 +216,26 @@ def load_learning_records(connection):
 
 def load_all_datasets():
     """
-    Populate all five SQLite tables.
+    Populate all five SQLite tables with a fresh dataset.
 
-    Employees are loaded first because the remaining
-    datasets contain foreign keys referencing employees.
+    Existing records are cleared before loading so that the
+    function can be safely called multiple times, including
+    during automated tests.
     """
 
     connection = get_connection()
 
     try:
+        # Clear child tables before employees because of
+        # foreign-key relationships.
+        connection.execute("DELETE FROM learning_records")
+        connection.execute("DELETE FROM support_tickets")
+        connection.execute("DELETE FROM tool_usage")
+        connection.execute("DELETE FROM onboarding_tasks")
+        connection.execute("DELETE FROM employees")
+
+        # Load employees first because the remaining datasets
+        # contain foreign keys referencing employee_id.
         load_employees(connection)
         load_onboarding_tasks(connection)
         load_tool_usage(connection)
@@ -241,7 +252,6 @@ def load_all_datasets():
 
     finally:
         connection.close()
-
 
 # ============================================================
 # MAIN

@@ -35,6 +35,17 @@ def get_connection():
 # DATABASE INITIALIZATION
 # ============================================================
 
+def reset_database():
+    """
+    Reset the SQLite database by removing the existing database file.
+    """
+
+    if DATABASE_PATH.exists():
+        DATABASE_PATH.unlink()
+
+    initialize_database()
+
+
 def initialize_database():
     """
     Create the SQLite database schema from schema.sql.
@@ -56,7 +67,6 @@ def initialize_database():
 
     finally:
         connection.close()
-
 
 # ============================================================
 # TABLE INSPECTION
