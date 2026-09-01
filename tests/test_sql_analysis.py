@@ -14,6 +14,7 @@ from src.database.database import (
     get_connection,
     get_index_names,
     get_view_names,
+    initialize_database,
 )
 
 
@@ -24,9 +25,11 @@ from src.database.database import (
 @pytest.fixture(scope="module", autouse=True)
 def prepare_database():
     """
-    Ensure analytical indexes and views exist before tests run.
+    Ensure the database schema, analytical indexes,
+    and analytical views exist before tests run.
     """
 
+    initialize_database()
     create_analytical_indexes()
     create_analytical_views()
 
